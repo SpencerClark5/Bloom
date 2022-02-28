@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Head&Torso.png-121dfa535d3027be3b09d612333c1e68.stex"
+path="res://.import/Torso.png-13f58f1ae127043739837ae00a464f95.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Character_Art/Head&Torso.png"
-dest_files=[ "res://.import/Head&Torso.png-121dfa535d3027be3b09d612333c1e68.stex" ]
+source_file="res://Art/Character_Art/Torso.png"
+dest_files=[ "res://.import/Torso.png-13f58f1ae127043739837ae00a464f95.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
