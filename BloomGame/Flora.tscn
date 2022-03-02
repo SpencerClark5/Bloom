@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Art/Character_Art/Head.png" type="Texture" id=1]
 [ext_resource path="res://Character.gd" type="Script" id=2]
@@ -8,9 +8,6 @@
 [ext_resource path="res://Art/Character_Art/Back_Leg.png" type="Texture" id=6]
 [ext_resource path="res://Art/Character_Art/Front_Leg.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 34, 32 )
-
 [node name="Flora" type="Node2D"]
 __meta__ = {
 "_edit_vertical_guides_": [  ]
@@ -19,11 +16,13 @@ __meta__ = {
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-visible = false
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
+position = Vector2( -56, -7 )
+scale = Vector2( -50.4643, -43.5632 )
+polygon = PoolVector2Array( 0.455768, 0.987072, -0.079264, 0.688655, -0.237792, 0.849341, -0.59448, 0.780476, -0.713376, 0.482059, -0.336872, 0.459103, -0.554848, 0.114776, -0.4954, -0.252507, -0.435952, -0.61979, -0.356688, -0.872296, -0.138712, -1.26253, 0.0594479, -1.3314, 0.535032, -1.3314, 0.733191, -0.482059 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 3, -1 )
 current = true
 limit_smoothed = true
 
