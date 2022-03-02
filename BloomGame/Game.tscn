@@ -8,13 +8,13 @@
 [node name="Sprite" type="Sprite" parent="."]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of cf55d14 (Trying to fix)
 <<<<<<< Updated upstream
 =======
 >>>>>>> parent of acddabb (Updated gravity and movement)
 position = Vector2( -73, 4 )
-=======
-position = Vector2( -67, 6.50002 )
->>>>>>> parent of a69b7de (working with animations)
 scale = Vector2( 3.64379, 2.92892 )
 texture = ExtResource( 2 )
 
