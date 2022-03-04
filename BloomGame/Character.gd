@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 var velocity = Vector2(0,0)
 
-const SPEED = 50
+const SPEED = 20
 const GRAVITY = 30
-const JUMP = -900
+const JUMP = -700
 onready var _animated_sprite = $AnimatedSprite
 
 func _physics_process(delta):
@@ -29,3 +29,5 @@ func _physics_process(delta):
 
 
 	velocity = move_and_slide(velocity)
+	
+	velocity.x = lerp(velocity.x,0,0.1)

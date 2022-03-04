@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Character.gd" type="Script" id=1]
 [ext_resource path="res://Art/Character_Art/Anim/Character_Anims_02.png" type="Texture" id=2]
@@ -54,9 +54,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 47.0
-
 [node name="WalkTest" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -73,9 +70,9 @@ animation = "Walking"
 frame = 4
 speed_scale = 4.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( 34, -32 )
-shape = SubResource( 4 )
+polygon = PoolVector2Array( -23, -60, -7, -61, 11, -53, 18, -46, 21, -26, 19, -6, 17, 5, 8, 23, 16, 36, 16, 43, -42, 43, -43, 31, -27, 29 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
