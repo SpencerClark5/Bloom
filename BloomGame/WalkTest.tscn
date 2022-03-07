@@ -51,7 +51,7 @@ animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Walking",
-"speed": 5.0
+"speed": 3.5
 } ]
 
 [node name="WalkTest" type="KinematicBody2D"]
