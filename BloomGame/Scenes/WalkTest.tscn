@@ -75,4 +75,10 @@ position = Vector2( 34, -32 )
 polygon = PoolVector2Array( -23, -60, -7, -61, 11, -53, 18, -46, 21, -26, 19, -6, 17, 5, 8, 23, 16, 36, 16, 43, -42, 43, -43, 31, -27, 29 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -56, -40 )
 current = true
+limit_left = -845
+limit_top = -1440
+limit_right = 3450
+limit_bottom = 465
+limit_smoothed = true
