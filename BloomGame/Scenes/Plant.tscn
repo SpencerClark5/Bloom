@@ -76,6 +76,7 @@ tracks/1/keys = {
 extents = Vector2( 60.5, 10 )
 
 [node name="Node2D" type="Node2D"]
+z_index = -1
 script = ExtResource( 1 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
