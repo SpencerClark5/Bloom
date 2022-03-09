@@ -104,11 +104,12 @@ anims/RESET = SubResource( 3 )
 anims/Walking = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 72, -129 )
+position = Vector2( 72, -119 )
 scale = Vector2( 2.6289, 2.72266 )
 frames = SubResource( 1 )
 animation = "Jump"
 frame = 4
+speed_scale = 4.0
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( 65, -76 )
