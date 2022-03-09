@@ -1,0 +1,96 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scripts/Planting.gd" type="Script" id=1]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_17.png" type="Texture" id=2]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_09.png" type="Texture" id=3]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_07.png" type="Texture" id=4]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_19.png" type="Texture" id=5]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_11.png" type="Texture" id=6]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_08.png" type="Texture" id=7]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_02.png" type="Texture" id=8]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_04.png" type="Texture" id=9]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_06.png" type="Texture" id=10]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_05.png" type="Texture" id=11]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_03.png" type="Texture" id=12]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_01.png" type="Texture" id=13]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_10.png" type="Texture" id=14]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_16.png" type="Texture" id=15]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_12.png" type="Texture" id=16]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_14.png" type="Texture" id=17]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_15.png" type="Texture" id=18]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_18.png" type="Texture" id=19]
+[ext_resource path="res://Art/Character_Art/Small Plant Anim/Plant_Anim_13.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 2 ), ExtResource( 19 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "Plant",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=3]
+resource_name = "PlantAnim"
+length = 9.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../AnimationPlayer:root_node")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ NodePath("../AnimatedSprite") ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 60.5, 10 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 72, -102 )
+scale = Vector2( 3.65, 3.65 )
+frames = SubResource( 2 )
+animation = "Plant"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite")
+anims/PlantAnim = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 89, -53 )
+shape = SubResource( 1 )
