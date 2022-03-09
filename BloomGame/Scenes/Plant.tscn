@@ -81,7 +81,7 @@ script = ExtResource( 1 )
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 72, -102 )
+position = Vector2( 90, -150 )
 scale = Vector2( 3.65, 3.65 )
 frames = SubResource( 2 )
 animation = "Plant"
