@@ -63,7 +63,7 @@ animations = [ {
 "frames": [ ExtResource( 20 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 16 ) ],
 "loop": false,
 "name": "Jumping",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [node name="WalkTest" type="KinematicBody2D"]
@@ -79,6 +79,7 @@ position = Vector2( 40, -76 )
 scale = Vector2( 2.6289, 2.72266 )
 frames = SubResource( 1 )
 animation = "Jumping"
+frame = 6
 speed_scale = 4.0
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
@@ -87,7 +88,6 @@ polygon = PoolVector2Array( -23, -60, -7, -61, 11, -53, 18, -46, 21, -26, 19, -6
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -56, -40 )
-current = true
 limit_left = -845
 limit_top = -1440
 limit_right = 3450
