@@ -23,7 +23,7 @@
 
 [sub_resource type="Animation" id=4]
 resource_name = "Jump"
-length = 10.0
+length = 3.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
