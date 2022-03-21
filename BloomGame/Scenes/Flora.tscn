@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://Art/Character_Art/Head.png" type="Texture" id=1]
 [ext_resource path="res://Art/Character_Art/Run_AnimSingleLimb/Frame_08/Run_Anim_Back_Arm_08.png" type="Texture" id=2]
@@ -63,6 +63,13 @@
 [ext_resource path="res://Art/Character_Art/Run_AnimSingleLimb/Frame_06/Run_Anim_Torso_06.png" type="Texture" id=61]
 [ext_resource path="res://Art/Character_Art/Run_AnimSingleLimb/Frame_04/Run_Anim_Torso_04.png" type="Texture" id=62]
 [ext_resource path="res://Scenes/Movement.gd" type="Script" id=63]
+[ext_resource path="res://Art/Character_Art/NewJumpAnim/Jump Anim/Bloom_Character_Jump_Anim_07.png" type="Texture" id=64]
+[ext_resource path="res://Art/Character_Art/NewJumpAnim/Jump Anim/Bloom_Character_Jump_Anim_01.png" type="Texture" id=65]
+[ext_resource path="res://Art/Character_Art/NewJumpAnim/Jump Anim/Bloom_Character_Jump_Anim_02.png" type="Texture" id=66]
+[ext_resource path="res://Art/Character_Art/NewJumpAnim/Jump Anim/Bloom_Character_Jump_Anim_04.png" type="Texture" id=67]
+[ext_resource path="res://Art/Character_Art/NewJumpAnim/Jump Anim/Bloom_Character_Jump_Anim_03.png" type="Texture" id=68]
+[ext_resource path="res://Art/Character_Art/NewJumpAnim/Jump Anim/Bloom_Character_Jump_Anim_05.png" type="Texture" id=69]
+[ext_resource path="res://Art/Character_Art/NewJumpAnim/Jump Anim/Bloom_Character_Jump_Anim_06.png" type="Texture" id=70]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -123,6 +130,34 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=11]
 resource_name = "LeftLegRunAnim"
 length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("LeftLeg:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "NewJump"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../NewJumpingSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -139,7 +174,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("RightArm:texture")
+tracks/1/path = NodePath("LeftLeg:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -148,10 +183,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 3 ) ]
+"values": [ Vector2( -57, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body:animation")
+tracks/2/path = NodePath("LeftLeg:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -160,10 +195,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ "TorsoRunAnim" ]
+"values": [ 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body:frame")
+tracks/3/path = NodePath("RightArm:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -172,10 +207,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0 ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("RightArm:frames")
+tracks/4/path = NodePath("Body:animation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -184,10 +219,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ SubResource( 3 ) ]
+"values": [ "TorsoRunAnim" ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("RightArm:frame")
+tracks/5/path = NodePath("Body:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -196,10 +231,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 2 ]
+"values": [ 0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("LeftArm:frame")
+tracks/6/path = NodePath("RightArm:frames")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -208,15 +243,63 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0 ]
+"values": [ SubResource( 3 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("RightLeg:frame")
+tracks/7/path = NodePath("RightArm:frame")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("LeftArm:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("LeftLeg:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("RightLeg:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../NewJumpingSprite:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -273,6 +356,38 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "Walking"
+tracks/0/type = "value"
+tracks/0/path = NodePath("LeftLeg:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -57, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LeftLeg:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 65 ), ExtResource( 68 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "NewJump",
+"speed": 5.0
+} ]
 
 [node name="Flora" type="Node2D"]
 __meta__ = {
@@ -322,7 +437,7 @@ animation = "LeftArmRun"
 speed_scale = 3.0
 
 [node name="LeftLeg" type="AnimatedSprite" parent="KinematicBody2D"]
-position = Vector2( 96, -96 )
+position = Vector2( -57, 0 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 6 )
 animation = "LeftLegRun"
@@ -338,8 +453,16 @@ speed_scale = 3.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
 anims/LeftArmRunAnim = SubResource( 10 )
 anims/LeftLegRunAnim = SubResource( 11 )
+anims/NewJump = SubResource( 13 )
 anims/RESET = SubResource( 1 )
 anims/RightArmRunAnim = SubResource( 9 )
 anims/RightLegRunAnim = SubResource( 12 )
 anims/TorsoRunAnim = SubResource( 4 )
 anims/Walking = SubResource( 2 )
+
+[node name="NewJumpingSprite" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 96, -96 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 14 )
+animation = "NewJump"

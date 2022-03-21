@@ -10,6 +10,7 @@ onready var _animated_sprite_RightArm = $RightArm
 onready var _animated_sprite_LeftArm = $LeftArm
 onready var _animated_sprite_LeftLeg = $LeftLeg
 onready var _animated_sprite_RightLeg = $RightLeg
+onready var _animated_sprite_Jump = $NewJumpingSprite
 
 func _physics_process(delta):
 	
@@ -61,6 +62,7 @@ func _physics_process(delta):
 	
 	# Jump
 	if Input.is_action_just_pressed("Jump"):
+		_animated_sprite_Jump.play("NewJump")
 		velocity.y = JUMP
 
 
