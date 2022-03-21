@@ -107,7 +107,6 @@ anims/Walking = SubResource( 2 )
 scale = Vector2( 2.6289, 2.72266 )
 frames = SubResource( 1 )
 animation = "Jump"
-frame = 4
 speed_scale = 4.0
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
