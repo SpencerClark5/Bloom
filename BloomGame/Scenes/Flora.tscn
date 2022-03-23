@@ -132,7 +132,7 @@ animations = [ {
 resource_name = "Idle"
 length = 5.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("../IdleSprite:frame")
+tracks/0/path = NodePath("IdleSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -184,7 +184,7 @@ tracks/0/keys = {
 resource_name = "PlantingAnim"
 length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("../PlantingSprite:frame")
+tracks/0/path = NodePath("PlantingSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -289,30 +289,6 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../IdleSprite:frame")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../PlantingSprite:frame")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -478,16 +454,18 @@ position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 14 )
 animation = "NewJump"
+speed_scale = 3.0
 
-[node name="IdleSprite" type="AnimatedSprite" parent="."]
-visible = false
+[node name="IdleSprite" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 15 )
 animation = "Idle"
 
-[node name="PlantingSprite" type="AnimatedSprite" parent="."]
+[node name="PlantingSprite" type="AnimatedSprite" parent="FloraBody"]
+visible = false
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 17 )
 animation = "PlantingAnim"
+speed_scale = 3.0
