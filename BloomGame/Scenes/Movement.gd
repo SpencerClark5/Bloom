@@ -50,7 +50,23 @@ func _physics_process(delta):
 		_animated_sprite_RightLeg.play("RightLegRun")
 		_animated_sprite_RightLeg.flip_h = true
 		velocity.x -= SPEED
+	# Jump
+	elif Input.is_action_just_pressed("Jump"):
+		_animated_sprite_Body.visible = false
+		_animated_sprite_LeftArm.visible = false
+		_animated_sprite_LeftLeg.visible = false
+		_animated_sprite_RightArm.visible = false
+		_animated_sprite_RightLeg.visible = false
+		_animated_sprite_Jump.visible = true
+		_animated_sprite_Jump.play("NewJump")
+		velocity.y = JUMP
 	else:
+		_animated_sprite_Body.visible = true
+		_animated_sprite_LeftArm.visible = true
+		_animated_sprite_LeftLeg.visible = true
+		_animated_sprite_RightArm.visible = true
+		_animated_sprite_RightLeg.visible = true
+		_animated_sprite_Jump.visible = false
 		_animated_sprite_Body.stop()
 		_animated_sprite_LeftArm.stop()
 		_animated_sprite_LeftLeg.stop()
@@ -60,12 +76,7 @@ func _physics_process(delta):
 	# Gravity
 	velocity.y = velocity.y + GRAVITY
 	
-	# Jump
-	if Input.is_action_just_pressed("Jump"):
-	#	_animated_sprite_Jump.play("NewJump")
-		velocity.y = JUMP
-
-
+	
 	velocity = move_and_slide(velocity)
 	
 	# Friction

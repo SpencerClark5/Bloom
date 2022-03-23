@@ -168,7 +168,7 @@ length = 6.0
 resource_name = "NewJump"
 length = 4.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("../NewJumpingSprite:frame")
+tracks/0/path = NodePath("NewJumpingSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -472,7 +472,7 @@ anims/RightLegRunAnim = SubResource( 12 )
 anims/TorsoRunAnim = SubResource( 4 )
 anims/Walking = SubResource( 2 )
 
-[node name="NewJumpingSprite" type="AnimatedSprite" parent="."]
+[node name="NewJumpingSprite" type="AnimatedSprite" parent="FloraBody"]
 visible = false
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
