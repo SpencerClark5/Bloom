@@ -14,6 +14,8 @@ onready var _animated_sprite_Jump = $NewJumpingSprite
 onready var _animated_sprite_Idle = $IdleSprite
 onready var _animated_sprite_Plant = $PlantingSprite
 
+var time_elapsed = 0.0
+
 func _physics_process(delta):
 	
 	# Movement and animation 
@@ -85,22 +87,31 @@ func _physics_process(delta):
 		_animated_sprite_Jump.play("NewJump")
 #		velocity.y = JUMP
 	else:
-		_animated_sprite_Idle.visible = true
-		_animated_sprite_Idle.play("Idle")
+#		while(time_elapsed != 5.0):
+			_animated_sprite_Idle.visible = true
+			_animated_sprite_Body.visible = false
+			_animated_sprite_LeftArm.visible = false
+			_animated_sprite_LeftLeg.visible = false
+			_animated_sprite_RightArm.visible = false
+			_animated_sprite_RightLeg.visible = false
+			_animated_sprite_Jump.visible = false
+			time_elapsed += delta
+			if(time_elapsed > 3):
+				_animated_sprite_Idle.play("Idle")
 		
-		_animated_sprite_Body.visible = false
-		_animated_sprite_LeftArm.visible = false
-		_animated_sprite_LeftLeg.visible = false
-		_animated_sprite_RightArm.visible = false
-		_animated_sprite_RightLeg.visible = false
-		_animated_sprite_Jump.visible = false
-		
-		
-#		_animated_sprite_Body.stop()
-#		_animated_sprite_LeftArm.stop()
-#		_animated_sprite_LeftLeg.stop()
-#		_animated_sprite_RightArm.stop()
-#		_animated_sprite_RightLeg.stop()
+#		_animated_sprite_Body.visible = false
+#		_animated_sprite_LeftArm.visible = false
+#		_animated_sprite_LeftLeg.visible = false
+#		_animated_sprite_RightArm.visible = false
+#		_animated_sprite_RightLeg.visible = false
+#		_animated_sprite_Jump.visible = false
+#
+#
+##		_animated_sprite_Body.stop()
+##		_animated_sprite_LeftArm.stop()
+##		_animated_sprite_LeftLeg.stop()
+##		_animated_sprite_RightArm.stop()
+##		_animated_sprite_RightLeg.stop()
 	
 	# Gravity
 	velocity.y = velocity.y + GRAVITY
