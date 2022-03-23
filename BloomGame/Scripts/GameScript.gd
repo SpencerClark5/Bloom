@@ -17,7 +17,7 @@ func _process(_delta):
 func Plant():
 	#get the position of the player to instance the node here
 	var PlantInstance = smallPlant.instance()
-	PlantInstance.position = get_node("WalkTest").get_position()
+	PlantInstance.position = get_node("Flora").get_position()
 	add_child(PlantInstance)
 	print("planted")
 	

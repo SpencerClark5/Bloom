@@ -62,7 +62,7 @@ func _physics_process(delta):
 	
 	# Jump
 	if Input.is_action_just_pressed("Jump"):
-		_animated_sprite_Jump.play("NewJump")
+	#	_animated_sprite_Jump.play("NewJump")
 		velocity.y = JUMP
 
 
