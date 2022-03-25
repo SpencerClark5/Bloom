@@ -107,20 +107,6 @@ func _physics_process(delta):
 			if(time_elapsed > 3):
 				_animated_sprite_Idle.play("Idle")
 		
-#		_animated_sprite_Body.visible = false
-#		_animated_sprite_LeftArm.visible = false
-#		_animated_sprite_LeftLeg.visible = false
-#		_animated_sprite_RightArm.visible = false
-#		_animated_sprite_RightLeg.visible = false
-#		_animated_sprite_Jump.visible = false
-#
-#
-##		_animated_sprite_Body.stop()
-##		_animated_sprite_LeftArm.stop()
-##		_animated_sprite_LeftLeg.stop()
-##		_animated_sprite_RightArm.stop()
-##		_animated_sprite_RightLeg.stop()
-	
 	# Gravity
 	velocity.y = velocity.y + GRAVITY
 	
