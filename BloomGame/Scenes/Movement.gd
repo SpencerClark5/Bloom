@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var velocity = Vector2(0,0)
 
-const SPEED = 30
+const SPEED = 125
 const GRAVITY = 30
 const JUMP = -700
 onready var _animated_sprite_Body = $Body
@@ -32,22 +32,32 @@ func _physics_process(delta):
 		_animated_sprite_Idle.stop()
 		_animated_sprite_Idle.frame = 0
 		time_elapsed = 0
-		
-		_animated_sprite_Body.play("TorsoRunAnim")
-		_animated_sprite_Body.flip_h = false
-		
-		_animated_sprite_RightArm.play("RightArmRun")
-		_animated_sprite_RightArm.flip_h = false
-		
-		_animated_sprite_LeftArm.play("LeftArmRun")
-		_animated_sprite_LeftArm.flip_h = false
-		
-		_animated_sprite_LeftLeg.play("LeftLegRun")
-		_animated_sprite_LeftLeg.flip_h = false
-		
-		_animated_sprite_RightLeg.play("RightLegRun")
-		_animated_sprite_RightLeg.flip_h = false
-		
+		if(velocity.y == 0):
+			_animated_sprite_Body.play("TorsoRunAnim")
+			_animated_sprite_Body.flip_h = false
+			
+			_animated_sprite_RightArm.play("RightArmRun")
+			_animated_sprite_RightArm.flip_h = false
+			
+			_animated_sprite_LeftArm.play("LeftArmRun")
+			_animated_sprite_LeftArm.flip_h = false
+			
+			_animated_sprite_LeftLeg.play("LeftLegRun")
+			_animated_sprite_LeftLeg.flip_h = false
+			
+			_animated_sprite_RightLeg.play("RightLegRun")
+			_animated_sprite_RightLeg.flip_h = false
+		else:
+			_animated_sprite_Idle.visible = false
+			_animated_sprite_Body.visible = false
+			_animated_sprite_LeftArm.visible = false
+			_animated_sprite_LeftLeg.visible = false
+			_animated_sprite_RightArm.visible = false
+			_animated_sprite_RightLeg.visible = false
+			_animated_sprite_Jump.visible = true
+			_animated_sprite_Jump.flip_h = false
+			_animated_sprite_Jump.play("NewJump")
+			
 		velocity.x += SPEED
 	
 	elif Input.is_action_pressed("Left"):
@@ -63,22 +73,34 @@ func _physics_process(delta):
 		_animated_sprite_Idle.stop()
 		_animated_sprite_Idle.frame = 0
 		time_elapsed = 0
+		if(velocity.y == 0):
+			_animated_sprite_Body.play("TorsoRunAnim")
+			_animated_sprite_Body.flip_h = true
+			
+			_animated_sprite_RightArm.play("RightArmRun")
+			_animated_sprite_RightArm.flip_h = true
+			
+			_animated_sprite_LeftArm.play("LeftArmRun")
+			_animated_sprite_LeftArm.flip_h = true
+			
+			_animated_sprite_LeftLeg.play("LeftLegRun")
+			_animated_sprite_LeftLeg.flip_h = true
+			
+			_animated_sprite_RightLeg.play("RightLegRun")
+			_animated_sprite_RightLeg.flip_h = true
+		else:
+			_animated_sprite_Idle.visible = false
+			_animated_sprite_Body.visible = false
+			_animated_sprite_LeftArm.visible = false
+			_animated_sprite_LeftLeg.visible = false
+			_animated_sprite_RightArm.visible = false
+			_animated_sprite_RightLeg.visible = false
+			_animated_sprite_Jump.visible = true
+			_animated_sprite_Jump.flip_h = true
+			_animated_sprite_Jump.play("NewJump")
 		
-		_animated_sprite_Body.play("TorsoRunAnim")
-		_animated_sprite_Body.flip_h = true
-		
-		_animated_sprite_RightArm.play("RightArmRun")
-		_animated_sprite_RightArm.flip_h = true
-		
-		_animated_sprite_LeftArm.play("LeftArmRun")
-		_animated_sprite_LeftArm.flip_h = true
-		
-		_animated_sprite_LeftLeg.play("LeftLegRun")
-		_animated_sprite_LeftLeg.flip_h = true
-		
-		_animated_sprite_RightLeg.play("RightLegRun")
-		_animated_sprite_RightLeg.flip_h = true
 		velocity.x -= SPEED
+		
 	# Jump
 	elif Input.is_action_just_pressed("Jump"):
 		_animated_sprite_Idle.visible = false
@@ -96,6 +118,7 @@ func _physics_process(delta):
 		_animated_sprite_Jump.play("NewJump")
 #		velocity.y = JUMP
 	else:
+		if(velocity.y == 0):
 			_animated_sprite_Idle.visible = true
 			_animated_sprite_Body.visible = false
 			_animated_sprite_LeftArm.visible = false
@@ -116,4 +139,4 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 	
 	# Friction
-	velocity.x = lerp(velocity.x,0,0.1)
+	velocity.x = lerp(velocity.x,0,0.5)

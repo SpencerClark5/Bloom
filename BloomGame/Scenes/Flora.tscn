@@ -367,7 +367,7 @@ animations = [ {
 "frames": [ ExtResource( 65 ), ExtResource( 68 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 64 ) ],
 "loop": true,
 "name": "NewJump",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="SpriteFrames" id=15]
@@ -416,7 +416,7 @@ scale = Vector2( 3, 3 )
 z_index = 3
 frames = SubResource( 8 )
 animation = "TorsoRunAnim"
-speed_scale = 3.0
+speed_scale = 2.6
 
 [node name="RightArm" type="AnimatedSprite" parent="FloraBody"]
 visible = false
@@ -425,7 +425,7 @@ scale = Vector2( 3, 3 )
 frames = SubResource( 3 )
 animation = "RightArmRun"
 frame = 2
-speed_scale = 3.0
+speed_scale = 2.6
 
 [node name="LeftArm" type="AnimatedSprite" parent="FloraBody"]
 visible = false
@@ -434,7 +434,7 @@ scale = Vector2( 3, 3 )
 z_index = 4
 frames = SubResource( 5 )
 animation = "LeftArmRun"
-speed_scale = 3.0
+speed_scale = 2.6
 
 [node name="LeftLeg" type="AnimatedSprite" parent="FloraBody"]
 visible = false
@@ -442,7 +442,7 @@ position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 6 )
 animation = "LeftLegRun"
-speed_scale = 3.0
+speed_scale = 2.6
 
 [node name="RightLeg" type="AnimatedSprite" parent="FloraBody"]
 visible = false
@@ -450,7 +450,7 @@ position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
 animation = "RightLegAnim"
-speed_scale = 3.0
+speed_scale = 2.6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FloraBody"]
 anims/Idle = SubResource( 16 )
@@ -471,7 +471,7 @@ position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 14 )
 animation = "NewJump"
-speed_scale = 3.0
+speed_scale = 2.5
 
 [node name="IdleSprite" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
