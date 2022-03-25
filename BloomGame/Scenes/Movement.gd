@@ -30,6 +30,8 @@ func _physics_process(delta):
 		_animated_sprite_Jump.visible = false
 		
 		_animated_sprite_Idle.stop()
+		_animated_sprite_Idle.frame = 0
+		time_elapsed = 0
 		
 		_animated_sprite_Body.play("TorsoRunAnim")
 		_animated_sprite_Body.flip_h = false
@@ -57,7 +59,10 @@ func _physics_process(delta):
 		_animated_sprite_RightArm.visible = true
 		_animated_sprite_RightLeg.visible = true
 		_animated_sprite_Jump.visible = false
+		
 		_animated_sprite_Idle.stop()
+		_animated_sprite_Idle.frame = 0
+		time_elapsed = 0
 		
 		_animated_sprite_Body.play("TorsoRunAnim")
 		_animated_sprite_Body.flip_h = true
@@ -83,11 +88,14 @@ func _physics_process(delta):
 		_animated_sprite_RightArm.visible = false
 		_animated_sprite_RightLeg.visible = false
 		
+		_animated_sprite_Idle.stop()
+		_animated_sprite_Idle.frame = 0
+		time_elapsed = 0
+		
 		_animated_sprite_Jump.visible = true
 		_animated_sprite_Jump.play("NewJump")
 #		velocity.y = JUMP
 	else:
-#		while(time_elapsed != 5.0):
 			_animated_sprite_Idle.visible = true
 			_animated_sprite_Body.visible = false
 			_animated_sprite_LeftArm.visible = false
