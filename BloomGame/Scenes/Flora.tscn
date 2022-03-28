@@ -1,5 +1,6 @@
-[gd_scene load_steps=111 format=2]
+[gd_scene load_steps=136 format=2]
 
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/01/Jump_Anim_Torso_01.png" type="Texture" id=1]
 [ext_resource path="res://Art/Character_Art/Run_AnimSingleLimb/Frame_08/Run_Anim_Back_Arm_08.png" type="Texture" id=2]
 [ext_resource path="res://Art/Character_Art/Back_Arm.png" type="Texture" id=3]
 [ext_resource path="res://Art/Character_Art/Run_AnimSingleLimb/Frame_05/Run_Anim_Torso_05.png" type="Texture" id=4]
@@ -86,12 +87,41 @@
 [ext_resource path="res://Art/Character_Art/PlantINGAnim/Bloom_Character_Planting_Anim_03.png" type="Texture" id=85]
 [ext_resource path="res://Art/Character_Art/PlantINGAnim/Bloom_Character_Planting_Anim_06.png" type="Texture" id=86]
 [ext_resource path="res://Art/Character_Art/PlantINGAnim/Bloom_Character_Planting_Anim_05.png" type="Texture" id=87]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/02/Jump_Anim_Torso_02.png" type="Texture" id=88]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/03/Jump_Anim_Torso_03.png" type="Texture" id=89]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/04/Jump_Anim_Torso_04.png" type="Texture" id=90]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/05/Jump_Anim_Torso_05.png" type="Texture" id=91]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/04/Jump_Anim_Back_Arm_04.png" type="Texture" id=92]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/01/Jump_Anim_Back_Leg_01.png" type="Texture" id=93]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/01/Jump_Anim_Front_Leg_01.png" type="Texture" id=94]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/04/Jump_Anim_Front_Arm_04.png" type="Texture" id=95]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/03/Jump_Anim_Front_Arm_03.png" type="Texture" id=96]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/05/Jump_Anim_Front_Leg_05.png" type="Texture" id=97]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/03/Jump_Anim_Back_Leg_03.png" type="Texture" id=98]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/04/Jump_Anim_Back_Leg_04.png" type="Texture" id=99]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/05/Jump_Anim_Back_Arm_05.png" type="Texture" id=100]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/02/Jump_Anim_Back_Arm_02.png" type="Texture" id=101]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/03/Jump_Anim_Back_Arm_03.png" type="Texture" id=102]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/02/Jump_Anim_Back_Leg_02.png" type="Texture" id=103]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/05/Jump_Anim_Front_Arm_05.png" type="Texture" id=104]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/03/Jump_Anim_Front_Leg_03.png" type="Texture" id=105]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/04/Jump_Anim_Front_Leg_04.png" type="Texture" id=106]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/02/Jump_Anim_Front_Leg_02.png" type="Texture" id=107]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/01/Jump_Anim_Front_Arm_01.png" type="Texture" id=108]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/02/Jump_Anim_Front_Arm_02.png" type="Texture" id=109]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/01/Jump_Anim_Back_Arm_01.png" type="Texture" id=110]
+[ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/05/Jump_Anim_Back_Leg_05.png" type="Texture" id=111]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ ExtResource( 59 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 4 ), ExtResource( 61 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 58 ), ExtResource( 56 ) ],
 "loop": true,
 "name": "TorsoRunAnim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ) ],
+"loop": true,
+"name": "TorsoJumpAnim",
 "speed": 5.0
 } ]
 
@@ -101,6 +131,11 @@ animations = [ {
 "loop": true,
 "name": "RightArmRun",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 110 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 92 ), ExtResource( 100 ) ],
+"loop": true,
+"name": "RightArmJumpAnim",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=5]
@@ -108,6 +143,11 @@ animations = [ {
 "frames": [ ExtResource( 20 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 29 ) ],
 "loop": true,
 "name": "LeftArmRun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 108 ), ExtResource( 109 ), ExtResource( 96 ), ExtResource( 95 ), ExtResource( 104 ) ],
+"loop": true,
+"name": "LeftArmJumpAnim",
 "speed": 5.0
 } ]
 
@@ -117,6 +157,11 @@ animations = [ {
 "loop": true,
 "name": "LeftLegRun",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 94 ), ExtResource( 107 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 97 ) ],
+"loop": true,
+"name": "LeftLegJumpAnim",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=7]
@@ -124,6 +169,11 @@ animations = [ {
 "frames": [ ExtResource( 41 ), ExtResource( 6 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 50 ) ],
 "loop": true,
 "name": "RightLegAnim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 93 ), ExtResource( 103 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 111 ) ],
+"loop": true,
+"name": "RightLegJumpAnim",
 "speed": 5.0
 } ]
 
@@ -494,7 +544,7 @@ speed_scale = 2.5
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 3 )
-animation = "RightArmRun"
+animation = "RightArmJumpAnim"
 frame = 2
 speed_scale = 2.5
 
@@ -503,21 +553,21 @@ position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 z_index = 4
 frames = SubResource( 5 )
-animation = "LeftArmRun"
+animation = "LeftArmJumpAnim"
 speed_scale = 2.5
 
 [node name="LeftLeg" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 6 )
-animation = "LeftLegRun"
+animation = "LeftLegJumpAnim"
 speed_scale = 2.5
 
 [node name="RightLeg" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
-animation = "RightLegAnim"
+animation = "RightLegJumpAnim"
 speed_scale = 2.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FloraBody"]
