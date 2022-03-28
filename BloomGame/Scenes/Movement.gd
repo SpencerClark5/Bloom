@@ -16,8 +16,6 @@ onready var _animated_sprite_Plant = $PlantingSprite
 
 var time_elapsed = 0.0
 
-var isOnGround = true
-	
 func _physics_process(delta):
 	
 	# Movement and animation 
@@ -118,7 +116,6 @@ func _physics_process(delta):
 		
 		_animated_sprite_Jump.visible = true
 		_animated_sprite_Jump.play("NewJump")
-		
 #		velocity.y = JUMP
 	else:
 		if(velocity.y == 0):
@@ -129,9 +126,6 @@ func _physics_process(delta):
 			_animated_sprite_RightArm.visible = false
 			_animated_sprite_RightLeg.visible = false
 			_animated_sprite_Jump.visible = false
-			
-			isOnGround = true
-			
 			time_elapsed += delta
 			if(time_elapsed > 3):
 				_animated_sprite_Idle.play("Idle")
@@ -139,9 +133,8 @@ func _physics_process(delta):
 	# Gravity
 	velocity.y = velocity.y + GRAVITY
 	
-	if (Input.is_action_just_pressed("Jump") && isOnGround):
+	if Input.is_action_just_pressed("Jump"):
 		velocity.y = JUMP
-		isOnGround = false
 	
 	velocity = move_and_slide(velocity)
 	
