@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Character.gd" type="Script" id=1]
 [ext_resource path="res://Art/Character_Art/Anim/Character_Anims_02.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Art/Character_Art/Jump Anim/Jump05.png" type="Texture" id=18]
 [ext_resource path="res://Art/Character_Art/Jump Anim/Jump01.png" type="Texture" id=19]
 [ext_resource path="res://Art/Character_Art/Jump Anim/Jump07.png" type="Texture" id=20]
+[ext_resource path="res://Art/Level Art/bloom_bg_layer_3.png" type="Texture" id=21]
 
 [sub_resource type="Animation" id=4]
 resource_name = "Jump"
@@ -122,3 +123,7 @@ limit_top = -1440
 limit_right = 3450
 limit_bottom = 465
 limit_smoothed = true
+
+[node name="BloomBgLayer3" type="Sprite" parent="."]
+position = Vector2( 18, -1 )
+texture = ExtResource( 21 )
