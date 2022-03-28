@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=2]
+[gd_scene load_steps=161 format=2]
 
 [ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/03/Jump_Anim_Front_Arm_03.png" type="Texture" id=1]
 [ext_resource path="res://Art/Character_Art/Run_AnimSingleLimb/Frame_08/Run_Anim_Back_Arm_08.png" type="Texture" id=2]
@@ -111,12 +111,37 @@
 [ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/03/Jump_Anim_Back_Leg_03.png" type="Texture" id=109]
 [ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/04/Jump_Anim_Back_Leg_04.png" type="Texture" id=110]
 [ext_resource path="res://Art/Character_Art/SingleLimpJumpAnim/Jump_Anim/05/Jump_Anim_Back_Leg_05.png" type="Texture" id=111]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/04/Planting_Anim_Back_Arm_04.png" type="Texture" id=112]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/01/Planting_Anim_Front_Arm_01.png" type="Texture" id=113]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/04/Planting_Anim_Front_Arm_04.png" type="Texture" id=114]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/03/Planting_Anim_Torso_03.png" type="Texture" id=115]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/02/Planting_Anim_Back_Arm_02.png" type="Texture" id=116]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/03/Planting_Anim_Back_Arm_03.png" type="Texture" id=117]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/02/Planting_Anim_Front_Arm_02.png" type="Texture" id=118]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/03/Planting_Anim_Front_Arm_03.png" type="Texture" id=119]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/02/Planting_Anim_Torso_02.png" type="Texture" id=120]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/04/Planting_Anim_Torso_04.png" type="Texture" id=121]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/01/Planting_Anim_Back_Arm_01.png" type="Texture" id=122]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/01/Planting_Anim_Torso_01.png" type="Texture" id=123]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/02/Planting_Anim_Front_Leg_02.png" type="Texture" id=124]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/04/Planting_Anim_Front_Leg_04.png" type="Texture" id=125]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/03/Planting_Anim_Front_Leg_03.png" type="Texture" id=126]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/01/Planting_Anim_Front_Leg_01.png" type="Texture" id=127]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/03/Planting_Anim_Back_Leg_03.png" type="Texture" id=128]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/01/Planting_Anim_Back_Leg_01.png" type="Texture" id=129]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/02/Planting_Anim_Back_Leg_02.png" type="Texture" id=130]
+[ext_resource path="res://Art/Character_Art/SingleLimbPlantingAnim/Planting_Anim/04/Planting_Anim_Back_Leg_04.png" type="Texture" id=131]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ ExtResource( 59 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 4 ), ExtResource( 61 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 58 ), ExtResource( 56 ) ],
 "loop": true,
 "name": "TorsoRunAnim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 123 ), ExtResource( 120 ), ExtResource( 115 ), ExtResource( 121 ) ],
+"loop": true,
+"name": "TorsoPlantingAnim",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 90 ), ExtResource( 106 ), ExtResource( 102 ), ExtResource( 107 ), ExtResource( 99 ) ],
@@ -127,14 +152,19 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
+"frames": [ ExtResource( 108 ), ExtResource( 91 ), ExtResource( 94 ), ExtResource( 92 ), ExtResource( 101 ) ],
+"loop": true,
+"name": "RightArmJumpAnim",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 9 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "RightArmRun",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 108 ), ExtResource( 91 ), ExtResource( 94 ), ExtResource( 92 ), ExtResource( 101 ) ],
+"frames": [ ExtResource( 122 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 112 ) ],
 "loop": true,
-"name": "RightArmJumpAnim",
+"name": "RightArmPlantingAnim",
 "speed": 5.0
 } ]
 
@@ -143,6 +173,11 @@ animations = [ {
 "frames": [ ExtResource( 20 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 29 ) ],
 "loop": true,
 "name": "LeftArmRun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 113 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 114 ) ],
+"loop": true,
+"name": "LeftArmPlantingAnim",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 93 ), ExtResource( 95 ), ExtResource( 1 ), ExtResource( 96 ), ExtResource( 97 ) ],
@@ -162,6 +197,11 @@ animations = [ {
 "loop": true,
 "name": "LeftLegJumpAnim",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 127 ), ExtResource( 124 ), ExtResource( 126 ), ExtResource( 125 ) ],
+"loop": true,
+"name": "LeftLegPlantingAnim",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=7]
@@ -174,6 +214,11 @@ animations = [ {
 "frames": [ ExtResource( 100 ), ExtResource( 104 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ) ],
 "loop": true,
 "name": "RightLegJumpAnim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 129 ), ExtResource( 130 ), ExtResource( 128 ), ExtResource( 131 ) ],
+"loop": true,
+"name": "RightLegPlantingAnim",
 "speed": 5.0
 } ]
 
@@ -225,6 +270,22 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
+[sub_resource type="Animation" id=25]
+resource_name = "LeftArmPlantingAnim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("LeftArm:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
 [sub_resource type="Animation" id=10]
 resource_name = "LeftArmRunAnim"
 length = 6.0
@@ -255,6 +316,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "LeftLegPlantingAnim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("LeftLeg:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -408,6 +485,22 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
+[sub_resource type="Animation" id=26]
+resource_name = "RightArmPlantingAnim"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("RightArm:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
 [sub_resource type="Animation" id=9]
 resource_name = "RightArmRunAnim"
 length = 6.0
@@ -440,6 +533,22 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
+[sub_resource type="Animation" id=29]
+resource_name = "RightLegPlantingAnim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("RightLeg:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
 [sub_resource type="Animation" id=12]
 resource_name = "RightLegRunAnim"
 length = 6.0
@@ -470,6 +579,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "TorsoPlantingAnim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -544,7 +669,7 @@ speed_scale = 2.5
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 3 )
-animation = "RightArmJumpAnim"
+animation = "RightArmPlantingAnim"
 frame = 2
 speed_scale = 2.5
 
@@ -553,38 +678,43 @@ position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 z_index = 4
 frames = SubResource( 5 )
-animation = "LeftArmJumpAnim"
+animation = "LeftArmPlantingAnim"
 speed_scale = 2.5
 
 [node name="LeftLeg" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 6 )
-animation = "LeftLegJumpAnim"
+animation = "LeftLegPlantingAnim"
 speed_scale = 2.5
 
 [node name="RightLeg" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
-animation = "RightLegJumpAnim"
+animation = "RightLegPlantingAnim"
 speed_scale = 2.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FloraBody"]
 anims/Idle = SubResource( 16 )
 anims/IdleCont = SubResource( 19 )
 anims/LeftArmJumpAnim = SubResource( 22 )
+anims/LeftArmPlantingAnim = SubResource( 25 )
 anims/LeftArmRunAnim = SubResource( 10 )
 anims/LeftLegJumpAnim = SubResource( 23 )
+anims/LeftLegPlantingAnim = SubResource( 28 )
 anims/LeftLegRunAnim = SubResource( 11 )
 anims/NewJump = SubResource( 13 )
 anims/PlantingAnim = SubResource( 18 )
 anims/RESET = SubResource( 1 )
 anims/RightArmJumpAnim = SubResource( 20 )
+anims/RightArmPlantingAnim = SubResource( 26 )
 anims/RightArmRunAnim = SubResource( 9 )
 anims/RightLegJumpAnim = SubResource( 24 )
+anims/RightLegPlantingAnim = SubResource( 29 )
 anims/RightLegRunAnim = SubResource( 12 )
 anims/TorsoJumpAnim = SubResource( 21 )
+anims/TorsoPlantingAnim = SubResource( 27 )
 anims/TorsoRunAnim = SubResource( 4 )
 anims/Walking = SubResource( 2 )
 
