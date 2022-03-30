@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2( -564, 263 )
 motion_scale = Vector2( 0, 1 )
-motion_mirroring = Vector2( 2800, 0 )
+motion_mirroring = Vector2( 2800, 1975 )
 
 [node name="Blank" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 517.38, -491.5 )
@@ -24,9 +24,10 @@ scale = Vector2( 10.5829, 10.5829 )
 texture = ExtResource( 7 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 position = Vector2( -564, 263 )
 motion_scale = Vector2( 0.25, 1 )
-motion_mirroring = Vector2( 2900, 0 )
+motion_mirroring = Vector2( 2900, 1975 )
 
 [node name="Back" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 663, -491 )
@@ -34,9 +35,10 @@ scale = Vector2( 11.6556, 10.5294 )
 texture = ExtResource( 6 )
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 position = Vector2( -564, 263 )
 motion_scale = Vector2( 0.5, 1 )
-motion_mirroring = Vector2( 2400, 0 )
+motion_mirroring = Vector2( 2400, 1975 )
 
 [node name="Front" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2( 448, -483 )
@@ -44,8 +46,9 @@ scale = Vector2( 9.86881, 9.86881 )
 texture = ExtResource( 8 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 position = Vector2( -564, 263 )
-motion_mirroring = Vector2( 2800, 0 )
+motion_mirroring = Vector2( 2800, 2150 )
 
 [node name="Outline" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2( 639, -478 )
