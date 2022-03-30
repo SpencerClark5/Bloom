@@ -24,7 +24,6 @@ scale = Vector2( 10.5829, 10.5829 )
 texture = ExtResource( 7 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 position = Vector2( -564, 263 )
 motion_scale = Vector2( 0.25, 1 )
 motion_mirroring = Vector2( 2900, 1975 )
@@ -35,7 +34,6 @@ scale = Vector2( 11.6556, 10.5294 )
 texture = ExtResource( 6 )
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 position = Vector2( -564, 263 )
 motion_scale = Vector2( 0.5, 1 )
 motion_mirroring = Vector2( 2400, 1975 )
@@ -46,7 +44,6 @@ scale = Vector2( 9.86881, 9.86881 )
 texture = ExtResource( 8 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 position = Vector2( -564, 263 )
 motion_mirroring = Vector2( 2800, 2150 )
 
