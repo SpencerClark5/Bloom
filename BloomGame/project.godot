@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [WAT]
 
-Test_Directory="res://"
+Test_Directory="res://\"C:\\Users\\VerdouwRowan\\TheRockBoomVine\\BloomGame\\UnitTests\""
 Results_Directory="res://"
 Test_Metadata_Directory="res://"
 Tags=PoolStringArray(  )
