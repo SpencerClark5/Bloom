@@ -708,11 +708,11 @@ __meta__ = {
 }
 
 [node name="FloraBody" type="KinematicBody2D" parent="."]
+script = ExtResource( 63 )
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="FloraBody"]
 position = Vector2( 165, -68 )
 polygon = PoolVector2Array( -74, -39, -53, -38, -44, -37, -33, -30, -27, -18, -36, -2, -20, 4, -20, 24, -21, 68, -52, 68, -114, 68, -107, 16 )
-script = ExtResource( 63 )
 
 [node name="Camera2D" type="Camera2D" parent="FloraBody"]
 position = Vector2( 102, -73 )
