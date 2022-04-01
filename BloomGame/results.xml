@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<testsuites failures="0" name="TestXML" tests="1" time="0.037">
+	<testsuite name="Bloom Example Tests" failures="0"  tests="1" time="0">
+		<testcase name="Bloom Example Test" time="0"></testcase>
+	</testsuite>
+
+</testsuites>
