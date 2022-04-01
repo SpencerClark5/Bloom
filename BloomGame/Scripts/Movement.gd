@@ -10,11 +10,10 @@ onready var _animated_sprite_RightArm = $RightArm
 onready var _animated_sprite_LeftArm = $LeftArm
 onready var _animated_sprite_LeftLeg = $LeftLeg
 onready var _animated_sprite_RightLeg = $RightLeg
-onready var _animated_sprite_Jump = $NewJumpingSprite
 onready var _animated_sprite_Idle = $IdleSprite
-onready var _animated_sprite_Plant = $PlantingSprite
 
 var time_elapsed = 0.0
+var plant_timer = 0.0
 
 var isOnGround = 0
 var isPlanting = 0
@@ -218,8 +217,7 @@ func _physics_process(delta):
 		if(velocity.y == 0):
 			isOnGround = 0
 
-	elif Input.is_action_pressed("Plant"):
-		
+	elif Input.is_action_just_pressed("Plant"):
 		isPlanting = 1
 		
 		_animated_sprite_Idle.visible = false
@@ -286,14 +284,14 @@ func _physics_process(delta):
 	#Idle anim
 	else:
 #		if(isPlanting == 0):
-			if(velocity.y == 0):
+			if(velocity.y == 0 || isOnGround):
 				_animated_sprite_Idle.visible = true
 				_animated_sprite_Body.visible = false
 				_animated_sprite_LeftArm.visible = false
 				_animated_sprite_LeftLeg.visible = false
 				_animated_sprite_RightArm.visible = false
 				_animated_sprite_RightLeg.visible = false
-				_animated_sprite_Jump.visible = false
+				
 				
 				isOnGround = 0
 				
@@ -313,3 +311,59 @@ func _physics_process(delta):
 	
 	# Friction
 	velocity.x = lerp(velocity.x,0,0.5)
+#func _input(event):
+#	if event.is_action_pressed("Plant"):
+#		_animated_sprite_Idle.visible = false
+#		_animated_sprite_Body.visible = true
+#		_animated_sprite_LeftArm.visible = true
+#		_animated_sprite_LeftLeg.visible = true
+#		_animated_sprite_RightArm.visible = true
+#		_animated_sprite_RightLeg.visible = true
+#
+#		if(velocity.x >= 0):
+#			_animated_sprite_Body.animation = "TorsoPlantAnim"
+#			_animated_sprite_Body.flip_h = false
+#
+#			_animated_sprite_RightArm.animation = "RightArmPlantAnim"
+#			_animated_sprite_RightArm.flip_h = false
+#
+#			_animated_sprite_LeftArm.animation = "LeftArmPlantAnim"
+#			_animated_sprite_LeftArm.flip_h = false
+#
+#			_animated_sprite_LeftLeg.animation = "LeftLegPlantAnim"
+#			_animated_sprite_LeftLeg.flip_h = false
+#
+#			_animated_sprite_RightLeg.animation = "RightLegPlantAnim"
+#			_animated_sprite_RightLeg.flip_h = false
+#
+#
+#			_animated_sprite_Body.play("TorsoPlantAnim")
+#			_animated_sprite_RightArm.play("RightArmPlantAnim")
+#			_animated_sprite_LeftArm.play("LeftArmPlantAnim")
+#			_animated_sprite_LeftLeg.play("LeftLegPlantAnim")
+#			_animated_sprite_RightLeg.play("RightLegPlantAnim")
+#
+#		else:
+#			_animated_sprite_Body.animation = "TorsoPlantAnim"
+#			_animated_sprite_Body.flip_h = true
+#
+#			_animated_sprite_RightArm.animation = "RightArmPlantAnim"
+#			_animated_sprite_RightArm.flip_h = true
+#
+#			_animated_sprite_LeftArm.animation = "LeftArmPlantAnim"
+#			_animated_sprite_LeftArm.flip_h = true
+#
+#			_animated_sprite_LeftLeg.animation = "LeftLegPlantAnim"
+#			_animated_sprite_LeftLeg.flip_h = true
+#
+#			_animated_sprite_RightLeg.animation = "RightLegPlantAnim"
+#			_animated_sprite_RightLeg.flip_h = true
+#
+#
+#			_animated_sprite_Body.play("TorsoPlantAnim")
+#			_animated_sprite_RightArm.play("RightArmPlantAnim")
+#			_animated_sprite_LeftArm.play("LeftArmPlantAnim")
+#			_animated_sprite_LeftLeg.play("LeftLegPlantAnim")
+#			_animated_sprite_RightLeg.play("RightLegPlantAnim")
+#
+#
