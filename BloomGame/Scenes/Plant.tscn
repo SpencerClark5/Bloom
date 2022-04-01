@@ -77,9 +77,11 @@ script = ExtResource( 1 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
-position = Vector2( 121, -124 )
-polygon = PoolVector2Array( -60, 9, -44, -4, 17, -5, 36, 1, 45, 13, 45, 14, 30, 12, -45, 5, -61, 13 )
+[node name="Plant" type="CollisionPolygon2D" parent="KinematicBody2D"]
+position = Vector2( 120.004, -124 )
+scale = Vector2( 1.01297, 1 )
+z_index = 1
+polygon = PoolVector2Array( -57.261, 0, -43.4403, -1, 16.7786, -1, 36.5225, 1, 45, 13, 45, 14, 24.6761, 8, -44.4275, 8, -61, 13 )
 one_way_collision = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
