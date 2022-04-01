@@ -13,5 +13,3 @@ func test_simple_example()->void:
 	describe("Bloom Example Test")
 	
 	asserts.is_true(true)
-	
-
