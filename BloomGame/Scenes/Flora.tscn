@@ -356,34 +356,10 @@ length = 6.0
 [sub_resource type="Animation" id=13]
 resource_name = "NewJump"
 length = 4.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("NewJumpingSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 3.5, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6 ]
-}
 
 [sub_resource type="Animation" id=18]
 resource_name = "PlantingAnim"
 length = 3.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("PlantingSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5 ]
-}
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -732,7 +708,7 @@ speed_scale = 2.5
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 3 )
-animation = "RightArmPlantingAnim"
+animation = "RightArmRun"
 frame = 2
 speed_scale = 2.5
 
@@ -741,21 +717,21 @@ position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 z_index = 4
 frames = SubResource( 5 )
-animation = "LeftArmPlantingAnim"
+animation = "LeftArmRun"
 speed_scale = 2.5
 
 [node name="LeftLeg" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 6 )
-animation = "LeftLegPlantingAnim"
+animation = "LeftLegRun"
 speed_scale = 2.5
 
 [node name="RightLeg" type="AnimatedSprite" parent="FloraBody"]
-position = Vector2( 96, -96 )
+position = Vector2( 97, -99 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
-animation = "RightLegPlantingAnim"
+animation = "RightLegAnim"
 speed_scale = 2.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FloraBody"]
