@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Art/Character_Art/Bloom_Grapple_Link.png" type="Texture" id=1]
+[ext_resource path="res://Art/Character_Art/Bloom_Grapple_Hook.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="Chain" type="Node2D"]
+
+[node name="Links" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 95, 99 )
+
+[node name="Tip" type="KinematicBody2D" parent="."]
+
+[node name="Hook" type="Sprite" parent="Tip"]
+position = Vector2( 5, 0 )
+scale = Vector2( 4, 5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
+shape = SubResource( 1 )
