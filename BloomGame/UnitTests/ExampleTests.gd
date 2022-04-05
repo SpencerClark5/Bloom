@@ -1,6 +1,6 @@
 extends WAT.Test
 
-
+onready var node
 #This sets name of test in the results view
 func title()->String:
 	return "Bloom Example Tests"
@@ -11,5 +11,5 @@ func test_simple_example()->void:
 	
 	#can use describe to show this string instead of the method name in the results view
 	describe("Bloom Example Test")
-	
-	asserts.is_true(true)
+	node.get_node("Flora")
+	asserts.Null(node)
