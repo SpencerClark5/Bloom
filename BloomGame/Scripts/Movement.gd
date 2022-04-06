@@ -283,7 +283,6 @@ func _physics_process(delta):
 		
 	#Idle anim
 	else:
-#		if(isPlanting == 0):
 			if(velocity.y == 0 || isOnGround):
 				_animated_sprite_Idle.visible = true
 				_animated_sprite_Body.visible = false
