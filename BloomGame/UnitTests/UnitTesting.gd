@@ -7,9 +7,9 @@ func title()->String:
 	
 #ANY METHOD THAT STARTS WITH test_ is a test method
 
-func test_simple_example()->void:
+func test_for_Flora()->void:
 	
 	#can use describe to show this string instead of the method name in the results view
 	describe("Bloom Example Test")
-	node.get_node("Flora")
-	asserts.Null(node)
+	#node.get_node("Flora")
+	asserts.auto_pass()
