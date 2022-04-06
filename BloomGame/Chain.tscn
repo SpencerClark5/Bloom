@@ -9,21 +9,29 @@
 [node name="Chain" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Links" type="Sprite" parent="."]
-position = Vector2( -1, 420 )
+[node name="LinksParent" type="Node2D" parent="."]
+
+[node name="Links" type="Sprite" parent="LinksParent"]
+position = Vector2( 0, 6 )
+rotation = -1.5708
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
+centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 3, 200 )
+region_rect = Rect2( 0, 0, 3, 10 )
+region_filter_clip = true
 
 [node name="Tip" type="KinematicBody2D" parent="."]
+rotation = 1.5708
+collision_layer = 2
+collision_mask = 2
 
 [node name="Hook" type="Sprite" parent="Tip"]
-position = Vector2( 5, 0 )
+position = Vector2( 5.9815, -20.8 )
 scale = Vector2( 4, 5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
-position = Vector2( -1, 0 )
+position = Vector2( -0.950386, -18.701 )
 scale = Vector2( 0.772, 0.881 )
 shape = SubResource( 1 )
