@@ -48,6 +48,10 @@ config/name="Bloom Game"
 run/main_scene="res://Scenes/Game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalVariables="*res://Scripts/GlobalVariables.gd"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/WAT/plugin.cfg" )

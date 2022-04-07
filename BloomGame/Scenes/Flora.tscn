@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=2]
+[gd_scene load_steps=208 format=2]
 
 [ext_resource path="res://Art/Character_Art/SingleLimbJumpAnim/Jump_Anim/01/Jump_Anim_Torso_01.png" type="Texture" id=1]
 [ext_resource path="res://Art/Character_Art/Run_AnimSingleLimb/Frame_08/Run_Anim_Back_Arm_08.png" type="Texture" id=2]
@@ -82,7 +82,11 @@
 [ext_resource path="res://Art/Character_Art/Idle Anim/Bloom_Character_Idle_Anim_03.png" type="Texture" id=80]
 [ext_resource path="res://Art/Character_Art/Idle Anim/Bloom_Character_Idle_Anim_01.png" type="Texture" id=81]
 [ext_resource path="res://Scenes/Chain.tscn" type="PackedScene" id=82]
-[ext_resource path="res://Scripts/WallClimb.gd" type="Script" id=83]
+[ext_resource path="res://Scripts/LeftArmAnimation.gd" type="Script" id=83]
+[ext_resource path="res://Scripts/BodyAnimation.gd" type="Script" id=84]
+[ext_resource path="res://Scripts/RightArmAnimation.gd" type="Script" id=85]
+[ext_resource path="res://Scripts/LeftLegAnimation.gd" type="Script" id=86]
+[ext_resource path="res://Scripts/RightLegAnimation.gd" type="Script" id=87]
 [ext_resource path="res://Art/Character_Art/SingleLimbJumpAnim/Jump_Anim/02/Jump_Anim_Torso_02.png" type="Texture" id=88]
 [ext_resource path="res://Art/Character_Art/SingleLimbJumpAnim/Jump_Anim/03/Jump_Anim_Torso_03.png" type="Texture" id=89]
 [ext_resource path="res://Art/Character_Art/SingleLimbJumpAnim/Jump_Anim/04/Jump_Anim_Torso_04.png" type="Texture" id=90]
@@ -176,6 +180,11 @@ animations = [ {
 "name": "TorsoPlantingAnim",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 153 ), ExtResource( 163 ), ExtResource( 159 ), ExtResource( 162 ), ExtResource( 157 ), ExtResource( 151 ), ExtResource( 152 ), ExtResource( 148 ), ExtResource( 164 ), ExtResource( 154 ), ExtResource( 155 ) ],
+"loop": true,
+"name": "TorsoIdleAnim",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ) ],
 "loop": true,
 "name": "TorsoJumpAnim",
@@ -184,11 +193,6 @@ animations = [ {
 "frames": [ ExtResource( 59 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 4 ), ExtResource( 61 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 58 ), ExtResource( 56 ) ],
 "loop": true,
 "name": "TorsoRunAnim",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 153 ), ExtResource( 163 ), ExtResource( 159 ), ExtResource( 162 ), ExtResource( 157 ), ExtResource( 151 ), ExtResource( 152 ), ExtResource( 148 ), ExtResource( 164 ), ExtResource( 154 ), ExtResource( 155 ) ],
-"loop": true,
-"name": "TorsoIdleAnim",
 "speed": 5.0
 } ]
 
@@ -217,9 +221,9 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 150 ), ExtResource( 147 ), ExtResource( 158 ), ExtResource( 149 ) ],
+"frames": [ ExtResource( 108 ), ExtResource( 109 ), ExtResource( 96 ), ExtResource( 95 ), ExtResource( 104 ) ],
 "loop": true,
-"name": "LeftArmIdleAnim",
+"name": "LeftArmJumpAnim",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 122 ), ExtResource( 121 ), ExtResource( 120 ), ExtResource( 127 ) ],
@@ -227,19 +231,24 @@ animations = [ {
 "name": "LeftArmPlantingAnim",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 108 ), ExtResource( 109 ), ExtResource( 96 ), ExtResource( 95 ), ExtResource( 104 ) ],
-"loop": true,
-"name": "LeftArmJumpAnim",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 20 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 29 ) ],
 "loop": true,
 "name": "LeftArmRun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 150 ), ExtResource( 147 ), ExtResource( 158 ), ExtResource( 149 ) ],
+"loop": true,
+"name": "LeftArmIdleAnim",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
+"frames": [ ExtResource( 94 ), ExtResource( 107 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 97 ) ],
+"loop": true,
+"name": "LeftLegJumpAnim",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 125 ), ExtResource( 123 ), ExtResource( 126 ), ExtResource( 124 ) ],
 "loop": true,
 "name": "LeftLegPlantingAnim",
@@ -248,11 +257,6 @@ animations = [ {
 "frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 7 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 40 ), ExtResource( 34 ) ],
 "loop": true,
 "name": "LeftLegRun",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 94 ), ExtResource( 107 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 97 ) ],
-"loop": true,
-"name": "LeftLegJumpAnim",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 166 ), ExtResource( 173 ), ExtResource( 167 ), ExtResource( 171 ) ],
@@ -268,6 +272,11 @@ animations = [ {
 "name": "RightLegIdleAnim",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 41 ), ExtResource( 6 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 50 ) ],
+"loop": true,
+"name": "RightLegAnim",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 93 ), ExtResource( 103 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 111 ) ],
 "loop": true,
 "name": "RightLegJumpAnim",
@@ -276,11 +285,6 @@ animations = [ {
 "frames": [ ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ) ],
 "loop": true,
 "name": "RightLegPlantingAnim",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 41 ), ExtResource( 6 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 50 ) ],
-"loop": true,
-"name": "RightLegAnim",
 "speed": 5.0
 } ]
 
@@ -834,6 +838,7 @@ z_index = 3
 frames = SubResource( 8 )
 animation = "TorsoRunAnim"
 speed_scale = 2.5
+script = ExtResource( 84 )
 
 [node name="RightArm" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
@@ -842,6 +847,7 @@ frames = SubResource( 3 )
 animation = "RightArmIdleAnim"
 frame = 2
 speed_scale = 2.5
+script = ExtResource( 85 )
 
 [node name="LeftArm" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
@@ -858,6 +864,7 @@ scale = Vector2( 3, 3 )
 frames = SubResource( 6 )
 animation = "LeftLegIdleAnim"
 speed_scale = 2.5
+script = ExtResource( 86 )
 
 [node name="RightLeg" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 97, -99 )
@@ -865,6 +872,7 @@ scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
 animation = "RightLegIdleAnim"
 speed_scale = 2.5
+script = ExtResource( 87 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FloraBody"]
 anims/Idle = SubResource( 16 )
