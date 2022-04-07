@@ -97,7 +97,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="PlantRoot" type="Node2D"]
 z_index = -1
 script = ExtResource( 1 )
 

@@ -1,7 +1,9 @@
 extends Node2D
+class_name GameScript
 
 
 var smallPlant = preload("res://Scenes/Plant.tscn")
+export var test = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,10 +13,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("Plant"):
-		Plant()
+		plant()
 	
 
-func Plant():
+func plant():
 	#get the position of the player to instance the node here
 	var PlantInstance = smallPlant.instance()
 	add_child(PlantInstance)

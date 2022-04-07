@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
-<testsuites failures="1" name="TestXML" tests="1" time="0.022">
-	<testsuite name="Bloom Example Tests" failures="1"  tests="3" time="0">
-		<testcase name=" for Plant" time="0"></testcase>
+<testsuites failures="0" name="TestXML" tests="1" time="1.265">
+	<testsuite name="Bloom Example Tests" failures="0"  tests="3" time="0">
 		<testcase name=" for Flora" time="0"></testcase>
+		<testcase name=" for Plant" time="0"></testcase>
 		<testcase name=" for Function Call" time="0"></testcase>
 	</testsuite>
 

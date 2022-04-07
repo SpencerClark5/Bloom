@@ -3,6 +3,8 @@ extends WAT.Test
 var _smallPlant = preload("res://Scenes/Plant.tscn")
 var _testFlora = preload("res://Scenes/Flora.tscn")
 var _game = preload("res://Scenes/Game.tscn")
+var _gameScript = preload("res://Scripts/GameScript.gd")
+
 #This sets name of test in the results view
 func title()->String:
 	return "Bloom Example Tests"
@@ -15,16 +17,26 @@ func title()->String:
 
 #tests that a plant is not null
 func test_for_Plant()->void:
-	_smallPlant.instance()
+	var _plantInstance = _smallPlant.instance()
 	asserts.is_not_null(_smallPlant)
 
 #test that flora is not null
 func test_for_Flora()->void:
-	_testFlora.instance()
+	var _instanceFlora = _testFlora.instance()
 	asserts.is_not_null(_testFlora)
 	
+
+#Testing that plant is being called and that the instance is not null
 func test_for_Function_Call()->void:
-	_game.instance()
-	Input.action_press("Plant")
-	asserts.was_called(_game.Plant(), "was Called")
+	
+	var scene = direct.scene(_game)
+	var double = scene.double()
+	asserts.is_class_instance(double, GameScript)
+	
+	var gameInstance = double
+	asserts.is_equal(gameInstance.test, 3)
+	gameInstance.plant()
+	yield(until_timeout(1), YIELD)
+	asserts.is_not_null(gameInstance.get_node("PlantRoot"))
+	
 	
