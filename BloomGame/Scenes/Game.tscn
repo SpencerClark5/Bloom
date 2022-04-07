@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/Large_Dirt_Tiles.tres" type="TileSet" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_3.png" type="Texture" id=6]
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_4.png" type="Texture" id=7]
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_2.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27.5, 252.25 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -63,3 +66,9 @@ tile_data = PoolIntArray( -1769463, 0, 0, -1769462, 0, 0, -1769461, 0, 0, -17694
 
 [node name="Flora" parent="." instance=ExtResource( 4 )]
 position = Vector2( -853, 125 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1313.5, -446.75 )
+shape = SubResource( 1 )
