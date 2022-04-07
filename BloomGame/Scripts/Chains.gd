@@ -3,7 +3,7 @@ This script controls the chain.
 """
 extends Node2D
 
-onready var links = $Links		# A slightly easier reference to the links
+onready var links = $LinksParent/Links		# A slightly easier reference to the links
 var direction := Vector2(0,0)	# The direction in which the chain was shot
 var tip := Vector2(0,0)			# The global position the tip should be in
 								# We use an extra var for this, because the chain is 
@@ -11,16 +11,17 @@ var tip := Vector2(0,0)			# The global position the tip should be in
 								# properties would get messed with when the player
 								# moves.
 
-const SPEED = 50	# The speed with which the chain moves
+const SPEED = 10	# The speed with which the chain moves
 
 var flying = false	# Whether the chain is moving through the air
 var hooked = false	# Whether the chain has connected to a wall
 
 # shoot() shoots the chain in a given direction
 func shoot(dir: Vector2) -> void:
+	tip = self.global_position		# reset the tip position to the player's position
 	direction = dir.normalized()	# Normalize the direction and save it
 	flying = true					# Keep track of our current scan
-	tip = self.global_position		# reset the tip position to the player's position
+	
 
 # release() the chain
 func release() -> void:
@@ -33,11 +34,12 @@ func _process(_delta: float) -> void:
 	if not self.visible:
 		return	# Not visible -> nothing to draw
 	var tip_loc = to_local(tip)	# Easier to work in local coordinates
+	var origin = Vector2(0,0)
 	# We rotate the links (= chain) and the tip to fit on the line between self.position (= origin = player.position) and the tip
-	links.rotation = self.position.angle_to_point(tip_loc) - deg2rad(90)
-	$Tip.rotation = self.position.angle_to_point(tip_loc) - deg2rad(90)
-	links.position = tip_loc						# The links are moved to start at the tip
-	links.region_rect.size.y = tip_loc.length()		# and get extended for the distance between (0,0) and the tip
+	$LinksParent.rotation = origin.angle_to_point(tip_loc) + deg2rad(180)
+	$Tip.rotation = origin.angle_to_point(tip_loc) - deg2rad(90)
+	#$LinksParent.position = tip_loc						# The links are moved to start at the tip
+	$LinksParent/Links.region_rect.size.y = tip_loc.length()/4		# and get extended for the distance between (0,0) and the tip
 
 # Every physics frame we update the tip position
 func _physics_process(_delta: float) -> void:
