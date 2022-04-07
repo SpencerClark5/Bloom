@@ -2,6 +2,8 @@ extends Node
 
 
 var yVelocity = 5
+var inPlantArea = false
+var isPlanting = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

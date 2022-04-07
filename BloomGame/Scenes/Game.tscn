@@ -1,15 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/Large_Dirt_Tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Art/Level Art/bloom_bg_layer_3 (1).png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Flora.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_1.png" type="Texture" id=5]
-[ext_resource path="res://Art/Level Art/bloom_bg_layer_3.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/PlantArea.gd" type="Script" id=6]
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_4.png" type="Texture" id=7]
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_2.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.5, 252.25 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 244.5, 55 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -34,7 +38,7 @@ motion_mirroring = Vector2( 2900, 1975 )
 [node name="Back" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 663, -491 )
 scale = Vector2( 11.6556, 10.5294 )
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2( -564, 263 )
@@ -72,3 +76,14 @@ position = Vector2( -853, 125 )
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 1313.5, -446.75 )
 shape = SubResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 749, -1265 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 214.5, 45 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_exited"]

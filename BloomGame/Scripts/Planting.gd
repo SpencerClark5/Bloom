@@ -21,3 +21,4 @@ func _ready():
 func _enableCollider():
 	print("Called!")
 	_plant.disabled = false
+	GlobalVariables.isPlanting = false
