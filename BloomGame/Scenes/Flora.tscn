@@ -285,7 +285,7 @@ animations = [ {
 "frames": [ ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ) ],
 "loop": true,
 "name": "RightLegPlantingAnim",
-"speed": 5.0
+"speed": 4.0
 } ]
 
 [sub_resource type="Animation" id=16]
