@@ -5,7 +5,6 @@ const JUMP_FORCE = 700			# Force applied on jumping
 const MOVE_SPEED = 250			# Speed to walk with
 const GRAVITY = 30				# Gravity applied every second
 const MAX_SPEED = 1000000			# Maximum speed the player is allowed to move
-const FRICTION_AIR = 0		# The friction while airborne
 const FRICTION_GROUND = 0.5	# The friction while on the ground
 const CHAIN_PULL = 30
 
@@ -63,6 +62,7 @@ func _physics_process(_delta: float) -> void:
 	velocity.y += GRAVITY
 
 	# Hook physics
+	# you can ignore this cam
 	if $Chain.hooked:
 		# `to_local($Chain.tip).normalized()` is the direction that the chain is pulling
 		chain_velocity = to_local($Chain.tip).normalized() * CHAIN_PULL
@@ -82,6 +82,9 @@ func _physics_process(_delta: float) -> void:
 		chain_velocity = Vector2(0,0)
 	velocity += chain_velocity
 
+
+
+#this deals with walking
 	velocity.x += walk		# apply the walking
 	move_and_slide(velocity, Vector2.UP)	# Actually apply all the forces
 	velocity.x -= walk		# take away the walk speed again
@@ -99,11 +102,6 @@ func _physics_process(_delta: float) -> void:
 	elif is_on_ceiling() and velocity.y <= -5:	# Same on ceilings
 		velocity.y = -5
 #
-#	# Apply air friction
-#	if !grounded:
-#		velocity.x *= FRICTION_AIR
-#		if velocity.y > 0:
-#			velocity.y *= FRICTION_AIR
 
 	# Jumping
 	if Input.is_action_just_pressed("Jump"):
@@ -114,7 +112,8 @@ func _physics_process(_delta: float) -> void:
 			velocity.y = -JUMP_FORCE
 
 
-
+#my code ends here, everything below is cams
+# i commented out some of your movement
 
 
 
