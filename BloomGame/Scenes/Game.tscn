@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/Large_Dirt_Tiles.tres" type="TileSet" id=2]
-[ext_resource path="res://Art/Level Art/bloom_bg_layer_3 (1).png" type="Texture" id=3]
+[ext_resource path="res://Art/Level Art/bloom_bg_layer_3New.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Flora.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_1.png" type="Texture" id=5]
 [ext_resource path="res://PlantArea.gd" type="Script" id=6]
