@@ -31,7 +31,7 @@ onready var _animated_sprite_LeftLeg = $LeftLeg
 onready var _animated_sprite_RightLeg = $RightLeg
 onready var _animated_sprite_Idle = $IdleSprite
 onready var _animated_sprite_Wall_Climb = $TransitionSprite
-onready var _music_player = $Body/JumpSound
+onready var _jump_sound = $Body/JumpSound
 onready var _walking_sound = $Camera2D/WalkingSound
 
 var time_elapsed = 0.0
@@ -95,9 +95,9 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Jump"):
 		if grounded:
 			velocity.y = -JUMP_FORCE	# Apply the jump-force
-			_music_player.play()
+			_jump_sound.play()
 		elif can_jump:
-			_music_player.play()
+			_jump_sound.play()
 			can_jump = false	# Used air-jump
 			velocity.y = -JUMP_FORCE
 			
