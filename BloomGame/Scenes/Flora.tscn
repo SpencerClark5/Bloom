@@ -187,15 +187,15 @@ animations = [ {
 "name": "TorsoIdleAnim",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 114 ), ExtResource( 113 ), ExtResource( 115 ), ExtResource( 112 ) ],
-"loop": true,
-"name": "TorsoPlantingAnim",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 59 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 4 ), ExtResource( 61 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 58 ), ExtResource( 56 ) ],
 "loop": true,
 "name": "TorsoRunAnim",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 114 ), ExtResource( 113 ), ExtResource( 115 ), ExtResource( 112 ) ],
+"loop": true,
+"name": "TorsoPlantingAnim",
+"speed": 4.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -210,27 +210,27 @@ animations = [ {
 "name": "RightArmJumpAnim",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 119 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ) ],
-"loop": true,
-"name": "RightArmPlantingAnim",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 161 ), ExtResource( 160 ), ExtResource( 156 ), ExtResource( 165 ) ],
 "loop": true,
 "name": "RightArmIdleAnim",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 119 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ) ],
+"loop": true,
+"name": "RightArmPlantingAnim",
+"speed": 4.0
 } ]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 20 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "LeftArmRun",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 108 ), ExtResource( 109 ), ExtResource( 96 ), ExtResource( 95 ), ExtResource( 104 ) ],
 "loop": true,
 "name": "LeftArmJumpAnim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "LeftArmRun",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 150 ), ExtResource( 147 ), ExtResource( 158 ), ExtResource( 149 ) ],
@@ -256,15 +256,15 @@ animations = [ {
 "name": "LeftLegRun",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 94 ), ExtResource( 107 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 97 ) ],
-"loop": true,
-"name": "LeftLegJumpAnim",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 125 ), ExtResource( 123 ), ExtResource( 126 ), ExtResource( 124 ) ],
 "loop": true,
 "name": "LeftLegPlantingAnim",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 94 ), ExtResource( 107 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 97 ) ],
+"loop": true,
+"name": "LeftLegJumpAnim",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=7]
@@ -279,15 +279,15 @@ animations = [ {
 "name": "RightLegIdleAnim",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ) ],
-"loop": true,
-"name": "RightLegPlantingAnim",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 41 ), ExtResource( 6 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 50 ) ],
 "loop": true,
 "name": "RightLegAnim",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ) ],
+"loop": true,
+"name": "RightLegPlantingAnim",
+"speed": 4.0
 } ]
 
 [sub_resource type="Animation" id=16]
