@@ -32,6 +32,7 @@ onready var _animated_sprite_RightLeg = $RightLeg
 onready var _animated_sprite_Idle = $IdleSprite
 onready var _animated_sprite_Wall_Climb = $TransitionSprite
 onready var _music_player = $Body/JumpSound
+onready var _walking_sound = $Camera2D/WalkingSound
 
 var time_elapsed = 0.0
 
@@ -123,7 +124,6 @@ func _physics_process(_delta: float) -> void:
 
 	#  Animation 
 	if Input.is_action_pressed("Right"):
-		
 		_animated_sprite_Idle.visible = false
 		_animated_sprite_Wall_Climb.visible = false
 		_animated_sprite_Body.visible = true
@@ -135,6 +135,11 @@ func _physics_process(_delta: float) -> void:
 		_animated_sprite_Idle.stop()
 		_animated_sprite_Idle.frame = 0
 		time_elapsed = 0
+		
+		#okay so, this is to make sure the audio file is only playing once
+		if not (_walking_sound.is_playing()):
+			_walking_sound.play()
+		
 		
 		GlobalVariables.isClimbing = false
 	
@@ -152,6 +157,10 @@ func _physics_process(_delta: float) -> void:
 		_animated_sprite_Idle.stop()
 		_animated_sprite_Idle.frame = 0
 		time_elapsed = 0
+		
+		#okay so, this is to make sure the audio file is only playing once
+		if not (_walking_sound.is_playing()):
+			_walking_sound.play()
 		
 		GlobalVariables.isClimbing = false
 		
@@ -180,6 +189,7 @@ func _physics_process(_delta: float) -> void:
 			time_elapsed += _delta
 			if(time_elapsed > 3):
 				_animated_sprite_Idle.play("Idle")
+				_walking_sound.stop()
 				
 		elif((velocity.y > 5 || velocity.y < 5) && (GlobalVariables.isPlanting == false && GlobalVariables.isClimbing == false)):
 			_animated_sprite_Idle.visible = false

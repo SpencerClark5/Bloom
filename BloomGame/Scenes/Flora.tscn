@@ -1,4 +1,4 @@
-[gd_scene load_steps=209 format=2]
+[gd_scene load_steps=210 format=2]
 
 [ext_resource path="res://Art/Character_Art/SingleLimbJumpAnim/Jump_Anim/01/Jump_Anim_Torso_01.png" type="Texture" id=1]
 [ext_resource path="res://Art/Character_Art/Run_AnimSingleLimb/Frame_08/Run_Anim_Back_Arm_08.png" type="Texture" id=2]
@@ -173,6 +173,7 @@
 [ext_resource path="res://Art/Character_Art/SingleLimbIdleAnim/Idle_Anim/04/Idle_Anim_Front_Leg_04.png" type="Texture" id=171]
 [ext_resource path="res://Art/Character_Art/SingleLimbIdleAnim/Idle_Anim/03/Idle_Anim_Back_Leg_03.png" type="Texture" id=172]
 [ext_resource path="res://Art/Character_Art/SingleLimbIdleAnim/Idle_Anim/02/Idle_Anim_Front_Leg_02.png" type="Texture" id=173]
+[ext_resource path="res://Music/Bloom Dirt Footsteps/Footsteps (CHOP UP)_1.wav" type="AudioStream" id=174]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -831,6 +832,10 @@ polygon = PoolVector2Array( -74, -39, -53, -38, -44, -37, -33, -30, -27, -18, -3
 position = Vector2( 102, -73 )
 current = true
 limit_smoothed = true
+
+[node name="WalkingSound" type="AudioStreamPlayer2D" parent="FloraBody/Camera2D"]
+stream = ExtResource( 174 )
+volume_db = 6.5
 
 [node name="Body" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
