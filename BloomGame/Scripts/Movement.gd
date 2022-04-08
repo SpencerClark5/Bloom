@@ -7,6 +7,7 @@ const GRAVITY = 30				# Gravity applied every second
 const MAX_SPEED = 1000000			# Maximum speed the player is allowed to move
 const FRICTION_GROUND = 0.5	# The friction while on the ground
 const CHAIN_PULL = 30
+const CLIMB_SPEED = 100
 
 var velocity = Vector2(0,0)		# The velocity of the player (kept over time)
 var chain_velocity := Vector2(0,0)
@@ -29,6 +30,7 @@ onready var _animated_sprite_LeftArm = $LeftArm
 onready var _animated_sprite_LeftLeg = $LeftLeg
 onready var _animated_sprite_RightLeg = $RightLeg
 onready var _animated_sprite_Idle = $IdleSprite
+onready var _animated_sprite_Wall_Climb = $TransitionSprite
 
 var time_elapsed = 0.0
 
@@ -94,6 +96,8 @@ func _physics_process(_delta: float) -> void:
 		elif can_jump:
 			can_jump = false	# Used air-jump
 			velocity.y = -JUMP_FORCE
+			
+			GlobalVariables.isClimbing = false
 
 
 #my code ends here, everything below is cams
@@ -118,6 +122,7 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("Right"):
 		
 		_animated_sprite_Idle.visible = false
+		_animated_sprite_Wall_Climb.visible = false
 		_animated_sprite_Body.visible = true
 		_animated_sprite_LeftArm.visible = true
 		_animated_sprite_LeftLeg.visible = true
@@ -127,11 +132,14 @@ func _physics_process(_delta: float) -> void:
 		_animated_sprite_Idle.stop()
 		_animated_sprite_Idle.frame = 0
 		time_elapsed = 0
+		
+		GlobalVariables.isClimbing = false
 	
 	elif Input.is_action_pressed("Left"):
 	
 		#Turns anims on
 		_animated_sprite_Idle.visible = false
+		_animated_sprite_Wall_Climb.visible = false
 		_animated_sprite_Body.visible = true
 		_animated_sprite_LeftArm.visible = true
 		_animated_sprite_LeftLeg.visible = true
@@ -142,31 +150,46 @@ func _physics_process(_delta: float) -> void:
 		_animated_sprite_Idle.frame = 0
 		time_elapsed = 0
 		
-#		
+		GlobalVariables.isClimbing = false
+		
+		
+	elif Input.is_action_just_pressed("EnterClimb"):
+		print("enter climb")
+		GlobalVariables.isClimbing = true
+	elif Input.is_action_pressed("Climb"):
+		velocity.y -= CLIMB_SPEED
 		
 	#Idle anim
 	else:
 		
-		if((velocity.y == 5 && grounded) && (GlobalVariables.isPlanting == false)):
+		if((velocity.y == 5 && grounded) && (GlobalVariables.isPlanting == false && GlobalVariables.isClimbing == false)):
 			_animated_sprite_Idle.visible = true
+			_animated_sprite_Wall_Climb.visible = false
 			_animated_sprite_Body.visible = false
 			_animated_sprite_LeftArm.visible = false
 			_animated_sprite_LeftLeg.visible = false
 			_animated_sprite_RightArm.visible = false
 			_animated_sprite_RightLeg.visible = false
 			
+			_animated_sprite_Wall_Climb.stop()
+			_animated_sprite_Wall_Climb.frame = 0
+			
 			time_elapsed += _delta
 			if(time_elapsed > 3):
 				_animated_sprite_Idle.play("Idle")
 				
-		elif(velocity.y > 5 || velocity.y < 5):
+		elif((velocity.y > 5 || velocity.y < 5) && (GlobalVariables.isPlanting == false && GlobalVariables.isClimbing == false)):
 			_animated_sprite_Idle.visible = false
+			_animated_sprite_Wall_Climb.visible = false
 			_animated_sprite_Body.visible = true
 			_animated_sprite_LeftArm.visible = true
 			_animated_sprite_LeftLeg.visible = true
 			_animated_sprite_RightArm.visible = true
 			_animated_sprite_RightLeg.visible = true
 
+			_animated_sprite_Wall_Climb.stop()
+			_animated_sprite_Wall_Climb.frame = 0
+			
 			_animated_sprite_Idle.stop()
 			_animated_sprite_Idle.frame = 0
 			time_elapsed = 0
@@ -195,12 +218,16 @@ func _physics_process(_delta: float) -> void:
 			
 		elif(GlobalVariables.inPlantArea && GlobalVariables.isPlanting):
 			_animated_sprite_Idle.visible = false
+			_animated_sprite_Wall_Climb.visible = false
 			_animated_sprite_Body.visible = true
 			_animated_sprite_LeftArm.visible = true
 			_animated_sprite_LeftLeg.visible = true
 			_animated_sprite_RightArm.visible = true
 			_animated_sprite_RightLeg.visible = true
 
+			_animated_sprite_Wall_Climb.stop()
+			_animated_sprite_Wall_Climb.frame = 0
+			
 			_animated_sprite_Idle.stop()
 			_animated_sprite_Idle.frame = 0
 			time_elapsed = 0
@@ -226,4 +253,21 @@ func _physics_process(_delta: float) -> void:
 			_animated_sprite_LeftArm.play("LeftArmPlantingAnim")
 			_animated_sprite_LeftLeg.play("LeftLegPlantingAnim")
 			_animated_sprite_RightLeg.play("RightLegPlantingAnim")
-		
+			
+			
+		elif(GlobalVariables.inClimbArea && GlobalVariables.isClimbing):
+			_animated_sprite_Idle.visible = false
+			_animated_sprite_Wall_Climb.visible = true
+			_animated_sprite_Body.visible = false
+			_animated_sprite_LeftArm.visible = false
+			_animated_sprite_LeftLeg.visible = false
+			_animated_sprite_RightArm.visible = false
+			_animated_sprite_RightLeg.visible = false
+			
+			_animated_sprite_Idle.stop()
+			_animated_sprite_Idle.frame = 0
+			time_elapsed = 0
+			
+			_animated_sprite_Wall_Climb.play("TransitionToWall")
+			if(_animated_sprite_Wall_Climb.frame == 13):
+				_animated_sprite_Wall_Climb.stop()

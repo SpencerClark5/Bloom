@@ -555,7 +555,7 @@ tracks/8/keys = {
 "values": [ 0 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../TransitionSprite:frame")
+tracks/9/path = NodePath("TransitionSprite:frame")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -775,7 +775,7 @@ tracks/0/keys = {
 resource_name = "TransitionToWall"
 length = 7.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("../TransitionSprite:frame")
+tracks/0/path = NodePath("TransitionSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -921,7 +921,7 @@ animation = "Idle"
 [node name="Chain" parent="FloraBody" instance=ExtResource( 82 )]
 position = Vector2( 92, -50 )
 
-[node name="TransitionSprite" type="AnimatedSprite" parent="."]
+[node name="TransitionSprite" type="AnimatedSprite" parent="FloraBody"]
 visible = false
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )

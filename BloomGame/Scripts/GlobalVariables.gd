@@ -1,9 +1,16 @@
 extends Node
 
-
+#movement scrip
 var yVelocity = 5
+
+#planting
 var inPlantArea = false
 var isPlanting = false
+
+#wallclimb
+var inClimbArea = false
+var isClimbing = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
