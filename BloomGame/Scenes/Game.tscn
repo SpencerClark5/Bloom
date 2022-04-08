@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/Large_Dirt_Tiles.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_4.png" type="Texture" id=7]
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_2.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/WallClimb.gd" type="Script" id=9]
+[ext_resource path="res://Music/Bloom_Demo_2.mp3" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64.5, 252.25 )
@@ -71,6 +72,10 @@ tile_data = PoolIntArray( -1769463, 0, 0, -1769462, 0, 0, -1769461, 0, 0, -17694
 
 [node name="Flora" parent="." instance=ExtResource( 4 )]
 position = Vector2( -853, 125 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Flora"]
+stream = ExtResource( 10 )
+autoplay = true
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource( 9 )

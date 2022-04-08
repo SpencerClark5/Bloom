@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bloom_Demo_2.mp3-884c83960c30f2875060f8c5646bb81d.mp3str"
+
+[deps]
+
+source_file="res://Music/Bloom_Demo_2.mp3"
+dest_files=[ "res://.import/Bloom_Demo_2.mp3-884c83960c30f2875060f8c5646bb81d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
