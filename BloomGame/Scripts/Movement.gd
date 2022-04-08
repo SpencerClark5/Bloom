@@ -33,6 +33,7 @@ onready var _animated_sprite_Idle = $IdleSprite
 onready var _animated_sprite_Wall_Climb = $TransitionSprite
 onready var _jump_sound = $Body/JumpSound
 onready var _walking_sound = $Camera2D/WalkingSound
+onready var _landing_sound = $Body/LandingSound
 
 var time_elapsed = 0.0
 
@@ -92,16 +93,21 @@ func _physics_process(_delta: float) -> void:
 		velocity.y = -5
 #
 	# Jumping
+	#var jumped = false
 	if Input.is_action_just_pressed("Jump"):
 		if grounded:
 			velocity.y = -JUMP_FORCE	# Apply the jump-force
 			_jump_sound.play()
+			#jumped = true
 		elif can_jump:
 			_jump_sound.play()
 			can_jump = false	# Used air-jump
 			velocity.y = -JUMP_FORCE
+			#jumped = true
 			
 			GlobalVariables.isClimbing = false
+	#if (jumped and grounded):
+		#_landing_sound.play()
 
 
 #my code ends here, everything below is cams

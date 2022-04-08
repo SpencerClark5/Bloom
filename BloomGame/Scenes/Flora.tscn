@@ -1,4 +1,4 @@
-[gd_scene load_steps=210 format=2]
+[gd_scene load_steps=211 format=2]
 
 [ext_resource path="res://Art/Character_Art/SingleLimbJumpAnim/Jump_Anim/01/Jump_Anim_Torso_01.png" type="Texture" id=1]
 [ext_resource path="res://Art/Character_Art/Run_AnimSingleLimb/Frame_08/Run_Anim_Back_Arm_08.png" type="Texture" id=2]
@@ -174,6 +174,7 @@
 [ext_resource path="res://Art/Character_Art/SingleLimbIdleAnim/Idle_Anim/03/Idle_Anim_Back_Leg_03.png" type="Texture" id=172]
 [ext_resource path="res://Art/Character_Art/SingleLimbIdleAnim/Idle_Anim/02/Idle_Anim_Front_Leg_02.png" type="Texture" id=173]
 [ext_resource path="res://Music/Bloom Dirt Footsteps/Footsteps (CHOP UP)_1.wav" type="AudioStream" id=174]
+[ext_resource path="res://Music/Jump_Land/12065-BODY_JUMP-LAND_-DIRT_1.wav" type="AudioStream" id=175]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -182,15 +183,15 @@ animations = [ {
 "name": "TorsoJumpAnim",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 114 ), ExtResource( 113 ), ExtResource( 115 ), ExtResource( 112 ) ],
-"loop": true,
-"name": "TorsoPlantingAnim",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 59 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 4 ), ExtResource( 61 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 58 ), ExtResource( 56 ) ],
 "loop": true,
 "name": "TorsoRunAnim",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 114 ), ExtResource( 113 ), ExtResource( 115 ), ExtResource( 112 ) ],
+"loop": true,
+"name": "TorsoPlantingAnim",
+"speed": 4.0
 }, {
 "frames": [ ExtResource( 153 ), ExtResource( 163 ), ExtResource( 159 ), ExtResource( 162 ), ExtResource( 157 ), ExtResource( 151 ), ExtResource( 152 ), ExtResource( 148 ), ExtResource( 164 ), ExtResource( 154 ), ExtResource( 155 ) ],
 "loop": true,
@@ -200,24 +201,24 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 161 ), ExtResource( 160 ), ExtResource( 156 ), ExtResource( 165 ) ],
-"loop": true,
-"name": "RightArmIdleAnim",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 119 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ) ],
 "loop": true,
 "name": "RightArmPlantingAnim",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 161 ), ExtResource( 160 ), ExtResource( 156 ), ExtResource( 165 ) ],
 "loop": true,
-"name": "RightArmRun",
+"name": "RightArmIdleAnim",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 110 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 92 ), ExtResource( 100 ) ],
 "loop": true,
 "name": "RightArmJumpAnim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "RightArmRun",
 "speed": 5.0
 } ]
 
@@ -233,14 +234,14 @@ animations = [ {
 "name": "LeftArmJumpAnim",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "LeftArmRun",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 150 ), ExtResource( 147 ), ExtResource( 158 ), ExtResource( 149 ) ],
 "loop": true,
 "name": "LeftArmIdleAnim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "LeftArmRun",
 "speed": 5.0
 } ]
 
@@ -274,20 +275,20 @@ animations = [ {
 "name": "RightLegAnim",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ) ],
+"frames": [ ExtResource( 170 ), ExtResource( 168 ), ExtResource( 172 ), ExtResource( 169 ) ],
 "loop": true,
-"name": "RightLegPlantingAnim",
-"speed": 4.0
+"name": "RightLegIdleAnim",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 93 ), ExtResource( 103 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 111 ) ],
 "loop": true,
 "name": "RightLegJumpAnim",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 170 ), ExtResource( 168 ), ExtResource( 172 ), ExtResource( 169 ) ],
+"frames": [ ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ) ],
 "loop": true,
-"name": "RightLegIdleAnim",
-"speed": 5.0
+"name": "RightLegPlantingAnim",
+"speed": 4.0
 } ]
 
 [sub_resource type="Animation" id=16]
@@ -851,6 +852,10 @@ position = Vector2( -32, 32 )
 scale = Vector2( 0.333333, 0.333333 )
 stream = ExtResource( 146 )
 volume_db = 8.125
+
+[node name="LandingSound" type="AudioStreamPlayer2D" parent="FloraBody/Body"]
+stream = ExtResource( 175 )
+volume_db = 4.875
 
 [node name="RightArm" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
