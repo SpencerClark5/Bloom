@@ -5,6 +5,6 @@ func _on_Area2D2_body_entered(body):
 	GlobalVariables.inPlantArea = true
 
 
-func _on_Area2D2_body_exited():
+func _on_Area2D2_body_exited(body):
 	print("left plant area")
 	GlobalVariables.inPlantArea = false
