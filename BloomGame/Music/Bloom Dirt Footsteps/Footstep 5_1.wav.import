@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Footstep 5_1.wav-87c5ecaee825401f44e3dcb0256bf32e.sample"
+
+[deps]
+
+source_file="res://Music/Bloom Dirt Footsteps/Footstep 5_1.wav"
+dest_files=[ "res://.import/Footstep 5_1.wav-87c5ecaee825401f44e3dcb0256bf32e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

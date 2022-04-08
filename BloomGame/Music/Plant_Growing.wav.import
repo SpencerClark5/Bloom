@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Plant_Growing.wav-b736d812d439d7b1b2fe2154c5a90a7d.sample"
+
+[deps]
+
+source_file="res://Music/Plant_Growing.wav"
+dest_files=[ "res://.import/Plant_Growing.wav-b736d812d439d7b1b2fe2154c5a90a7d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -73,7 +73,7 @@ tile_data = PoolIntArray( -1769463, 0, 0, -1769462, 0, 0, -1769461, 0, 0, -17694
 [node name="Flora" parent="." instance=ExtResource( 4 )]
 position = Vector2( -853, 125 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Flora"]
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="Flora"]
 stream = ExtResource( 10 )
 autoplay = true
 

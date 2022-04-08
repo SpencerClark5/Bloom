@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/12065-BODY_JUMP-LAND_-DIRT_1.wav-44d2aa3e46066eea85bc371eff6c7028.sample"
+
+[deps]
+
+source_file="res://Music/Jump_Land/12065-BODY_JUMP-LAND_-DIRT_1.wav"
+dest_files=[ "res://.import/12065-BODY_JUMP-LAND_-DIRT_1.wav-44d2aa3e46066eea85bc371eff6c7028.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
