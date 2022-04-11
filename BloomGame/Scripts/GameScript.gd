@@ -21,26 +21,51 @@ func _process(_delta):
 	if(GlobalVariables.inPlantArea):
 		if Input.is_action_just_pressed("PlantLeg"):
 			print("CALLED PLANTLEG")
+			#if the left leg is visible
 			if(LeftLeg.is_visible()):
+				#test print
 				print("IN THE IF")
+				
+				#call the plant function
 				plant()
+				#set the global isPlanting to true
 				GlobalVariables.isPlanting = true
+				#hide the left leg sprite
 				LeftLeg.hide();
+				#disable double jump
+				
 			else:
+				#test print
 				print("IN THE ELSE")
+				#call the plant function
 				plant()
+				#turn on the isPlanting variable
 				GlobalVariables.isPlanting = true
+				#hide the right leg sprite
 				RightLeg.hide()
+				#disable the jump
+				
+		#when they press Q? 
 		if Input.is_action_just_pressed("PlantArm"):
+			#if the arm is visible
 			if(LeftArm.visible == true):
+				#test print
 				print("PLANTED LEFT ARM")
+				#call the plant function
 				plant()
+				#turn on the isPlanting
 				GlobalVariables.isPlanting = true
+				#toggle the visibility of the left arm
 				LeftArm.visible = false;
+				#disable wall climb (disable the input c)
 			else:
+				#call plant function
 				plant()
+				#turn on the variable
 				GlobalVariables.isPlanting = true
+				#disable right arm
 				RightArm.visible = false;
+				#disable the grapple (disable mouse click)
 		
 #	if(GlobalVariables.inPlantArea):
 #		if Input.is_action_just_pressed("Plant"):
