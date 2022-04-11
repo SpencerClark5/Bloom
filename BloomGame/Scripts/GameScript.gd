@@ -1,6 +1,12 @@
 extends Node2D
 class_name GameScript
 
+onready var RightArm = $Flora/FloraBody/RightArm
+onready var LeftArm = $Flora/FloraBody/LeftArm
+onready var RightLeg = $Flora/FloraBody/RightLeg
+onready var LeftLeg = $Flora/FloraBody/LeftLeg
+
+
 
 var smallPlant = preload("res://Scenes/Plant.tscn")
 export var test = 3
@@ -13,10 +19,36 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if(GlobalVariables.inPlantArea):
-		if Input.is_action_just_pressed("Plant"):
-			plant()
-			GlobalVariables.isPlanting = true
+		if Input.is_action_just_pressed("PlantLeg"):
+			print("CALLED PLANTLEG")
+			if(LeftLeg.is_visible()):
+				print("IN THE IF")
+				plant()
+				GlobalVariables.isPlanting = true
+				LeftLeg.hide();
+			else:
+				print("IN THE ELSE")
+				plant()
+				GlobalVariables.isPlanting = true
+				RightLeg.hide()
+		if Input.is_action_just_pressed("PlantArm"):
+			if(LeftArm.visible == true):
+				print("PLANTED LEFT ARM")
+				plant()
+				GlobalVariables.isPlanting = true
+				LeftArm.visible = false;
+			else:
+				plant()
+				GlobalVariables.isPlanting = true
+				RightArm.visible = false;
+		
+#	if(GlobalVariables.inPlantArea):
+#		if Input.is_action_just_pressed("Plant"):
+#			plant()
+#			GlobalVariables.isPlanting = true
 	
+
+
 
 func plant():
 	#get the position of the player to instance the node here
