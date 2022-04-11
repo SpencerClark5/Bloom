@@ -58,7 +58,7 @@ func _process(_delta):
 				GlobalVariables.isPlanting = true
 				#toggle the visibility of the left arm
 				LeftArm.visible = false;
-				#disable wall climb (disable the input c)
+				#disable wall climb
 			else:
 				#call plant function
 				plant()
@@ -66,7 +66,7 @@ func _process(_delta):
 				GlobalVariables.isPlanting = true
 				#disable right arm
 				RightArm.visible = false;
-				#disable the grapple (disable mouse click)
+				#disable the grapple
 		
 #	if(GlobalVariables.inPlantArea):
 #		if Input.is_action_just_pressed("Plant"):
