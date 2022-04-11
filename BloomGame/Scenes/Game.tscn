@@ -12,7 +12,7 @@
 [ext_resource path="res://Music/Bloom_Demo_2.mp3" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64.5, 551.5 )
+extents = Vector2( 64.5, 252.25 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 244.5, 55 )

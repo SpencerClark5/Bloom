@@ -19,6 +19,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if(GlobalVariables.inPlantArea):
+		# when they press Q
 		if Input.is_action_just_pressed("PlantLeg"):
 			print("CALLED PLANTLEG")
 			#if the left leg is visible
@@ -45,7 +46,7 @@ func _process(_delta):
 				RightLeg.hide()
 				#disable the jump
 				
-		#when they press Q? 
+		#when they press E 
 		if Input.is_action_just_pressed("PlantArm"):
 			#if the arm is visible
 			if(LeftArm.visible == true):
