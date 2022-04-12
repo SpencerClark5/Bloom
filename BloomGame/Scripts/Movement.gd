@@ -52,7 +52,7 @@ func _physics_process(_delta: float) -> void:
 	velocity.y += GRAVITY
 
 	# Hook physics
-	# you can ignore this cam
+	#if chain is hooked and colliding with stalactite
 	if $Chain.hooked:
 		# `to_local($Chain.tip).normalized()` is the direction that the chain is pulling
 		chain_velocity = to_local($Chain.tip).normalized() * CHAIN_PULL
