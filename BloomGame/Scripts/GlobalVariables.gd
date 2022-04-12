@@ -6,17 +6,24 @@ var yVelocity = 5
 #planting
 var inPlantArea = false
 var isPlanting = false
+var canPlant = true
 
 #wallclimb
 var inClimbArea = false
 var isClimbing = false
+var canClimb = true
 
+#grapple
+var canGrapple = true
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+#jump
+var canSingleJump = true
+var canDoubleJump = true
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+#limbs lost
+var timesPlanted = 0
+#limbs
+var RightArmOn = true
+var LeftArmOn = true
+var RightLegOn = true
+var LeftLegOn = true

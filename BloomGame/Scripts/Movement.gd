@@ -16,12 +16,13 @@ var can_jump = false			# Whether the player used their air-jump
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.pressed:
-			# We clicked the mouse -> shoot()
-			$Chain.shoot(event.position - get_viewport().size * 0.5)
-		else:
-			# We released the mouse -> release()
-			$Chain.release()
+		if(GlobalVariables.canGrapple):
+			if event.pressed:
+				# We clicked the mouse -> shoot()
+				$Chain.shoot(event.position - get_viewport().size * 0.5)
+			else:
+				# We released the mouse -> release()
+				$Chain.release()
 
 
 onready var _animated_sprite_Body = $Body
@@ -95,11 +96,11 @@ func _physics_process(_delta: float) -> void:
 	# Jumping
 	#var jumped = false
 	if Input.is_action_just_pressed("Jump"):
-		if grounded:
+		if (grounded && GlobalVariables.canSingleJump):
 			velocity.y = -JUMP_FORCE	# Apply the jump-force
 			_jump_sound.play()
 			#jumped = true
-		elif can_jump:
+		elif (can_jump && GlobalVariables.canDoubleJump):
 			_jump_sound.play()
 			can_jump = false	# Used air-jump
 			velocity.y = -JUMP_FORCE
@@ -133,10 +134,14 @@ func _physics_process(_delta: float) -> void:
 		_animated_sprite_Idle.visible = false
 		_animated_sprite_Wall_Climb.visible = false
 		_animated_sprite_Body.visible = true
-		_animated_sprite_LeftArm.visible = true
-		_animated_sprite_LeftLeg.visible = true
-		_animated_sprite_RightArm.visible = true
-		_animated_sprite_RightLeg.visible = true
+		if(GlobalVariables.LeftArmOn):
+			_animated_sprite_LeftArm.visible = true
+		if(GlobalVariables.LeftLegOn):
+			_animated_sprite_LeftLeg.visible = true
+		if(GlobalVariables.RightArmOn):
+			_animated_sprite_RightArm.visible = true
+		if(GlobalVariables.RightLegOn):
+			_animated_sprite_RightLeg.visible = true
 
 		_animated_sprite_Idle.stop()
 		_animated_sprite_Idle.frame = 0
@@ -148,6 +153,7 @@ func _physics_process(_delta: float) -> void:
 		
 		
 		GlobalVariables.isClimbing = false
+		_animated_sprite_Wall_Climb.flip_h = false
 	
 	elif Input.is_action_pressed("Left"):
 	
@@ -155,10 +161,14 @@ func _physics_process(_delta: float) -> void:
 		_animated_sprite_Idle.visible = false
 		_animated_sprite_Wall_Climb.visible = false
 		_animated_sprite_Body.visible = true
-		_animated_sprite_LeftArm.visible = true
-		_animated_sprite_LeftLeg.visible = true
-		_animated_sprite_RightArm.visible = true
-		_animated_sprite_RightLeg.visible = true
+		if(GlobalVariables.LeftArmOn):
+			_animated_sprite_LeftArm.visible = true
+		if(GlobalVariables.LeftLegOn):
+			_animated_sprite_LeftLeg.visible = true
+		if(GlobalVariables.RightArmOn):
+			_animated_sprite_RightArm.visible = true
+		if(GlobalVariables.RightLegOn):
+			_animated_sprite_RightLeg.visible = true
 
 		_animated_sprite_Idle.stop()
 		_animated_sprite_Idle.frame = 0
@@ -169,13 +179,15 @@ func _physics_process(_delta: float) -> void:
 			_walking_sound.play()
 		
 		GlobalVariables.isClimbing = false
+		_animated_sprite_Wall_Climb.flip_h = true
 		
 		
 	elif Input.is_action_just_pressed("EnterClimb"):
 		print("enter climb")
 		GlobalVariables.isClimbing = true
 	elif Input.is_action_pressed("Climb"):
-		velocity.y -= CLIMB_SPEED
+		if(GlobalVariables.inClimbArea):
+			velocity.y -= CLIMB_SPEED
 		
 	#Idle anim
 	else:
@@ -201,10 +213,14 @@ func _physics_process(_delta: float) -> void:
 			_animated_sprite_Idle.visible = false
 			_animated_sprite_Wall_Climb.visible = false
 			_animated_sprite_Body.visible = true
-			_animated_sprite_LeftArm.visible = true
-			_animated_sprite_LeftLeg.visible = true
-			_animated_sprite_RightArm.visible = true
-			_animated_sprite_RightLeg.visible = true
+			if(GlobalVariables.LeftArmOn):
+				_animated_sprite_LeftArm.visible = true
+			if(GlobalVariables.LeftLegOn):
+				_animated_sprite_LeftLeg.visible = true
+			if(GlobalVariables.RightArmOn):
+				_animated_sprite_RightArm.visible = true
+			if(GlobalVariables.RightLegOn):
+				_animated_sprite_RightLeg.visible = true
 
 			_animated_sprite_Wall_Climb.stop()
 			_animated_sprite_Wall_Climb.frame = 0
@@ -240,10 +256,14 @@ func _physics_process(_delta: float) -> void:
 			_animated_sprite_Idle.visible = false
 			_animated_sprite_Wall_Climb.visible = false
 			_animated_sprite_Body.visible = true
-			_animated_sprite_LeftArm.visible = true
-			_animated_sprite_LeftLeg.visible = true
-			_animated_sprite_RightArm.visible = true
-			_animated_sprite_RightLeg.visible = true
+			if(GlobalVariables.LeftArmOn):
+				_animated_sprite_LeftArm.visible = true
+			if(GlobalVariables.LeftLegOn):
+				_animated_sprite_LeftLeg.visible = true
+			if(GlobalVariables.RightArmOn):
+				_animated_sprite_RightArm.visible = true
+			if(GlobalVariables.RightLegOn):
+				_animated_sprite_RightLeg.visible = true
 
 			_animated_sprite_Wall_Climb.stop()
 			_animated_sprite_Wall_Climb.frame = 0
@@ -275,7 +295,7 @@ func _physics_process(_delta: float) -> void:
 			_animated_sprite_RightLeg.play("RightLegPlantingAnim")
 			
 			
-		elif(GlobalVariables.inClimbArea && GlobalVariables.isClimbing):
+		elif(GlobalVariables.inClimbArea && GlobalVariables.isClimbing && GlobalVariables.canClimb):
 			_animated_sprite_Idle.visible = false
 			_animated_sprite_Wall_Climb.visible = true
 			_animated_sprite_Body.visible = false

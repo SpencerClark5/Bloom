@@ -1,10 +1,10 @@
 extends Node2D
 class_name GameScript
 
-onready var RightArm = $Flora/FloraBody/RightArm
-onready var LeftArm = $Flora/FloraBody/LeftArm
-onready var RightLeg = $Flora/FloraBody/RightLeg
-onready var LeftLeg = $Flora/FloraBody/LeftLeg
+#onready var RightArm = $Flora/FloraBody/RightArm
+#onready var LeftArm = $Flora/FloraBody/LeftArm
+#onready var RightLeg = $Flora/FloraBody/RightLeg
+#onready var LeftLeg = $Flora/FloraBody/LeftLeg
 
 
 
@@ -23,7 +23,7 @@ func _process(_delta):
 		if Input.is_action_just_pressed("PlantLeg"):
 			print("CALLED PLANTLEG")
 			#if the left leg is visible
-			if(LeftLeg.is_visible()):
+			if(GlobalVariables.LeftLegOn):
 				#test print
 				print("IN THE IF")
 				
@@ -32,8 +32,9 @@ func _process(_delta):
 				#set the global isPlanting to true
 				GlobalVariables.isPlanting = true
 				#hide the left leg sprite
-				LeftLeg.hide();
+				GlobalVariables.LeftLegOn = false
 				#disable double jump
+				GlobalVariables.canDoubleJump = false
 				
 			else:
 				#test print
@@ -43,13 +44,14 @@ func _process(_delta):
 				#turn on the isPlanting variable
 				GlobalVariables.isPlanting = true
 				#hide the right leg sprite
-				RightLeg.hide()
+				GlobalVariables.RightLegOn = false
 				#disable the jump
+				GlobalVariables.canSingleJump = false
 				
 		#when they press E 
 		if Input.is_action_just_pressed("PlantArm"):
 			#if the arm is visible
-			if(LeftArm.visible == true):
+			if(GlobalVariables.LeftArmOn):
 				#test print
 				print("PLANTED LEFT ARM")
 				#call the plant function
@@ -57,22 +59,18 @@ func _process(_delta):
 				#turn on the isPlanting
 				GlobalVariables.isPlanting = true
 				#toggle the visibility of the left arm
-				LeftArm.visible = false;
+				GlobalVariables.LeftArmOn = false;
 				#disable wall climb
+				GlobalVariables.canClimb = false
 			else:
 				#call plant function
 				plant()
 				#turn on the variable
 				GlobalVariables.isPlanting = true
 				#disable right arm
-				RightArm.visible = false;
+				GlobalVariables.RightArmOn = false;
 				#disable the grapple
-		
-#	if(GlobalVariables.inPlantArea):
-#		if Input.is_action_just_pressed("Plant"):
-#			plant()
-#			GlobalVariables.isPlanting = true
-	
+				GlobalVariables.canGrapple = false
 
 
 
