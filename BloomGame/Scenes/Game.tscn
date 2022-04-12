@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/Large_Dirt_Tiles.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scripts/WallClimb.gd" type="Script" id=9]
 [ext_resource path="res://Music/Bloom_Demo_2.mp3" type="AudioStream" id=10]
 [ext_resource path="res://Scenes/PauseScreen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Art/Level Art/stalactite.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64.5, 252.25 )
@@ -139,6 +140,14 @@ script = ExtResource( 9 )
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D6"]
 shape = SubResource( 1 )
 
+[node name="Area2D8" type="Area2D" parent="."]
+position = Vector2( 5027, -1005 )
+scale = Vector2( 1, 1.537 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D8"]
+shape = SubResource( 1 )
+
 [node name="Area2D7" type="Area2D" parent="."]
 position = Vector2( 978, -3434 )
 scale = Vector2( 1, 1.397 )
@@ -146,6 +155,18 @@ script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D7"]
 shape = SubResource( 1 )
+
+[node name="StalactiteBody" type="StaticBody2D" parent="."]
+position = Vector2( 3147, -3068 )
+scale = Vector2( 1.628, 1.675 )
+
+[node name="Sprite" type="Sprite" parent="StalactiteBody"]
+position = Vector2( -3.68555, -15.5222 )
+texture = ExtResource( 12 )
+
+[node name="Stalactite" type="CollisionPolygon2D" parent="StalactiteBody"]
+position = Vector2( 0, -3.58191 )
+polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 15, -5, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]
@@ -159,5 +180,7 @@ shape = SubResource( 1 )
 [connection signal="body_exited" from="Area2D5" to="Area2D5" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D6" to="Area2D6" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D6" to="Area2D6" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D8" to="Area2D8" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D8" to="Area2D8" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D7" to="Area2D7" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D7" to="Area2D7" method="_on_Area2D_body_exited"]
