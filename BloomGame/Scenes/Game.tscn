@@ -12,7 +12,7 @@
 [ext_resource path="res://Music/Bloom_Demo_2.mp3" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64.5, 551.5 )
+extents = Vector2( 64.5, 252.25 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 244.5, 55 )
@@ -28,8 +28,8 @@ motion_scale = Vector2( 0, 1 )
 motion_mirroring = Vector2( 2800, 1975 )
 
 [node name="Blank" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 517.38, -491.5 )
-scale = Vector2( 10.5829, 10.5829 )
+position = Vector2( 608.957, -559.999 )
+scale = Vector2( 11.3155, 11.3155 )
 texture = ExtResource( 7 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -39,7 +39,7 @@ motion_mirroring = Vector2( 2900, 1975 )
 
 [node name="Back" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 663, -491 )
-scale = Vector2( 11.6556, 10.5294 )
+scale = Vector2( 8.85, 8.85 )
 texture = ExtResource( 3 )
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -49,7 +49,7 @@ motion_mirroring = Vector2( 2400, 1975 )
 
 [node name="Front" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2( 448, -483 )
-scale = Vector2( 9.86881, 9.86881 )
+scale = Vector2( 8.85, 8.85 )
 texture = ExtResource( 8 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -58,12 +58,13 @@ motion_mirroring = Vector2( 2800, 2150 )
 
 [node name="Outline" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2( 639, -478 )
-scale = Vector2( 11.366, 11.366 )
+scale = Vector2( 8.85, 8.85 )
 texture = ExtResource( 5 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
 [node name="floor" type="TileMap" parent="."]
+visible = false
 z_index = 1
 tile_set = ExtResource( 2 )
 show_collision = true
