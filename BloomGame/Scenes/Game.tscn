@@ -65,7 +65,6 @@ texture = ExtResource( 5 )
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
 [node name="floor" type="TileMap" parent="."]
-visible = false
 z_index = 1
 tile_set = ExtResource( 2 )
 show_collision = true
