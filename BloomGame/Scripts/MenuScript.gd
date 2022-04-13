@@ -20,7 +20,7 @@ func _on_Start_pressed():
 	
 
 func _on_Controls_pressed():
-	get_tree().chagne_scene("res://Scenes/Controls.tscn")
+	get_tree().change_scene("res://Scenes/Controls.tscn")
 
 
 func _on_Quit_pressed():
