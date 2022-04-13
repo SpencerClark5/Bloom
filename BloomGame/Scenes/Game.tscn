@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/Large_Dirt_Tiles.tres" type="TileSet" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_2.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/WallClimb.gd" type="Script" id=9]
 [ext_resource path="res://Music/Bloom_Demo_2.mp3" type="AudioStream" id=10]
-[ext_resource path="res://Scenes/PauseScreen.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Art/Level Art/stalactite.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -74,17 +73,6 @@ tile_data = PoolIntArray( -4390951, 0, 0, -4390950, 0, 0, -4390949, 0, 0, -43909
 
 [node name="Flora" parent="." instance=ExtResource( 4 )]
 position = Vector2( -853, 125 )
-
-[node name="Pause" type="CanvasLayer" parent="Flora"]
-pause_mode = 2
-follow_viewport_enable = true
-
-[node name="Control" parent="Flora/Pause" instance=ExtResource( 11 )]
-visible = false
-margin_left = -1260.0
-margin_top = -246.0
-margin_right = -1260.0
-margin_bottom = -246.0
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="Flora"]
 stream = ExtResource( 10 )

@@ -9,11 +9,13 @@ class_name GameScript
 
 
 var smallPlant = preload("res://Scenes/Plant.tscn")
+#onready var _pause_menu = $Pause
 export var test = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	#_pause_menu.follow_viewport_enable = true
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
