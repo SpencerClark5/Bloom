@@ -159,6 +159,8 @@ shape = SubResource( 1 )
 [node name="StalactiteBody" type="StaticBody2D" parent="."]
 position = Vector2( 3147, -3068 )
 scale = Vector2( 1.628, 1.675 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite" type="Sprite" parent="StalactiteBody"]
 position = Vector2( -3.68555, -15.5222 )

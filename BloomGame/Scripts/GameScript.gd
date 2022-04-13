@@ -18,6 +18,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	#call the grow function when they collide with the seed		
+	
+	
+	#when u wana plant
 	if(GlobalVariables.inPlantArea):
 		# when they press Q
 		if Input.is_action_just_pressed("PlantLeg"):
@@ -72,7 +76,42 @@ func _process(_delta):
 				#disable the grapple
 				GlobalVariables.canGrapple = false
 
-
+#this function is called whenever the character collides with the seedling
+func Grow():
+	#give jump first
+	if(GlobalVariables.canSingleJump == false):
+		#set the jump variable to true because its on
+		GlobalVariables.canSingleJump = true;
+		
+		#call the animation of the limb growing back
+		pass
+		
+	#then give back wall climb
+	elif(GlobalVariables.canClimb == false):
+		#set the jump variable to true because its on
+		GlobalVariables.canClimb = true;
+		
+		#call the animation of the limb growing back
+		pass
+		
+		
+		
+	#then give back double jump
+	elif(GlobalVariables.canDoubleJump == false):
+		#set the jump variable to true because its on
+		GlobalVariables.canDoubleJump = true;
+		
+		#call the animation of the limb growing back
+		pass
+		
+		
+	#then give back grapple
+	elif(GlobalVariables.canGrapple == false):
+		#set the jump variable to true because its on
+		GlobalVariables.canGrapple = true;
+		
+		#call the animation of the limb growing back
+		pass
 
 func plant():
 	#get the position of the player to instance the node here
