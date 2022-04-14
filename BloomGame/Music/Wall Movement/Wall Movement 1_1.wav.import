@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Wall Movement 1_1.wav-1367fca2ddf92465e0f85f608b7c17ee.sample"
+
+[deps]
+
+source_file="res://Music/Wall Movement/Wall Movement 1_1.wav"
+dest_files=[ "res://.import/Wall Movement 1_1.wav-1367fca2ddf92465e0f85f608b7c17ee.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
