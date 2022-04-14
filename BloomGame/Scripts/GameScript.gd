@@ -8,8 +8,7 @@ class_name GameScript
 
 
 
-var smallPlant = preload("res://Scenes/Plant.tscn")
-#onready var _pause_menu = $Pause
+var _smallPlant = preload("res://Scenes/Plant.tscn")
 export var test = 3
 
 # Called when the node enters the scene tree for the first time.
@@ -117,7 +116,7 @@ func Grow():
 
 func plant():
 	#get the position of the player to instance the node here
-	var PlantInstance = smallPlant.instance()
+	var PlantInstance = _smallPlant.instance()
 	add_child(PlantInstance)
 	#gets the flora node and then gets the KinematicBody2D and grabs the global position of that
 	PlantInstance.global_position = get_node("Flora").get_child(0).get_global_position()

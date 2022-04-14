@@ -35,12 +35,21 @@ onready var _animated_sprite_Wall_Climb = $TransitionSprite
 onready var _jump_sound = $Body/JumpSound
 onready var _walking_sound = $Camera2D/WalkingSound
 onready var _landing_sound = $Body/LandingSound
+onready var _wall_sounds = $Body/WallSounds
 
 var time_elapsed = 0.0
 
 
 
-
+func _choosing_wall_sounds(var path)->void:
+	var file = File.new()
+	if (file.file_exists(path)):
+		file.open(path,file.READ)
+		var buffer = file.get_buffer(file.getlen())
+		var stream = AudioStream
+		stream.data = buffer
+		_wall_sounds.stream = stream
+		_wall_sounds.play()
 
 
 
@@ -184,6 +193,7 @@ func _physics_process(_delta: float) -> void:
 		
 	elif Input.is_action_just_pressed("EnterClimb"):
 		print("enter climb")
+		_wall_sounds.play()
 		GlobalVariables.isClimbing = true
 	elif Input.is_action_pressed("Climb"):
 		if(GlobalVariables.inClimbArea):
