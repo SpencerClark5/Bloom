@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-const JUMP_FORCE = 700			# Force applied on jumping
+const JUMP_FORCE = 750			# Force applied on jumping
 const MOVE_SPEED = 250			# Speed to walk with
 const GRAVITY = 30				# Gravity applied every second
 const MAX_SPEED = 1000000			# Maximum speed the player is allowed to move
