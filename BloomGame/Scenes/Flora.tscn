@@ -846,7 +846,6 @@ margin_bottom = 2.0
 
 [node name="WalkingSound" type="AudioStreamPlayer" parent="FloraBody/Camera2D"]
 stream = ExtResource( 174 )
-volume_db = 5.262
 
 [node name="Body" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
@@ -859,15 +858,12 @@ script = ExtResource( 84 )
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="FloraBody/Body"]
 stream = ExtResource( 146 )
-volume_db = 8.125
 
 [node name="LandingSound" type="AudioStreamPlayer" parent="FloraBody/Body"]
 stream = ExtResource( 175 )
-volume_db = 4.875
 
 [node name="WallSounds" type="AudioStreamPlayer" parent="FloraBody/Body"]
 stream = ExtResource( 177 )
-volume_db = 9.333
 
 [node name="RightArm" type="AnimatedSprite" parent="FloraBody"]
 position = Vector2( 96, -96 )
