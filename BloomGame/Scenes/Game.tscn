@@ -79,8 +79,8 @@ stream = ExtResource( 10 )
 autoplay = true
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( -47, -983 )
-scale = Vector2( 1, 2 )
+position = Vector2( -83, -979 )
+scale = Vector2( 0.398, 2 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D"]
@@ -97,48 +97,56 @@ script = ExtResource( 6 )
 shape = SubResource( 2 )
 
 [node name="Area2D3" type="Area2D" parent="."]
-position = Vector2( 1136, -1816 )
-scale = Vector2( 1, 2.045 )
+position = Vector2( 1182, -1816 )
+scale = Vector2( 0.354, 2.045 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D3"]
 shape = SubResource( 1 )
 
 [node name="Area2D4" type="Area2D" parent="."]
-position = Vector2( 2867, -716 )
-scale = Vector2( 1, 2.045 )
+position = Vector2( 2899, -680 )
+scale = Vector2( 0.468, 2.045 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D4"]
 shape = SubResource( 1 )
 
+[node name="Area2D9" type="Area2D" parent="."]
+position = Vector2( 2475, -1003 )
+scale = Vector2( 0.423, 0.87 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D9"]
+shape = SubResource( 1 )
+
 [node name="Area2D5" type="Area2D" parent="."]
-position = Vector2( 5419, -193 )
-scale = Vector2( 1, 4.429 )
+position = Vector2( 5451, -193 )
+scale = Vector2( 0.636, 4.429 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D5"]
 shape = SubResource( 1 )
 
 [node name="Area2D6" type="Area2D" parent="."]
-position = Vector2( 4763, -2060 )
-scale = Vector2( 1, 2.46 )
+position = Vector2( 4720, -2056 )
+scale = Vector2( 0.507, 2.46 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D6"]
 shape = SubResource( 1 )
 
 [node name="Area2D8" type="Area2D" parent="."]
-position = Vector2( 5027, -1005 )
-scale = Vector2( 1, 1.537 )
+position = Vector2( 4974, -1012 )
+scale = Vector2( 0.433, 1.537 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D8"]
 shape = SubResource( 1 )
 
 [node name="Area2D7" type="Area2D" parent="."]
-position = Vector2( 978, -3434 )
-scale = Vector2( 1, 1.397 )
+position = Vector2( 942, -3434 )
+scale = Vector2( 0.43, 1.397 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D7"]
@@ -166,6 +174,8 @@ polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35
 [connection signal="body_exited" from="Area2D3" to="Area2D3" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D4" to="Area2D4" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D9" to="Area2D9" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D9" to="Area2D9" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D5" to="Area2D5" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D5" to="Area2D5" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D6" to="Area2D6" method="_on_Area2D_body_entered"]

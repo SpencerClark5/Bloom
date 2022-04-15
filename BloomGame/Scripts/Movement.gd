@@ -7,7 +7,7 @@ const GRAVITY = 30				# Gravity applied every second
 const MAX_SPEED = 1000000			# Maximum speed the player is allowed to move
 const FRICTION_GROUND = 0.5	# The friction while on the ground
 const CHAIN_PULL = 30
-const CLIMB_SPEED = 100
+const CLIMB_SPEED = 50
 
 var velocity = Vector2(0,0)		# The velocity of the player (kept over time)
 var chain_velocity := Vector2(0,0)
