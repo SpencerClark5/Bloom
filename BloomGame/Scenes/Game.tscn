@@ -76,12 +76,12 @@ position = Vector2( -853, 125 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="Flora"]
 stream = ExtResource( 10 )
-volume_db = -15.0
+volume_db = -24.0
 autoplay = true
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( -83, -979 )
-scale = Vector2( 0.398, 2 )
+position = Vector2( -115, -969 )
+scale = Vector2( 0.111, 2 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D"]
@@ -98,56 +98,56 @@ script = ExtResource( 6 )
 shape = SubResource( 2 )
 
 [node name="Area2D3" type="Area2D" parent="."]
-position = Vector2( 1182, -1816 )
-scale = Vector2( 0.354, 2.045 )
+position = Vector2( 1207, -1816 )
+scale = Vector2( 0.063, 2.045 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D3"]
 shape = SubResource( 1 )
 
 [node name="Area2D4" type="Area2D" parent="."]
-position = Vector2( 2899, -680 )
-scale = Vector2( 0.468, 2.045 )
+position = Vector2( 2935, -672 )
+scale = Vector2( 0.05, 2.045 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D4"]
 shape = SubResource( 1 )
 
 [node name="Area2D9" type="Area2D" parent="."]
-position = Vector2( 2475, -1003 )
-scale = Vector2( 0.423, 0.87 )
+position = Vector2( 2440, -993 )
+scale = Vector2( 0.074, 0.87 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D9"]
 shape = SubResource( 1 )
 
 [node name="Area2D5" type="Area2D" parent="."]
-position = Vector2( 5451, -193 )
-scale = Vector2( 0.636, 4.429 )
+position = Vector2( 5493, -192 )
+scale = Vector2( 0.057, 4.429 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D5"]
 shape = SubResource( 1 )
 
 [node name="Area2D6" type="Area2D" parent="."]
-position = Vector2( 4720, -2056 )
-scale = Vector2( 0.507, 2.46 )
+position = Vector2( 4680, -2056 )
+scale = Vector2( 0.048, 2.46 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D6"]
 shape = SubResource( 1 )
 
 [node name="Area2D8" type="Area2D" parent="."]
-position = Vector2( 4974, -1012 )
-scale = Vector2( 0.433, 1.537 )
+position = Vector2( 4936, -1008 )
+scale = Vector2( 0.049, 1.537 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D8"]
 shape = SubResource( 1 )
 
 [node name="Area2D7" type="Area2D" parent="."]
-position = Vector2( 942, -3434 )
-scale = Vector2( 0.43, 1.397 )
+position = Vector2( 908, -3434 )
+scale = Vector2( 0.078, 1.397 )
 script = ExtResource( 9 )
 
 [node name="WallClimbArea" type="CollisionShape2D" parent="Area2D7"]

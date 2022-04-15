@@ -61,6 +61,10 @@ window/stretch/aspect="expand"
 
 enabled=PoolStringArray( "res://addons/WAT/plugin.cfg" )
 
+[global]
+
+stretching=false
+
 [importer_defaults]
 
 texture={

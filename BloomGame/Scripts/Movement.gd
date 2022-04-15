@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-const JUMP_FORCE = 700			# Force applied on jumping
+const JUMP_FORCE = 750			# Force applied on jumping
 const MOVE_SPEED = 250			# Speed to walk with
 const GRAVITY = 30				# Gravity applied every second
 const MAX_SPEED = 1000000			# Maximum speed the player is allowed to move
@@ -232,10 +232,12 @@ func _physics_process(_delta: float) -> void:
 			_animated_sprite_Wall_Climb.stop()
 			_animated_sprite_Wall_Climb.frame = 0
 			
+			_walking_sound.stop()
+			
 			time_elapsed += _delta
 			if(time_elapsed > 3):
 				_animated_sprite_Idle.play("Idle")
-				_walking_sound.stop()
+				
 				
 		elif((velocity.y > 5 || velocity.y < 5) && (GlobalVariables.isPlanting == false && GlobalVariables.isClimbing == false)):
 			_animated_sprite_Idle.visible = false
