@@ -76,6 +76,7 @@ position = Vector2( -853, 125 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="Flora"]
 stream = ExtResource( 10 )
+volume_db = -15.0
 autoplay = true
 
 [node name="Area2D" type="Area2D" parent="."]
