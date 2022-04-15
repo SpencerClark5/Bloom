@@ -164,6 +164,7 @@ func _physics_process(_delta: float) -> void:
 		
 		GlobalVariables.isClimbing = false
 		_animated_sprite_Wall_Climb.flip_h = false
+		_animated_sprite_Idle.flip_h = false
 	
 	elif Input.is_action_pressed("Left"):
 	
@@ -190,6 +191,7 @@ func _physics_process(_delta: float) -> void:
 		
 		GlobalVariables.isClimbing = false
 		_animated_sprite_Wall_Climb.flip_h = true
+		_animated_sprite_Idle.flip_h = true
 		
 		
 	elif Input.is_action_just_pressed("EnterClimb"):
