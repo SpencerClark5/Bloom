@@ -42,6 +42,13 @@ func test_wall_climb_off()->void:
 	var double = scene.double()
 	var gameInstance = double
 	
+	GlobalVariables.inPlantArea = true
+	GlobalVariables.LeftArmOn = true
+	var a = InputEventAction.new()
+	a.action = "PlantArm"
+	a.pressed = true
+	Input.parse_input_event(a)
+	
 	asserts.is_false(GlobalVariables.canClimb)
 	
 	
