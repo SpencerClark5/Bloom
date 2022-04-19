@@ -5,13 +5,10 @@ var _testFlora = preload("res://Scenes/Flora.tscn")
 var _game = preload("res://Scenes/Game.tscn")
 var _gameScript = preload("res://Scripts/GameScript.gd")
 
+
 #This sets name of test in the results view
 func title()->String:
 	return "Bloom Example Tests"
-	
-#func start() ->void:
-	#var _smallPlant = preload("res://Scenes/Plant.tscn")
-	#var _testFlora = preload("res://Scenes/Flora.tscn")
 	
 #ANY METHOD THAT STARTS WITH test_ is a test method
 
@@ -32,11 +29,19 @@ func test_for_Function_Call()->void:
 	var scene = direct.scene(_game)
 	var double = scene.double()
 	asserts.is_class_instance(double, GameScript)
-	
 	var gameInstance = double
-	asserts.is_equal(gameInstance.test, 3)
+	
 	gameInstance.plant()
 	yield(until_timeout(1), YIELD)
 	asserts.is_not_null(gameInstance.get_node("PlantRoot"))
+	
+#Testing that wall climb turns off
+func test_wall_climb_off()->void:
+	
+	var scene = direct.scene(_game)
+	var double = scene.double()
+	var gameInstance = double
+	
+	asserts.is_false(GlobalVariables.canClimb)
 	
 	
