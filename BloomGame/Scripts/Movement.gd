@@ -216,6 +216,7 @@ func _physics_process(_delta: float) -> void:
 #
 		if(GlobalVariables.inClimbArea):
 			velocity.y -= CLIMB_SPEED
+			
 		
 	#Idle anim
 	else:

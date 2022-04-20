@@ -22,6 +22,7 @@ var canDoubleJump = true
 
 #limbs lost
 var timesPlanted = 0
+
 #limbs
 var RightArmOn = true
 var LeftArmOn = true

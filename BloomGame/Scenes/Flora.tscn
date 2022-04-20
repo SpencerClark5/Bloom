@@ -831,6 +831,11 @@ script = ExtResource( 63 )
 position = Vector2( 165, -68 )
 polygon = PoolVector2Array( -74, -39, -53, -38, -44, -37, -33, -30, -32, -19, -36, -2, -33, 11, -33, 22, -34, 66, -52, 65, -103, 66, -102, 17 )
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FloraBody"]
+visible = false
+polygon = PoolVector2Array( 71, -39, 121, -39, 121, -99, 75, -100 )
+disabled = true
+
 [node name="Camera2D" type="Camera2D" parent="FloraBody"]
 position = Vector2( 102, -73 )
 current = true
@@ -874,7 +879,6 @@ position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 3 )
 animation = "RightArmIdleAnim"
-frame = 2
 speed_scale = 2.5
 script = ExtResource( 85 )
 
@@ -883,23 +887,25 @@ position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 z_index = 4
 frames = SubResource( 5 )
-animation = "LeftArmIdleAnim"
+animation = "LeftArmRun"
 speed_scale = 2.5
 script = ExtResource( 83 )
 
 [node name="LeftLeg" type="AnimatedSprite" parent="FloraBody"]
+visible = false
 position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 6 )
-animation = "LeftLegIdleAnim"
+animation = "LeftLegRun"
 speed_scale = 2.5
 script = ExtResource( 86 )
 
 [node name="RightLeg" type="AnimatedSprite" parent="FloraBody"]
+visible = false
 position = Vector2( 97, -99 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
-animation = "RightLegIdleAnim"
+animation = "RightLegAnim"
 speed_scale = 2.5
 script = ExtResource( 87 )
 
