@@ -9,6 +9,7 @@ class_name GameScript
 
 
 var _smallPlant = preload("res://Scenes/Plant.tscn")
+var _bigPlant = preload("res://Scenes/BigPlant.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -161,7 +162,9 @@ func plant():
 	print("planted")
 
 func BigPlant():
+	#get the position of the player to instance the node here
+	var BigPlantInstance = _bigPlant.instance()
+	add_child(BigPlantInstance)
+	#gets the flora node and then gets the KinematicBody2D and grabs the global position of that
+	BigPlantInstance.global_position = get_node("Flora").get_child(0).get_global_position()
 	print("planted big boy")
-#when the player wants to spawn the plant
-#instance the plant scene after button press
-
