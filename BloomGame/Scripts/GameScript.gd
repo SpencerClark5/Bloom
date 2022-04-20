@@ -18,21 +18,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	#call the grow function when they collide with the seed		
-	
-	
-	#when u wana plant
-	if(GlobalVariables.inPlantArea):
-		# when they press Q
+	if(GlobalVariables.inBigPlantArea):
+		
 		if Input.is_action_just_pressed("PlantLeg"):
-			print("CALLED PLANTLEG")
-			#if the left leg is visible
+			
 			if(GlobalVariables.LeftLegOn):
-				#test print
-				print("IN THE IF")
-				
-				#call the plant function
-				plant()
+				BigPlant()
 				#set the global isPlanting to true
 				GlobalVariables.isPlanting = true
 				#hide the left leg sprite
@@ -42,24 +33,26 @@ func _process(_delta):
 				
 			else:
 				#test print
-				print("IN THE ELSE")
+				#print("IN THE ELSE")
 				#call the plant function
-				plant()
+				BigPlant()
 				#turn on the isPlanting variable
 				GlobalVariables.isPlanting = true
 				#hide the right leg sprite
 				GlobalVariables.RightLegOn = false
 				#disable the jump
 				GlobalVariables.canSingleJump = false
-				
-		#when they press E 
+		
+		
+		
+				#when they press E 
 		if Input.is_action_just_pressed("PlantArm"):
 			#if the arm is visible
 			if(GlobalVariables.LeftArmOn):
 				#test print
-				print("PLANTED LEFT ARM")
+				#print("PLANTED LEFT ARM")
 				#call the plant function
-				plant()
+				BigPlant()
 				#turn on the isPlanting
 				GlobalVariables.isPlanting = true
 				#toggle the visibility of the left arm
@@ -68,13 +61,59 @@ func _process(_delta):
 				GlobalVariables.canClimb = false
 			else:
 				#call plant function
-				plant()
+				BigPlant()
 				#turn on the variable
 				GlobalVariables.isPlanting = true
 				#disable right arm
 				GlobalVariables.RightArmOn = false;
 				#disable the grapple
 				GlobalVariables.canGrapple = false
+
+	
+				#disable the grapple
+				GlobalVariables.canGrapple = false
+
+
+
+
+
+
+	#when u wana plant
+	if(GlobalVariables.inPlantArea):
+		# when they press Q
+		if Input.is_action_just_pressed("PlantLeg"):
+			print("CALLED PLANTLEG")
+			#print("CALLED PLANTLEG")
+			#if the left leg is visible
+			if(GlobalVariables.LeftLegOn):
+				#test print
+				print("IN THE IF")
+				#print("IN THE IF")
+				
+				#call the plant function
+				plant()
+				
+			else:
+				#test print
+				print("IN THE ELSE")
+				#print("IN THE ELSE")
+				#call the plant function
+				plant()
+				#turn on the isPlanting variable
+				GlobalVariables.isPlanting = true;
+			#if the arm is visible
+			if(GlobalVariables.LeftArmOn):
+				#test print
+				print("PLANTED LEFT ARM")
+				#print("PLANTED LEFT ARM")
+				#call the plant function
+				plant()
+				#turn on the isPlanting
+				GlobalVariables.isPlanting=true;
+				#disable the grapple
+				GlobalVariables.canGrapple = false
+
+
 
 #this function is called whenever the character collides with the seedling
 func Grow():
@@ -120,6 +159,9 @@ func plant():
 	#gets the flora node and then gets the KinematicBody2D and grabs the global position of that
 	PlantInstance.global_position = get_node("Flora").get_child(0).get_global_position()
 	print("planted")
-	
+
+func BigPlant():
+	print("planted big boy")
 #when the player wants to spawn the plant
 #instance the plant scene after button press
+

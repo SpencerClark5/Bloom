@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/NewLargeDirtTileset.tres" type="TileSet" id=2]
@@ -17,6 +17,22 @@ extents = Vector2( 64.5, 252.25 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 244.5, 55 )
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Area2D
+
+func _on_big_plant_area_body_entered(body):
+	print (\"in big plant area\")
+	GlobalVariables.inBigPlantArea = true
+
+
+func _on_big_plant_area_body_exited(body):
+	print (\"left big plant area\")
+	GlobalVariables.inBigPlantArea = false
+"
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 20.4, 5 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -167,6 +183,14 @@ texture = ExtResource( 12 )
 position = Vector2( 0, -3.58191 )
 polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 15, -5, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
 
+[node name="big plant area" type="Area2D" parent="."]
+script = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="big plant area"]
+position = Vector2( 2650, -90 )
+scale = Vector2( 5, 5 )
+shape = SubResource( 3 )
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_entered"]
@@ -185,3 +209,5 @@ polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35
 [connection signal="body_exited" from="Area2D8" to="Area2D8" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D7" to="Area2D7" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D7" to="Area2D7" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="big plant area" to="big plant area" method="_on_big_plant_area_body_entered"]
+[connection signal="body_exited" from="big plant area" to="big plant area" method="_on_big_plant_area_body_exited"]

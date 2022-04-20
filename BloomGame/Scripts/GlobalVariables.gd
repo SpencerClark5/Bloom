@@ -7,6 +7,7 @@ var yVelocity = 5
 var inPlantArea = false
 var isPlanting = false
 var canPlant = true
+var inBigPlantArea = false
 
 #wallclimb
 var inClimbArea = false
