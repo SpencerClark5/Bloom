@@ -9,7 +9,7 @@
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_4.png" type="Texture" id=7]
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_2.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/WallClimb.gd" type="Script" id=9]
-[ext_resource path="res://Music/Bloom_Demo_2.mp3" type="AudioStream" id=10]
+[ext_resource path="res://Music/INTRO-Undergrowth_4-8-22_Bloom.wav" type="AudioStream" id=10]
 [ext_resource path="res://Art/Level Art/stalactite.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
