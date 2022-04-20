@@ -6,19 +6,22 @@ class_name GameScript
 #onready var RightLeg = $Flora/FloraBody/RightLeg
 #onready var LeftLeg = $Flora/FloraBody/LeftLeg
 
-
+onready var _background_music = $Flora/BackgroundMusic
 
 var _smallPlant = preload("res://Scenes/Plant.tscn")
 var _bigPlant = preload("res://Scenes/BigPlant.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#_pause_menu.follow_viewport_enable = true
-	pass
+	_background_music.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	
+	if (_background_music.is_playing() == false):
+		
+	
 	if(GlobalVariables.inBigPlantArea):
 		
 		if Input.is_action_just_pressed("PlantLeg"):
