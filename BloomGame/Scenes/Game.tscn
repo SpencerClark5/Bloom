@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/NewLargeDirtTileset.tres" type="TileSet" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Music/INTRO-Undergrowth_4-8-22_Bloom.wav" type="AudioStream" id=10]
 [ext_resource path="res://Music/LOOP-Undergrowth_4-8-22_Bloom.wav" type="AudioStream" id=11]
 [ext_resource path="res://Art/Level Art/stalactite.png" type="Texture" id=12]
+[ext_resource path="res://Art/keys/Space_Icon.png" type="Texture" id=13]
+[ext_resource path="res://Art/keys/Mouse_Icon.png" type="Texture" id=14]
+[ext_resource path="res://Art/keys/C_Icon.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64.5, 252.25 )
@@ -175,18 +178,16 @@ script = ExtResource( 9 )
 shape = SubResource( 1 )
 
 [node name="StalactiteBody" type="StaticBody2D" parent="."]
-position = Vector2( 3147, -3068 )
+position = Vector2( 2019, -340 )
 scale = Vector2( 1.628, 1.675 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite" type="Sprite" parent="StalactiteBody"]
-position = Vector2( -3.68555, -15.5222 )
 texture = ExtResource( 12 )
 
 [node name="Stalactite" type="CollisionPolygon2D" parent="StalactiteBody"]
-position = Vector2( 0, -3.58191 )
-polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 15, -5, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
+polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
 
 [node name="big plant area" type="Area2D" parent="."]
 script = SubResource( 4 )
@@ -195,6 +196,30 @@ script = SubResource( 4 )
 position = Vector2( 2650, -90 )
 scale = Vector2( 5, 5 )
 shape = SubResource( 3 )
+
+[node name="SpaceIcon" type="Sprite" parent="."]
+position = Vector2( -299, -179 )
+scale = Vector2( 4, 4 )
+z_index = -2
+z_as_relative = false
+texture = ExtResource( 13 )
+
+[node name="SpaceIcon2" type="Sprite" parent="."]
+position = Vector2( 860, -300 )
+scale = Vector2( 4, 4 )
+z_index = -2
+z_as_relative = false
+texture = ExtResource( 13 )
+
+[node name="MouseIcon" type="Sprite" parent="."]
+position = Vector2( 2017, -318 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 14 )
+
+[node name="CIcon" type="Sprite" parent="."]
+position = Vector2( 2721, -187 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 15 )
 
 [connection signal="finished" from="Flora/BackgroundMusic" to="." method="_on_BackgroundMusic_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
