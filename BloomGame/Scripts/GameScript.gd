@@ -7,8 +7,6 @@ class_name GameScript
 #onready var LeftLeg = $Flora/FloraBody/LeftLeg
 
 onready var _backgroundMusic = $Flora/BackgroundMusic
-onready var _floraScript = preload("res://Scripts/Movement.gd").new()
-var has_played = false
 
 var _smallPlant = preload("res://Scenes/Plant.tscn")
 var _bigPlant = preload("res://Scenes/BigPlant.tscn")
@@ -170,19 +168,6 @@ func BigPlant():
 	#gets the flora node and then gets the KinematicBody2D and grabs the global position of that
 	BigPlantInstance.global_position = get_node("Flora").get_child(0).get_global_position()
 	print("planted big boy")
-	
-	
-func _choosing_sounds(var path)->void:
-	var file = File.new()
-	if (file.file_exists(path)):
-		file.open(path,file.READ)
-		var buffer = file.get_buffer(file.get_len())
-		var stream = AudioStreamSample.new()
-		stream.data = buffer
-		_backgroundMusic.stream = stream
-		_backgroundMusic.play()
-	
-	
 
 
 func _on_BackgroundMusic_finished():
