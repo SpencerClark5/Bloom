@@ -11,6 +11,10 @@ onready var _backgroundMusic = $Flora/BackgroundMusic
 var _smallPlant = preload("res://Scenes/Plant.tscn")
 var _bigPlant = preload("res://Scenes/BigPlant.tscn")
 
+#ignore these, for testing
+export var canJump = true
+export var canDoubleJump = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -31,6 +35,7 @@ func _process(_delta):
 				GlobalVariables.LeftLegOn = false
 				#disable double jump
 				GlobalVariables.canDoubleJump = false
+				canDoubleJump = false
 				
 			else:
 				#test print
@@ -43,6 +48,7 @@ func _process(_delta):
 				GlobalVariables.RightLegOn = false
 				#disable the jump
 				GlobalVariables.canSingleJump = false
+				canJump = false
 		
 		
 		
@@ -122,6 +128,7 @@ func Grow():
 	if(GlobalVariables.canSingleJump == false):
 		#set the jump variable to true because its on
 		GlobalVariables.canSingleJump = true;
+		canJump = true
 		
 		#call the animation of the limb growing back
 		pass
@@ -140,6 +147,7 @@ func Grow():
 	elif(GlobalVariables.canDoubleJump == false):
 		#set the jump variable to true because its on
 		GlobalVariables.canDoubleJump = true;
+		canDoubleJump = true
 		
 		#call the animation of the limb growing back
 		pass
