@@ -16,11 +16,15 @@ const SPEED = 10	# The speed with which the chain moves
 var flying = false	# Whether the chain is moving through the air
 var hooked = false	# Whether the chain has connected to a wall
 
+onready var chain_sound = $ChainSound
+onready var hooked_sound = $HookedSound
+
 # shoot() shoots the chain in a given direction
 func shoot(dir: Vector2) -> void:
 	tip = self.global_position		# reset the tip position to the player's position
 	direction = dir.normalized()	# Normalize the direction and save it
 	flying = true					# Keep track of our current scan
+	chain_sound.play()
 	
 
 # release() the chain
@@ -48,5 +52,6 @@ func _physics_process(_delta: float) -> void:
 		# `if move_and_collide()` always moves, but returns true if we did collide
 		if $Tip.move_and_collide(direction * SPEED):
 			hooked = true	# Got something!
+			hooked_sound.play()
 			flying = false	# Not flying anymore
 	tip = $Tip.global_position	# set `tip` as starting position for next frame

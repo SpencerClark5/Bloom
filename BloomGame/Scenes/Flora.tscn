@@ -1,4 +1,4 @@
-[gd_scene load_steps=247 format=2]
+[gd_scene load_steps=249 format=2]
 
 [ext_resource path="res://Art/Character_Art/SingleLimbJumpAnim/Jump_Anim/01/Jump_Anim_Torso_01.png" type="Texture" id=1]
 [ext_resource path="res://Art/Character_Art/Run_AnimSingleLimb/Frame_08/Run_Anim_Back_Arm_08.png" type="Texture" id=2]
@@ -206,6 +206,8 @@
 [ext_resource path="res://Art/Character_Art/Front_Arm_Regrow/04.png" type="Texture" id=204]
 [ext_resource path="res://Art/Character_Art/Front_Arm_Regrow/01.png" type="Texture" id=205]
 [ext_resource path="res://Art/Character_Art/Front_Arm_Regrow/05.png" type="Texture" id=206]
+[ext_resource path="res://Music/Grapple/Hook Swish.wav" type="AudioStream" id=207]
+[ext_resource path="res://Music/Grapple/Grapple Impact.wav" type="AudioStream" id=208]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -1097,6 +1099,14 @@ animation = "Idle"
 
 [node name="Chain" parent="FloraBody" instance=ExtResource( 82 )]
 position = Vector2( 92, -50 )
+
+[node name="ChainSound" type="AudioStreamPlayer" parent="FloraBody/Chain"]
+stream = ExtResource( 207 )
+volume_db = -6.0
+
+[node name="HookedSound" type="AudioStreamPlayer" parent="FloraBody/Chain"]
+stream = ExtResource( 208 )
+volume_db = -6.0
 
 [node name="TransitionSprite" type="AnimatedSprite" parent="FloraBody"]
 visible = false
