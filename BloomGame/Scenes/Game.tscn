@@ -93,7 +93,7 @@ position = Vector2( -853, 125 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="Flora"]
 stream = ExtResource( 10 )
-volume_db = -80.0
+volume_db = -24.0
 autoplay = true
 
 [node name="LoopingBackground" type="AudioStreamPlayer" parent="Flora"]
