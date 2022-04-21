@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Art/Level Art/Large Plant Anim/12.png" type="Texture" id=1]
 [ext_resource path="res://Art/Level Art/Large Plant Anim/10.png" type="Texture" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://Art/Level Art/Large Plant Anim/05.png" type="Texture" id=32]
 [ext_resource path="res://Art/Level Art/Large Plant Anim/01.png" type="Texture" id=33]
 [ext_resource path="res://Art/Level Art/Large Plant Anim/02.png" type="Texture" id=34]
+[ext_resource path="res://Scripts/bigplant.gd" type="Script" id=35]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -75,10 +76,14 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 46.7949, 14.375 )
 
 [node name="BigPlant" type="Node2D"]
+script = ExtResource( 35 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 113, -696 )
+scale = Vector2( 6, 7.25 )
 frames = SubResource( 1 )
 animation = "Growing"
 
@@ -92,6 +97,79 @@ position = Vector2( 1, -62 )
 scale = Vector2( 2.08, 0.32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 42.3077, -465.625 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 42.3077, -1428.12 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 44.7115, -181.25 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 42.7885, -1731.25 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 46.1538, -1987.5 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 42.3077, -1134.38 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 42.7885, 87.5 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 45.1923, -734.375 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 42.7885, -2306.25 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 42.3077, -2668.75 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 46.6346, -2993.75 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="top collider" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 33.6538, -3410.63 )
+scale = Vector2( 0.75, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 44.2308, -934.375 )
 scale = Vector2( 0.75, 1 )
 shape = SubResource( 4 )
 one_way_collision = true
