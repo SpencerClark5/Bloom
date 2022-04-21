@@ -224,7 +224,7 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 14 )
 
 [node name="CIcon" type="Sprite" parent="."]
-position = Vector2( 2721, -187 )
+position = Vector2( 1741, 251 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 15 )
 
