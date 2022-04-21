@@ -41,7 +41,7 @@ onready var only_once = true
 var time_elapsed = 0.0
 
 
-#this should work for having the randomish sounds that Aiden talked about
+#this should work for having the randomish sounds
 func _choosing_wall_sounds(var path)->void:
 	var file = File.new()
 	if (file.file_exists(path)):

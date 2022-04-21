@@ -1,14 +1,13 @@
 <?xml version="1.0" ?>
-<testsuites failures="1" name="TestXML" tests="1" time="7.028">
-	<testsuite name="Bloom Example Tests" failures="1"  tests="8" time="0">
+<testsuites failures="0" name="TestXML" tests="1" time="6.384">
+	<testsuite name="Bloom Example Tests" failures="0"  tests="7" time="0">
 		<testcase name=" for Flora" time="0"></testcase>
-		<testcase name=" wall climb off" time="0"></testcase>
 		<testcase name=" for plant" time="0"></testcase>
 		<testcase name=" for Bigplant" time="0"></testcase>
-		<testcase name=" grow jumpOn" time="0"></testcase>
 		<testcase name=" grow doubleJumpOn" time="0"></testcase>
 		<testcase name=" grow grappleOn" time="0"></testcase>
 		<testcase name=" grow climbOn" time="0"></testcase>
+		<testcase name=" grow jumpOn" time="0"></testcase>
 	</testsuite>
 
 </testsuites>

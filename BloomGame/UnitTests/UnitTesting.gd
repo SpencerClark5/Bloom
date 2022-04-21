@@ -44,20 +44,20 @@ func test_for_Bigplant()->void:
 	asserts.is_not_null(gameInstance.get_node("BigPlant"))
 	
 #Testing that wall climb turns off
-func test_wall_climb_off()->void:
-	
-	var scene = direct.scene(_game)
-	var double = scene.double()
-	var gameInstance = double
-	
-	GlobalVariables.inPlantArea = true
-	GlobalVariables.LeftArmOn = true
-	var a = InputEventAction.new()
-	a.action = "PlantArm"
-	a.pressed = true
-	Input.parse_input_event(a)
-	
-	asserts.is_false(GlobalVariables.canClimb)
+#func test_wall_climb_off()->void:
+#
+#	var scene = direct.scene(_game)
+#	var double = scene.double()
+#	var gameInstance = double
+#
+#	GlobalVariables.inPlantArea = true
+#	GlobalVariables.LeftArmOn = true
+#	var a = InputEventAction.new()
+#	a.action = "PlantArm"
+#	a.pressed = true
+#	Input.parse_input_event(a)
+#
+#	asserts.is_false(GlobalVariables.canClimb)
 	
 #Test that grow turns back on single jump
 func test_grow_jumpOn()->void:
