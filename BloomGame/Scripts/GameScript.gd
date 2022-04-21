@@ -80,49 +80,61 @@ func _process(_delta):
 				GlobalVariables.canGrapple = false
 				canGrapple = false
 
-	
-				#disable the grapple
-				GlobalVariables.canGrapple = false
-
-
-
-
-
 
 	#when u wana plant
-	if(GlobalVariables.inPlantArea):
-		# when they press Q
+	elif(GlobalVariables.inPlantArea):
 		if Input.is_action_just_pressed("PlantLeg"):
-			print("CALLED PLANTLEG")
-			#print("CALLED PLANTLEG")
-			#if the left leg is visible
+			
 			if(GlobalVariables.LeftLegOn):
-				#test print
-				print("IN THE IF")
-				#print("IN THE IF")
-				
-				#call the plant function
 				plant()
+				#set the global isPlanting to true
+				GlobalVariables.isPlanting = true
+				#hide the left leg sprite
+				GlobalVariables.LeftLegOn = false
+				#disable double jump
+				GlobalVariables.canDoubleJump = false
+				canDoubleJump = false
 				
 			else:
 				#test print
-				print("IN THE ELSE")
 				#print("IN THE ELSE")
 				#call the plant function
 				plant()
 				#turn on the isPlanting variable
-				GlobalVariables.isPlanting = true;
+				GlobalVariables.isPlanting = true
+				#hide the right leg sprite
+				GlobalVariables.RightLegOn = false
+				#disable the jump
+				GlobalVariables.canSingleJump = false
+				canJump = false
+		
+		
+		
+				#when they press E 
+		if Input.is_action_just_pressed("PlantArm"):
 			#if the arm is visible
 			if(GlobalVariables.LeftArmOn):
 				#test print
-				print("PLANTED LEFT ARM")
 				#print("PLANTED LEFT ARM")
 				#call the plant function
 				plant()
 				#turn on the isPlanting
-				GlobalVariables.isPlanting=true;
+				GlobalVariables.isPlanting = true
+				#toggle the visibility of the left arm
+				GlobalVariables.LeftArmOn = false;
+				#disable wall climb
+				GlobalVariables.canClimb = false
+				canClimb = false
+			else:
+				#call plant function
+				plant()
+				#turn on the variable
+				GlobalVariables.isPlanting = true
+				#disable right arm
+				GlobalVariables.RightArmOn = false;
 				#disable the grapple
 				GlobalVariables.canGrapple = false
+				canGrapple = false
 
 
 
