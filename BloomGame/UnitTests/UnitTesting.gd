@@ -76,6 +76,25 @@ func test_grow_doubleJumpOn()->void:
 	
 	gameInstance.Grow()
 	asserts.is_true(gameInstance.canDoubleJump)
+
+
+#Test that grow turns back on climb
+func test_grow_climbOn()->void:
+	var scene = direct.scene(_game)
+	var double = scene.double()
+	var gameInstance = double
+	
+	gameInstance.Grow()
+	asserts.is_true(gameInstance.canClimb)
+	
+#Test that grow turns back on grapple
+func test_grow_grappleOn()->void:
+	var scene = direct.scene(_game)
+	var double = scene.double()
+	var gameInstance = double
+	
+	gameInstance.Grow()
+	asserts.is_true(gameInstance.canGrapple)
 	
 	
 	

@@ -14,6 +14,8 @@ var _bigPlant = preload("res://Scenes/BigPlant.tscn")
 #ignore these, for testing
 export var canJump = true
 export var canDoubleJump = true
+export var canClimb = true
+export var canGrapple = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -66,6 +68,7 @@ func _process(_delta):
 				GlobalVariables.LeftArmOn = false;
 				#disable wall climb
 				GlobalVariables.canClimb = false
+				canClimb = false
 			else:
 				#call plant function
 				BigPlant()
@@ -75,6 +78,7 @@ func _process(_delta):
 				GlobalVariables.RightArmOn = false;
 				#disable the grapple
 				GlobalVariables.canGrapple = false
+				canGrapple = false
 
 	
 				#disable the grapple
@@ -137,6 +141,7 @@ func Grow():
 	elif(GlobalVariables.canClimb == false):
 		#set the jump variable to true because its on
 		GlobalVariables.canClimb = true;
+		canClimb = true
 		
 		#call the animation of the limb growing back
 		pass
@@ -157,6 +162,7 @@ func Grow():
 	elif(GlobalVariables.canGrapple == false):
 		#set the jump variable to true because its on
 		GlobalVariables.canGrapple = true;
+		canGrapple = true
 		
 		#call the animation of the limb growing back
 		pass
