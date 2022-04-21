@@ -186,5 +186,4 @@ func _choosing_sounds(var path)->void:
 
 
 func _on_BackgroundMusic_finished():
-	_backgroundMusic.stop()
 	$Flora/LoopingBackground.play()
