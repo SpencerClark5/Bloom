@@ -225,8 +225,18 @@ position = Vector2( 800, 280 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 16 )
 
+[node name="QIcon2" type="Sprite" parent="."]
+position = Vector2( 2461, -125 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 16 )
+
 [node name="EIcon" type="Sprite" parent="."]
 position = Vector2( 1037, 280 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 17 )
+
+[node name="EIcon2" type="Sprite" parent="."]
+position = Vector2( 2705, -125 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 17 )
 
