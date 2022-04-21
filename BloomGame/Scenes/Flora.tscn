@@ -341,7 +341,7 @@ animations = [ {
 "frames": [ ExtResource( 170 ), ExtResource( 168 ), ExtResource( 172 ), ExtResource( 169 ) ],
 "loop": true,
 "name": "RightLegIdleAnim",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [ ExtResource( 93 ), ExtResource( 103 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 111 ) ],
 "loop": true,
