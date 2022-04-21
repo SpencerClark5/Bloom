@@ -843,7 +843,6 @@ disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="FloraBody"]
 position = Vector2( 102, -73 )
-current = true
 limit_smoothed = true
 
 [node name="Pause" type="CanvasLayer" parent="FloraBody/Camera2D"]

@@ -42,7 +42,7 @@ var time_elapsed = 0.0
 
 
 #this should work for having the randomish sounds that Aiden talked about
-func _choosing_sounds(var path)->void:
+func _choosing_wall_sounds(var path)->void:
 	var file = File.new()
 	if (file.file_exists(path)):
 		file.open(path,file.READ)
@@ -208,11 +208,11 @@ func _physics_process(_delta: float) -> void:
 #		#chooses which sounds to play based on the number
 #		match _sound_to_play:
 #			1:
-#				_choosing_sounds("res://Music/Wall Movement/Wall Movement 1_1.wav")
+#				_choosing_wall_sounds("res://Music/Wall Movement/Wall Movement 1_1.wav")
 #			2:
-#				_choosing_sounds("res://Music/Wall Movement/Wall Movement 2_1.wav")
+#				_choosing_wall_sounds("res://Music/Wall Movement/Wall Movement 2_1.wav")
 #			3:
-#				_choosing_sounds("res://Music/Wall Movement/Wall Movement 3_1.wav")
+#				_choosing_wall_sounds("res://Music/Wall Movement/Wall Movement 3_1.wav")
 #
 		if(GlobalVariables.inClimbArea):
 			velocity.y -= CLIMB_SPEED

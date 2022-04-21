@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/NewLargeDirtTileset.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_2.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/WallClimb.gd" type="Script" id=9]
 [ext_resource path="res://Music/INTRO-Undergrowth_4-8-22_Bloom.wav" type="AudioStream" id=10]
+[ext_resource path="res://Music/LOOP-Undergrowth_4-8-22_Bloom.wav" type="AudioStream" id=11]
 [ext_resource path="res://Art/Level Art/stalactite.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -94,6 +95,10 @@ position = Vector2( -853, 125 )
 stream = ExtResource( 10 )
 volume_db = -24.0
 autoplay = true
+
+[node name="LoopingBackground" type="AudioStreamPlayer" parent="Flora"]
+stream = ExtResource( 11 )
+volume_db = -24.0
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( -115, -969 )
@@ -191,6 +196,7 @@ position = Vector2( 2650, -90 )
 scale = Vector2( 5, 5 )
 shape = SubResource( 3 )
 
+[connection signal="finished" from="Flora/BackgroundMusic" to="." method="_on_BackgroundMusic_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_entered"]

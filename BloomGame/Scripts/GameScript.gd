@@ -6,21 +6,20 @@ class_name GameScript
 #onready var RightLeg = $Flora/FloraBody/RightLeg
 #onready var LeftLeg = $Flora/FloraBody/LeftLeg
 
-onready var _background_music = $Flora/BackgroundMusic
+onready var _backgroundMusic = $Flora/BackgroundMusic
+onready var _floraScript = preload("res://Scripts/Movement.gd").new()
+var has_played = false
 
 var _smallPlant = preload("res://Scenes/Plant.tscn")
 var _bigPlant = preload("res://Scenes/BigPlant.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_background_music.play()
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	
-	if (_background_music.is_playing() == false):
-		
 	
 	if(GlobalVariables.inBigPlantArea):
 		
@@ -171,3 +170,21 @@ func BigPlant():
 	#gets the flora node and then gets the KinematicBody2D and grabs the global position of that
 	BigPlantInstance.global_position = get_node("Flora").get_child(0).get_global_position()
 	print("planted big boy")
+	
+	
+func _choosing_sounds(var path)->void:
+	var file = File.new()
+	if (file.file_exists(path)):
+		file.open(path,file.READ)
+		var buffer = file.get_buffer(file.get_len())
+		var stream = AudioStreamSample.new()
+		stream.data = buffer
+		_backgroundMusic.stream = stream
+		_backgroundMusic.play()
+	
+	
+
+
+func _on_BackgroundMusic_finished():
+	_backgroundMusic.stop()
+	$Flora/LoopingBackground.play()
