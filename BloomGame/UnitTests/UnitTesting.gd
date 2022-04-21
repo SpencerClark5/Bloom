@@ -24,7 +24,7 @@ func test_for_Flora()->void:
 	
 
 #Testing that plant is being called and that the instance is not null
-func test_for_Function_Call()->void:
+func test_for_plant()->void:
 	
 	var scene = direct.scene(_game)
 	var double = scene.double()
@@ -34,6 +34,17 @@ func test_for_Function_Call()->void:
 	gameInstance.plant()
 	yield(until_timeout(1), YIELD)
 	asserts.is_not_null(gameInstance.get_node("PlantRoot"))
+	
+func test_for_Bigplant()->void:
+	
+	var scene = direct.scene(_game)
+	var double = scene.double()
+	asserts.is_class_instance(double, GameScript)
+	var gameInstance = double
+	
+	gameInstance.BigPlant()
+	yield(until_timeout(1), YIELD)
+	asserts.is_not_null(gameInstance.get_node("BigPlant"))
 	
 #Testing that wall climb turns off
 func test_wall_climb_off()->void:
