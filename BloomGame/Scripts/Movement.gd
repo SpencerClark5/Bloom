@@ -12,7 +12,7 @@ const CLIMB_SPEED = 50
 var velocity = Vector2(0,0)		# The velocity of the player (kept over time)
 var chain_velocity := Vector2(0,0)
 var can_jump = false			# Whether the player used their air-jump
-
+var endOfIdle = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -165,6 +165,8 @@ func _physics_process(_delta: float) -> void:
 		GlobalVariables.isClimbing = false
 		_animated_sprite_Wall_Climb.flip_h = false
 		_animated_sprite_Idle.flip_h = false
+		
+		endOfIdle = false
 	
 	elif Input.is_action_pressed("Left"):
 	
@@ -192,6 +194,8 @@ func _physics_process(_delta: float) -> void:
 		GlobalVariables.isClimbing = false
 		_animated_sprite_Wall_Climb.flip_h = true
 		_animated_sprite_Idle.flip_h = true
+		
+		endOfIdle = false
 		
 		
 	elif Input.is_action_just_pressed("EnterClimb"):
@@ -222,22 +226,94 @@ func _physics_process(_delta: float) -> void:
 	else:
 		
 		if((velocity.y == 5 && grounded) && (GlobalVariables.isPlanting == false && GlobalVariables.isClimbing == false)):
-			_animated_sprite_Idle.visible = true
+#			_animated_sprite_Idle.visible = true
+#			_animated_sprite_Wall_Climb.visible = false
+#			_animated_sprite_Body.visible = false
+#			_animated_sprite_LeftArm.visible = false
+#			_animated_sprite_LeftLeg.visible = false
+#			_animated_sprite_RightArm.visible = false
+#			_animated_sprite_RightLeg.visible = false
+			
 			_animated_sprite_Wall_Climb.visible = false
-			_animated_sprite_Body.visible = false
-			_animated_sprite_LeftArm.visible = false
-			_animated_sprite_LeftLeg.visible = false
-			_animated_sprite_RightArm.visible = false
-			_animated_sprite_RightLeg.visible = false
+			_animated_sprite_Body.visible = true
+			if(GlobalVariables.LeftArmOn):
+				_animated_sprite_LeftArm.visible = true
+			else:
+				_animated_sprite_LeftArm.visible = false
+			if(GlobalVariables.LeftLegOn):
+				_animated_sprite_LeftLeg.visible = true
+			else:
+				_animated_sprite_LeftLeg.visible = false
+			if(GlobalVariables.RightArmOn):
+				_animated_sprite_RightArm.visible = true
+			else:
+				_animated_sprite_RightArm.visible = false
+			if(GlobalVariables.RightLegOn):
+				_animated_sprite_RightLeg.visible = true
+			else:
+				_animated_sprite_RightLeg.visible = false
 			
 			_animated_sprite_Wall_Climb.stop()
 			_animated_sprite_Wall_Climb.frame = 0
 			
 			_walking_sound.stop()
 			
+			
+			
 			time_elapsed += _delta
 			if(time_elapsed > 3):
-				_animated_sprite_Idle.play("Idle")
+#				_animated_sprite_Idle.play("Idle")
+				if((_animated_sprite_Body.frame < 4)&&!endOfIdle):
+					_animated_sprite_Body.play("TorsoIdleAnim")
+					_animated_sprite_RightArm.play("RightArmIdleAnim")
+					_animated_sprite_LeftArm.play("LeftArmIdleAnim")
+					_animated_sprite_LeftLeg.play("LeftLegIdleAnim")
+					_animated_sprite_RightLeg.play("RightLegIdleAnim")
+					
+				elif((_animated_sprite_Body.frame >= 4 && _animated_sprite_Body.frame < 10) && !endOfIdle):
+					_animated_sprite_LeftArm.visible = false
+					_animated_sprite_LeftLeg.visible = false
+					_animated_sprite_RightArm.visible = false
+					_animated_sprite_RightLeg.visible = false
+					
+#					_animated_sprite_Body.play("TorsoIdleAnim")
+				else:
+					
+					endOfIdle = true
+					_animated_sprite_LeftArm.visible = false
+					_animated_sprite_LeftLeg.visible = false
+					_animated_sprite_RightArm.visible = false
+					_animated_sprite_RightLeg.visible = false
+					_animated_sprite_Body.animation = "IdleCont"
+					_animated_sprite_Body.play("IdleCont")
+			else:
+				_animated_sprite_Body.animation = "TorsoIdleAnim"
+				_animated_sprite_Body.flip_h = false
+
+				_animated_sprite_RightArm.animation = "RightArmIdleAnim"
+				_animated_sprite_RightArm.flip_h = false
+
+				_animated_sprite_LeftArm.animation = "LeftArmIdleAnim"
+				_animated_sprite_LeftArm.flip_h = false
+
+				_animated_sprite_LeftLeg.animation = "LeftLegIdleAnim"
+				_animated_sprite_LeftLeg.flip_h = false
+
+				_animated_sprite_RightLeg.animation = "RightLegIdleAnim"
+				_animated_sprite_RightLeg.flip_h = false
+				
+				_animated_sprite_Body.frame = 0
+				_animated_sprite_Body.stop()
+				_animated_sprite_RightArm.frame = 0
+				_animated_sprite_RightArm.stop()
+				_animated_sprite_LeftArm.frame = 0
+				_animated_sprite_LeftArm.stop()
+				_animated_sprite_RightLeg.frame = 0
+				_animated_sprite_RightLeg.stop()
+				_animated_sprite_LeftLeg.frame = 0
+				_animated_sprite_LeftLeg.stop()
+				
+			
 				
 				
 		elif((velocity.y > 5 || velocity.y < 5) && (GlobalVariables.isPlanting == false && GlobalVariables.isClimbing == false)):
@@ -259,6 +335,8 @@ func _physics_process(_delta: float) -> void:
 			_animated_sprite_Idle.stop()
 			_animated_sprite_Idle.frame = 0
 			time_elapsed = 0
+			
+			endOfIdle = false
 
 			_animated_sprite_Body.animation = "TorsoJumpAnim"
 			_animated_sprite_Body.flip_h = false
@@ -302,6 +380,8 @@ func _physics_process(_delta: float) -> void:
 			_animated_sprite_Idle.stop()
 			_animated_sprite_Idle.frame = 0
 			time_elapsed = 0
+			
+			endOfIdle = false
 
 			_animated_sprite_Body.animation = "TorsoPlantingAnim"
 			_animated_sprite_Body.flip_h = false
@@ -338,6 +418,8 @@ func _physics_process(_delta: float) -> void:
 			_animated_sprite_Idle.stop()
 			_animated_sprite_Idle.frame = 0
 			time_elapsed = 0
+			
+			endOfIdle = false
 			
 			_animated_sprite_Wall_Climb.play("TransitionToWall")
 			if(_animated_sprite_Wall_Climb.frame == 13):
