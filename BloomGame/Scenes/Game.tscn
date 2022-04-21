@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/NewLargeDirtTileset.tres" type="TileSet" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Art/keys/Space_Icon.png" type="Texture" id=13]
 [ext_resource path="res://Art/keys/Mouse_Icon.png" type="Texture" id=14]
 [ext_resource path="res://Art/keys/C_Icon.png" type="Texture" id=15]
+[ext_resource path="res://Art/keys/Q_Icon.png" type="Texture" id=16]
+[ext_resource path="res://Art/keys/E_Icon.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64.5, 252.25 )
@@ -217,6 +219,16 @@ scale = Vector2( 4, 4 )
 z_index = -2
 z_as_relative = false
 texture = ExtResource( 13 )
+
+[node name="QIcon" type="Sprite" parent="."]
+position = Vector2( 800, 280 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 16 )
+
+[node name="EIcon" type="Sprite" parent="."]
+position = Vector2( 1037, 280 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 17 )
 
 [node name="MouseIcon" type="Sprite" parent="."]
 position = Vector2( 2017, -318 )
