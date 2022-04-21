@@ -1,4 +1,4 @@
-[gd_scene load_steps=213 format=2]
+[gd_scene load_steps=234 format=2]
 
 [ext_resource path="res://Art/Character_Art/SingleLimbJumpAnim/Jump_Anim/01/Jump_Anim_Torso_01.png" type="Texture" id=1]
 [ext_resource path="res://Art/Character_Art/Run_AnimSingleLimb/Frame_08/Run_Anim_Back_Arm_08.png" type="Texture" id=2]
@@ -177,6 +177,24 @@
 [ext_resource path="res://Music/Jump_Land/12065-BODY_JUMP-LAND_-DIRT_1.wav" type="AudioStream" id=175]
 [ext_resource path="res://Scenes/PauseScreen.tscn" type="PackedScene" id=176]
 [ext_resource path="res://Music/Wall_Plant.wav" type="AudioStream" id=177]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/01/Torso_01.png" type="Texture" id=178]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/03/Back_Arm_03.png" type="Texture" id=179]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/02/Front_Arm_02.png" type="Texture" id=180]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/05/Front_Arm_05.png" type="Texture" id=181]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/06/Torso_06.png" type="Texture" id=182]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/04/Front_Arm_04.png" type="Texture" id=183]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/02/Torso_02.png" type="Texture" id=184]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/02/Back_Arm_02.png" type="Texture" id=185]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/06/Back_Arm_06.png" type="Texture" id=186]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/03/Front_Arm_03.png" type="Texture" id=187]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/05/Torso_05.png" type="Texture" id=188]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/03/Torso_03.png" type="Texture" id=189]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/04/Torso_04.png" type="Texture" id=190]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/04/Back_Arm_04.png" type="Texture" id=191]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/01/Front_Arm_01.png" type="Texture" id=192]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/06/Front_Arm_06.png" type="Texture" id=193]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/01/Back_Arm_01.png" type="Texture" id=194]
+[ext_resource path="res://Art/Character_Art/Legless_Run_Anim/05/Back_Arm_05.png" type="Texture" id=195]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -204,6 +222,11 @@ animations = [ {
 "loop": true,
 "name": "IdleCont",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 178 ), ExtResource( 184 ), ExtResource( 189 ), ExtResource( 190 ), ExtResource( 188 ), ExtResource( 182 ) ],
+"loop": true,
+"name": "TorsoLeglessRun",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -227,6 +250,11 @@ animations = [ {
 "loop": true,
 "name": "RightArmPlantingAnim",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 194 ), ExtResource( 185 ), ExtResource( 179 ), ExtResource( 191 ), ExtResource( 195 ), ExtResource( 186 ) ],
+"loop": true,
+"name": " RightArmLeglessRun",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=5]
@@ -249,6 +277,11 @@ animations = [ {
 "frames": [ ExtResource( 150 ), ExtResource( 147 ), ExtResource( 158 ), ExtResource( 149 ) ],
 "loop": true,
 "name": "LeftArmIdleAnim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 192 ), ExtResource( 180 ), ExtResource( 187 ), ExtResource( 183 ), ExtResource( 181 ), ExtResource( 193 ) ],
+"loop": true,
+"name": "LeftArmLeglessRun",
 "speed": 5.0
 } ]
 
@@ -360,6 +393,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "LeftArmLeglessRun"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("LeftArm:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
 [sub_resource type="Animation" id=26]
@@ -621,6 +670,22 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
+[sub_resource type="Animation" id=39]
+resource_name = "RightArmLeglessRun"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("RightArm:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
 [sub_resource type="Animation" id=28]
 resource_name = "RightArmPlantingAnim"
 length = 2.0
@@ -747,6 +812,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "TorsoLeglessRun"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
 [sub_resource type="Animation" id=25]
@@ -883,7 +964,6 @@ position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 3 )
 animation = "RightArmIdleAnim"
-frame = 2
 speed_scale = 2.5
 script = ExtResource( 85 )
 
@@ -892,7 +972,7 @@ position = Vector2( 96, -96 )
 scale = Vector2( 3, 3 )
 z_index = 4
 frames = SubResource( 5 )
-animation = "LeftArmRun"
+animation = "LeftArmLeglessRun"
 speed_scale = 2.5
 script = ExtResource( 83 )
 
@@ -919,6 +999,7 @@ anims/Idle = SubResource( 16 )
 anims/IdleCont = SubResource( 19 )
 anims/LeftArmIdleAnim = SubResource( 34 )
 anims/LeftArmJumpAnim = SubResource( 22 )
+anims/LeftArmLeglessRun = SubResource( 38 )
 anims/LeftArmPlantingAnim = SubResource( 26 )
 anims/LeftArmRunAnim = SubResource( 10 )
 anims/LeftLegIdleAnim = SubResource( 35 )
@@ -930,6 +1011,7 @@ anims/PlantingAnim = SubResource( 18 )
 anims/RESET = SubResource( 1 )
 anims/RightArmIdleAnim = SubResource( 32 )
 anims/RightArmJumpAnim = SubResource( 20 )
+anims/RightArmLeglessRun = SubResource( 39 )
 anims/RightArmPlantingAnim = SubResource( 28 )
 anims/RightArmRunAnim = SubResource( 9 )
 anims/RightLegIdleAnim = SubResource( 36 )
@@ -938,6 +1020,7 @@ anims/RightLegPlantingAnim = SubResource( 29 )
 anims/RightLegRunAnim = SubResource( 12 )
 anims/TorsoIdleAnim = SubResource( 33 )
 anims/TorsoJumpAnim = SubResource( 21 )
+anims/TorsoLeglessRun = SubResource( 37 )
 anims/TorsoPlantingAnim = SubResource( 25 )
 anims/TorsoRunAnim = SubResource( 4 )
 anims/TransitionToWall = SubResource( 31 )
