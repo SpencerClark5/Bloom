@@ -39,6 +39,13 @@ func _process(_delta):
 				GlobalVariables.canDoubleJump = false
 				canDoubleJump = false
 				
+				if(GlobalVariables.firstLimb == "null"):
+					GlobalVariables.firstLimb = "Leg"
+				elif(GlobalVariables.firstLimb == "Arm" && GlobalVariables.secondLimb != "Arm"):
+					GlobalVariables.secondLimb = "Leg"
+				else:
+					GlobalVariables.thirdLimb = "Leg"
+				
 			else:
 				#test print
 				#print("IN THE ELSE")
@@ -51,6 +58,13 @@ func _process(_delta):
 				#disable the jump
 				GlobalVariables.canSingleJump = false
 				canJump = false
+				
+				if(GlobalVariables.firstLimb != "null" && GlobalVariables.secondLimb == "null"):
+					GlobalVariables.secondLimb = "Leg"
+				elif(GlobalVariables.secondLimb != "null" && GlobalVariables.thirdLimb == "null"):
+					GlobalVariables.thirdLimb = "Leg"
+				else:
+					GlobalVariables.fourthLimb = "Leg"
 		
 		
 		
@@ -69,6 +83,14 @@ func _process(_delta):
 				#disable wall climb
 				GlobalVariables.canClimb = false
 				canClimb = false
+				
+				if(GlobalVariables.firstLimb == "null"):
+					GlobalVariables.firstLimb = "Arm"
+				elif(GlobalVariables.firstLimb == "Leg" && GlobalVariables.secondLimb != "Leg"):
+					GlobalVariables.secondLimb = "Arm"
+				else:
+					GlobalVariables.thirdLimb = "Arm"
+				
 			else:
 				#call plant function
 				BigPlant()
@@ -79,6 +101,13 @@ func _process(_delta):
 				#disable the grapple
 				GlobalVariables.canGrapple = false
 				canGrapple = false
+				
+				if(GlobalVariables.firstLimb != "null" && GlobalVariables.secondLimb == "null"):
+					GlobalVariables.secondLimb = "Arm"
+				elif(GlobalVariables.secondLimb != "null" && GlobalVariables.thirdLimb == "null"):
+					GlobalVariables.thirdLimb = "Arm"
+				else:
+					GlobalVariables.fourthLimb = "Arm"
 
 
 	#when u wana plant
@@ -95,6 +124,13 @@ func _process(_delta):
 				GlobalVariables.canDoubleJump = false
 				canDoubleJump = false
 				
+				if(GlobalVariables.firstLimb == "null"):
+					GlobalVariables.firstLimb = "Leg"
+				elif(GlobalVariables.firstLimb == "Arm" && GlobalVariables.secondLimb != "Arm"):
+					GlobalVariables.secondLimb = "Leg"
+				else:
+					GlobalVariables.thirdLimb = "Leg"
+				
 			else:
 				#test print
 				#print("IN THE ELSE")
@@ -107,6 +143,13 @@ func _process(_delta):
 				#disable the jump
 				GlobalVariables.canSingleJump = false
 				canJump = false
+				
+				if(GlobalVariables.firstLimb != "null" && GlobalVariables.secondLimb == "null"):
+					GlobalVariables.secondLimb = "Leg"
+				elif(GlobalVariables.secondLimb != "null" && GlobalVariables.thirdLimb == "null"):
+					GlobalVariables.thirdLimb = "Leg"
+				else:
+					GlobalVariables.fourthLimb = "Leg"
 		
 		
 		
@@ -125,6 +168,14 @@ func _process(_delta):
 				#disable wall climb
 				GlobalVariables.canClimb = false
 				canClimb = false
+				
+				if(GlobalVariables.firstLimb == "null"):
+					GlobalVariables.firstLimb = "Arm"
+				elif(GlobalVariables.firstLimb == "Leg" && GlobalVariables.secondLimb != "Leg"):
+					GlobalVariables.secondLimb = "Arm"
+				else:
+					GlobalVariables.thirdLimb = "Arm"
+				
 			else:
 				#call plant function
 				plant()
@@ -135,6 +186,13 @@ func _process(_delta):
 				#disable the grapple
 				GlobalVariables.canGrapple = false
 				canGrapple = false
+				
+				if(GlobalVariables.firstLimb != "null" && GlobalVariables.secondLimb == "null"):
+					GlobalVariables.secondLimb = "Arm"
+				elif(GlobalVariables.secondLimb != "null" && GlobalVariables.thirdLimb == "null"):
+					GlobalVariables.thirdLimb = "Arm"
+				else:
+					GlobalVariables.fourthLimb = "Arm"
 
 
 

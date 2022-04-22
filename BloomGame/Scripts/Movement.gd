@@ -138,7 +138,6 @@ func _physics_process(_delta: float) -> void:
 
 
 
-
 	#  Animation 
 	if Input.is_action_pressed("Right"):
 		_animated_sprite_Idle.visible = false
@@ -221,7 +220,7 @@ func _physics_process(_delta: float) -> void:
 			velocity.y -= CLIMB_SPEED
 			
 		
-	#Idle anim
+	#Idle/Abilities anim
 	else:
 		
 		if((velocity.y == 5 && grounded) && (GlobalVariables.isPlanting == false && GlobalVariables.isClimbing == false)):
@@ -424,3 +423,10 @@ func _physics_process(_delta: float) -> void:
 			_wall_sounds.play()
 			if(_animated_sprite_Wall_Climb.frame == 13):
 				_animated_sprite_Wall_Climb.stop()
+		elif(GlobalVariables.canGrow):
+			if(GlobalVariables.fourthLimb == "Leg"):
+				#do stuff
+				print("leg")
+			elif(GlobalVariables.fourthLimb == "Arm"):
+				#do stuff
+				print("arm")

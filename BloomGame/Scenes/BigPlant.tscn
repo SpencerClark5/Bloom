@@ -76,7 +76,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 46.7949, 14.375 )
 
 [node name="BigPlant" type="Node2D"]
 script = ExtResource( 35 )

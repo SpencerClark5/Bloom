@@ -22,7 +22,13 @@ var canSingleJump = true
 var canDoubleJump = true
 
 #limbs lost
-var timesPlanted = 0
+var firstLimb = "null"
+var secondLimb = "null"
+var thirdLimb = "null"
+var fourthLimb = "null"
+
+var canGrow = false
+var isGrowing = false
 
 #limbs
 var RightArmOn = true
