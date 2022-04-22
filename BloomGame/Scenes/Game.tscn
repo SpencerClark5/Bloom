@@ -129,7 +129,7 @@ script = ExtResource( 6 )
 shape = SubResource( 2 )
 
 [node name="Area2D10" type="Area2D" parent="."]
-position = Vector2( 75.0001, -2283 )
+position = Vector2( -132, -101 )
 scale = Vector2( 0.352, 0.56 )
 script = ExtResource( 6 )
 
@@ -257,7 +257,6 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 15 )
 
 [node name="SeedArea" type="Area2D" parent="."]
-visible = false
 position = Vector2( 14, -76 )
 scale = Vector2( 3.58462, 3.58462 )
 script = ExtResource( 18 )
