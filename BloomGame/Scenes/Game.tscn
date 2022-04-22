@@ -121,7 +121,7 @@ scale = Vector2( 1, 0.75 )
 shape = SubResource( 1 )
 
 [node name="Area2D2" type="Area2D" parent="."]
-position = Vector2( 925, 264 )
+position = Vector2( 2395, -1258 )
 scale = Vector2( 0.352, 0.56 )
 script = ExtResource( 6 )
 
@@ -227,7 +227,7 @@ z_as_relative = false
 texture = ExtResource( 13 )
 
 [node name="QIcon" type="Sprite" parent="."]
-position = Vector2( 800, 280 )
+position = Vector2( 2341, -1322 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 16 )
 
@@ -237,7 +237,7 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 16 )
 
 [node name="EIcon" type="Sprite" parent="."]
-position = Vector2( 1037, 280 )
+position = Vector2( 2459, -1319 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 17 )
 
@@ -257,6 +257,7 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 15 )
 
 [node name="SeedArea" type="Area2D" parent="."]
+visible = false
 position = Vector2( 14, -76 )
 scale = Vector2( 3.58462, 3.58462 )
 script = ExtResource( 18 )
