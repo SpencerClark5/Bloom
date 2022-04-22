@@ -200,7 +200,6 @@ func _physics_process(_delta: float) -> void:
 		
 	elif Input.is_action_just_pressed("EnterClimb"):
 		print("enter climb")
-		_wall_sounds.play()
 		GlobalVariables.isClimbing = true
 	elif Input.is_action_pressed("Climb"):
 		
@@ -422,5 +421,6 @@ func _physics_process(_delta: float) -> void:
 			endOfIdle = false
 			
 			_animated_sprite_Wall_Climb.play("TransitionToWall")
+			_wall_sounds.play()
 			if(_animated_sprite_Wall_Climb.frame == 13):
 				_animated_sprite_Wall_Climb.stop()
