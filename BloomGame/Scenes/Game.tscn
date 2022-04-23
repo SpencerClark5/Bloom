@@ -164,7 +164,6 @@ script = ExtResource( 6 )
 
 [node name="PlantArea" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( -66.584, 44.6421 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="Area2D14" type="Area2D" parent="."]
@@ -524,7 +523,7 @@ scale = Vector2( 10, 1.75 )
 shape = SubResource( 1 )
 
 [node name="Area2D23" type="Area2D" parent="."]
-position = Vector2( 5438, -2600 )
+position = Vector2( 5297, -2517 )
 scale = Vector2( 0.012, 0.762 )
 script = ExtResource( 9 )
 
