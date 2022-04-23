@@ -24,7 +24,7 @@
 extents = Vector2( 64.5, 252.25 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 244.5, 55 )
+extents = Vector2( 275.213, 13.5714 )
 
 [sub_resource type="GDScript" id=4]
 script/source = "extends Area2D
@@ -144,6 +144,38 @@ scale = Vector2( 0.352, 0.56 )
 script = ExtResource( 6 )
 
 [node name="PlantArea" type="CollisionShape2D" parent="Area2D10"]
+position = Vector2( 17.4003, 37.5 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 2 )
+
+[node name="Area2D12" type="Area2D" parent="."]
+position = Vector2( 2381, -2093 )
+scale = Vector2( 0.352, 0.56 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D12"]
+position = Vector2( -31.25, 44.6428 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 2 )
+
+[node name="Area2D13" type="Area2D" parent="."]
+position = Vector2( 4878, -2732 )
+scale = Vector2( 0.352, 0.56 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D13"]
+position = Vector2( -31.25, 44.6428 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 2 )
+
+[node name="Area2D14" type="Area2D" parent="."]
+position = Vector2( 5196, -3135 )
+scale = Vector2( 0.352, 0.56 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D14"]
+position = Vector2( -125.003, 82.1431 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="Area2D3" type="Area2D" parent="."]
@@ -290,6 +322,16 @@ shape = SubResource( 5 )
 [node name="Seedling" type="Sprite" parent="SeedArea"]
 texture = ExtResource( 19 )
 
+[node name="Area2D15" type="Area2D" parent="."]
+position = Vector2( 2739, -819 )
+scale = Vector2( 0.012321, 1.67962 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D15"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
 [connection signal="finished" from="Flora/BackgroundMusic" to="." method="_on_BackgroundMusic_finished"]
 [connection signal="body_entered" from="Area2D11" to="Area2D11" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D11" to="Area2D11" method="_on_Area2D_body_exited"]
@@ -299,6 +341,12 @@ texture = ExtResource( 19 )
 [connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_exited"]
 [connection signal="body_entered" from="Area2D10" to="Area2D10" method="_on_Area2D2_body_entered"]
 [connection signal="body_exited" from="Area2D10" to="Area2D10" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D12" to="Area2D12" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D12" to="Area2D12" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D13" to="Area2D13" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D13" to="Area2D13" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D14" to="Area2D14" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D14" to="Area2D14" method="_on_Area2D2_body_exited"]
 [connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D3" to="Area2D3" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_Area2D_body_entered"]
@@ -319,3 +367,5 @@ texture = ExtResource( 19 )
 [connection signal="body_exited" from="SeedArea2" to="SeedArea2" method="_on_Area2D11_body_exited"]
 [connection signal="body_entered" from="SeedArea" to="SeedArea" method="_on_Area2D11_body_entered"]
 [connection signal="body_exited" from="SeedArea" to="SeedArea" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="Area2D15" to="Area2D15" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D15" to="Area2D15" method="_on_Area2D_body_exited"]
