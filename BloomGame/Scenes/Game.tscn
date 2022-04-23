@@ -24,7 +24,7 @@
 extents = Vector2( 64.5, 252.25 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 275.213, 13.5714 )
+extents = Vector2( 244.5, 55 )
 
 [sub_resource type="GDScript" id=4]
 script/source = "extends Area2D
@@ -43,7 +43,7 @@ func _on_big_plant_area_body_exited(body):
 extents = Vector2( 20.4, 5 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 2.5, 1.5 )
+extents = Vector2( 2.5, 0.905647 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -144,38 +144,30 @@ scale = Vector2( 0.352, 0.56 )
 script = ExtResource( 6 )
 
 [node name="PlantArea" type="CollisionShape2D" parent="Area2D10"]
-position = Vector2( 17.4003, 37.5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="Area2D12" type="Area2D" parent="."]
-position = Vector2( 2381, -2093 )
-scale = Vector2( 0.352, 0.56 )
+position = Vector2( 2369, -2087 )
+scale = Vector2( 0.204, 0.56 )
 script = ExtResource( 6 )
 
 [node name="PlantArea" type="CollisionShape2D" parent="Area2D12"]
-position = Vector2( -31.25, 44.6428 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="Area2D13" type="Area2D" parent="."]
-position = Vector2( 4878, -2732 )
-scale = Vector2( 0.352, 0.56 )
+position = Vector2( 4865, -2726 )
+scale = Vector2( 0.236, 0.56 )
 script = ExtResource( 6 )
 
 [node name="PlantArea" type="CollisionShape2D" parent="Area2D13"]
-position = Vector2( -31.25, 44.6428 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="Area2D14" type="Area2D" parent="."]
-position = Vector2( 5196, -3135 )
+position = Vector2( 5151, -3107 )
 scale = Vector2( 0.352, 0.56 )
 script = ExtResource( 6 )
 
 [node name="PlantArea" type="CollisionShape2D" parent="Area2D14"]
-position = Vector2( -125.003, 82.1431 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="Area2D3" type="Area2D" parent="."]
@@ -297,16 +289,15 @@ z_index = 2
 texture = ExtResource( 15 )
 
 [node name="SeedArea2" type="Area2D" parent="."]
-position = Vector2( 10232.9, -7394.99 )
+position = Vector2( 3328, -1294 )
 scale = Vector2( 12.8495, 12.8495 )
 script = ExtResource( 18 )
 
 [node name="SeedCollider" type="CollisionShape2D" parent="SeedArea2"]
-position = Vector2( -125.131, 223.588 )
+position = Vector2( 0, -0.594353 )
 shape = SubResource( 5 )
 
 [node name="Seedling" type="Sprite" parent="SeedArea2"]
-position = Vector2( -535.808, 474.804 )
 scale = Vector2( 0.256798, 0.276256 )
 texture = ExtResource( 19 )
 
