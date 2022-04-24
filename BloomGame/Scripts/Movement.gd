@@ -420,7 +420,8 @@ func _physics_process(_delta: float) -> void:
 			endOfIdle = false
 			
 			_animated_sprite_Wall_Climb.play("TransitionToWall")
-			_wall_sounds.play()
+			if not (_wall_sounds.is_playing()):
+				_wall_sounds.play()
 			if(_animated_sprite_Wall_Climb.frame == 13):
 				_animated_sprite_Wall_Climb.stop()
 		elif(GlobalVariables.canGrow):
