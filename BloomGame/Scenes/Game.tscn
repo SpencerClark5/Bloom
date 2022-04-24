@@ -462,6 +462,16 @@ pause_mode = 1
 scale = Vector2( 10, 1.75 )
 shape = SubResource( 1 )
 
+[node name="Area2D24" type="Area2D" parent="."]
+position = Vector2( 399, -2080 )
+scale = Vector2( 0.012, 0.341 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D24"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
 [node name="Area2D17" type="Area2D" parent="."]
 position = Vector2( 1230, -2061 )
 scale = Vector2( 0.012, 0.741 )
@@ -585,6 +595,8 @@ shape = SubResource( 1 )
 [connection signal="body_exited" from="Area2D15" to="Area2D15" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D16" to="Area2D16" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D16" to="Area2D16" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D24" to="Area2D24" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D24" to="Area2D24" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D17" to="Area2D17" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D17" to="Area2D17" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D18" to="Area2D18" method="_on_Area2D_body_entered"]
