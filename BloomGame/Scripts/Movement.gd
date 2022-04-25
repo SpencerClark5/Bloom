@@ -37,7 +37,8 @@ onready var _jump_sound = $Body/JumpSound
 onready var _walking_sound = $Camera2D/WalkingSound
 onready var _landing_sound = $Body/LandingSound
 onready var _wall_sounds = $Body/WallSounds
-onready var only_once = true
+onready var only_once = false
+var sounds_array = ["res://Music/Wall Movement/Wall Movement 1_1.wav", "res://Music/Wall Movement/Wall Movement 2_1.wav", "res://Music/Wall Movement/Wall Movement 3_1.wav"]
 
 var time_elapsed = 0.0
 
@@ -51,7 +52,9 @@ func _choosing_wall_sounds(var path)->void:
 		var stream = AudioStreamSample.new()
 		stream.data = buffer
 		_wall_sounds.stream = stream
-		_wall_sounds.play()
+		if not (_wall_sounds.is_playing()):
+			_wall_sounds.play()
+			only_once = true
 
 
 
@@ -195,20 +198,17 @@ func _physics_process(_delta: float) -> void:
 		GlobalVariables.isClimbing = true
 	elif Input.is_action_pressed("Climb"):
 		
-		#creates a random number
+#		#creates a random number
 #		var rng = RandomNumberGenerator.new()
 #		rng.randomize()
-#		var _sound_to_play = rng.randi_range(1,3)
+#		var _sound_to_play = rng.randi_range(1,4)
 #
-#		#chooses which sounds to play based on the number
-#		match _sound_to_play:
-#			1:
-#				_choosing_wall_sounds("res://Music/Wall Movement/Wall Movement 1_1.wav")
-#			2:
-#				_choosing_wall_sounds("res://Music/Wall Movement/Wall Movement 2_1.wav")
-#			3:
-#				_choosing_wall_sounds("res://Music/Wall Movement/Wall Movement 3_1.wav")
-#
+#		for i in range(sounds_array.size()):
+#			if (_sound_to_play == i and !only_once):
+#					_choosing_wall_sounds(sounds_array[i])
+				
+
+
 		if(GlobalVariables.inClimbArea):
 			velocity.y -= CLIMB_SPEED
 			
