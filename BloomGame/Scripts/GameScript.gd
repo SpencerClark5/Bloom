@@ -25,7 +25,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
-	if(GlobalVariables.inBigPlantArea):
+	if(GlobalVariables.inBigPlantArea && GlobalVariables.timesPlanted < 5):
 		
 		if Input.is_action_just_pressed("PlantLeg"):
 			
@@ -244,6 +244,7 @@ func plant():
 	#gets the flora node and then gets the KinematicBody2D and grabs the global position of that
 	PlantInstance.global_position = get_node("Flora").get_child(0).get_global_position()
 	print("planted")
+	GlobalVariables.timesPlanted += 1
 
 func BigPlant():
 	#get the position of the player to instance the node here
@@ -252,6 +253,7 @@ func BigPlant():
 	#gets the flora node and then gets the KinematicBody2D and grabs the global position of that
 	BigPlantInstance.global_position = get_node("Flora").get_child(0).get_global_position()
 	print("planted big boy")
+	GlobalVariables.timesPlanted += 1
 
 
 func _on_BackgroundMusic_finished():

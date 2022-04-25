@@ -9,6 +9,8 @@ var isPlanting = false
 var canPlant = true
 var inBigPlantArea = false
 
+var timesPlanted = 0
+
 #wallclimb
 var inClimbArea = false
 var isClimbing = false

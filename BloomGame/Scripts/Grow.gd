@@ -56,7 +56,8 @@ func _on_Area2D11_body_entered(body):
 		GlobalVariables.canClimb = true
 		GlobalVariables.secondLimb = "null"
 	queue_free()
-	
+	if(GlobalVariables.timesPlanted != 0):
+		GlobalVariables.timesPlanted -= 1
 
 
 func _on_Area2D11_body_exited(body):
