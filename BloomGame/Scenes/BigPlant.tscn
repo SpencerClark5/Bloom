@@ -82,8 +82,8 @@ tracks/0/keys = {
 script = ExtResource( 35 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 113, -696 )
-scale = Vector2( 6, 7.25 )
+position = Vector2( 92, -241 )
+scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
 animation = "Growing"
 
@@ -102,26 +102,8 @@ scale = Vector2( 0.75, 1 )
 shape = SubResource( 4 )
 one_way_collision = true
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 42.3077, -1428.12 )
-scale = Vector2( 0.75, 1 )
-shape = SubResource( 4 )
-one_way_collision = true
-
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 44.7115, -181.25 )
-scale = Vector2( 0.75, 1 )
-shape = SubResource( 4 )
-one_way_collision = true
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 42.7885, -1731.25 )
-scale = Vector2( 0.75, 1 )
-shape = SubResource( 4 )
-one_way_collision = true
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 46.1538, -1987.5 )
 scale = Vector2( 0.75, 1 )
 shape = SubResource( 4 )
 one_way_collision = true
@@ -140,24 +122,6 @@ one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 45.1923, -734.375 )
-scale = Vector2( 0.75, 1 )
-shape = SubResource( 4 )
-one_way_collision = true
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 42.7885, -2306.25 )
-scale = Vector2( 0.75, 1 )
-shape = SubResource( 4 )
-one_way_collision = true
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 42.3077, -2668.75 )
-scale = Vector2( 0.75, 1 )
-shape = SubResource( 4 )
-one_way_collision = true
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 46.6346, -2993.75 )
 scale = Vector2( 0.75, 1 )
 shape = SubResource( 4 )
 one_way_collision = true
