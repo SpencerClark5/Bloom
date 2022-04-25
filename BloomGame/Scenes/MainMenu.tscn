@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/MenuScript.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/SourceCodePro-Bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Art/Bloom_Thumbnail_Blurry.png" type="Texture" id=3]
+[ext_resource path="res://Art/Bloom_Start_Screen_-_New.png" type="Texture" id=3]
+[ext_resource path="res://Art/Level Art/bloom_bg_layer_4.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -16,9 +17,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BloomBgLayer4" type="Sprite" parent="."]
+position = Vector2( 481, 280 )
+scale = Vector2( 10.8333, 6.15708 )
+texture = ExtResource( 4 )
+
 [node name="BloomThumbnailBlurry" type="Sprite" parent="."]
-position = Vector2( 512, 299 )
-scale = Vector2( 3.39333, 1.98667 )
+position = Vector2( 555, 300 )
+scale = Vector2( 1.346, 0.998 )
 texture = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
