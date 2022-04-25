@@ -14,6 +14,7 @@ var chain_velocity := Vector2(0,0)
 var can_jump = false			# Whether the player used their air-jump
 var endOfIdle = false
 
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if(GlobalVariables.canGrapple):
@@ -156,10 +157,6 @@ func _physics_process(_delta: float) -> void:
 		_animated_sprite_Idle.frame = 0
 		time_elapsed = 0
 		
-		#okay so, this is to make sure the audio file is only playing once
-		if not (_walking_sound.is_playing()):
-			_walking_sound.play()
-		
 		
 		GlobalVariables.isClimbing = false
 		_animated_sprite_Wall_Climb.flip_h = false
@@ -185,10 +182,6 @@ func _physics_process(_delta: float) -> void:
 		_animated_sprite_Idle.stop()
 		_animated_sprite_Idle.frame = 0
 		time_elapsed = 0
-		
-		#okay so, this is to make sure the audio file is only playing once
-		if not (_walking_sound.is_playing()):
-			_walking_sound.play()
 		
 		GlobalVariables.isClimbing = false
 		_animated_sprite_Wall_Climb.flip_h = true
@@ -431,3 +424,8 @@ func _physics_process(_delta: float) -> void:
 			elif(GlobalVariables.fourthLimb == "Arm"):
 				#do stuff
 				print("arm")
+				
+				
+				
+
+	

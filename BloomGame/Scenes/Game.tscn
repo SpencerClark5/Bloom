@@ -316,7 +316,6 @@ scale = Vector2( 3.58462, 3.58462 )
 script = ExtResource( 18 )
 
 [node name="SeedCollider" type="CollisionShape2D" parent="SeedArea"]
-scale = Vector2( 1, 1 )
 shape = SubResource( 5 )
 
 [node name="Seedling" type="Sprite" parent="SeedArea"]

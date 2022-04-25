@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Art/Level Art/Large Plant Anim/12.png" type="Texture" id=1]
 [ext_resource path="res://Art/Level Art/Large Plant Anim/10.png" type="Texture" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://Art/Level Art/Large Plant Anim/01.png" type="Texture" id=33]
 [ext_resource path="res://Art/Level Art/Large Plant Anim/02.png" type="Texture" id=34]
 [ext_resource path="res://Scripts/bigplant.gd" type="Script" id=35]
+[ext_resource path="res://Music/Large_Plant_Growth.wav" type="AudioStream" id=36]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -172,3 +173,8 @@ position = Vector2( 44.2308, -934.375 )
 scale = Vector2( 0.75, 1 )
 shape = SubResource( 4 )
 one_way_collision = true
+
+[node name="BigPlantGrowth" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 36 )
+volume_db = -6.0
+autoplay = true
