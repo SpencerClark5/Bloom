@@ -213,7 +213,7 @@ script = ExtResource( 6 )
 shape = SubResource( 2 )
 
 [node name="StalactiteBody" type="StaticBody2D" parent="."]
-position = Vector2( 1960, -169 )
+position = Vector2( 2017, -333 )
 scale = Vector2( 1.628, 1.675 )
 collision_layer = 2
 collision_mask = 2
@@ -222,7 +222,6 @@ collision_mask = 2
 texture = ExtResource( 12 )
 
 [node name="Stalactite" type="CollisionPolygon2D" parent="StalactiteBody"]
-position = Vector2( 38.0835, -93.1344 )
 polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
 
 [node name="StalactiteBody2" type="StaticBody2D" parent="."]
