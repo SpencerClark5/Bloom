@@ -81,7 +81,7 @@ func _process(_delta):
 				#toggle the visibility of the left arm
 				GlobalVariables.LeftArmOn = false;
 				#disable wall climb
-				GlobalVariables.canClimb = false
+				GlobalVariables.canGrapple = false
 				canClimb = false
 				
 				if(GlobalVariables.firstLimb == "null"):
@@ -99,7 +99,7 @@ func _process(_delta):
 				#disable right arm
 				GlobalVariables.RightArmOn = false;
 				#disable the grapple
-				GlobalVariables.canGrapple = false
+				GlobalVariables.canClimb = false
 				canGrapple = false
 				
 				if(GlobalVariables.firstLimb != "null" && GlobalVariables.secondLimb == "null"):
@@ -166,7 +166,7 @@ func _process(_delta):
 				#toggle the visibility of the left arm
 				GlobalVariables.LeftArmOn = false;
 				#disable wall climb
-				GlobalVariables.canClimb = false
+				GlobalVariables.canGrapple = false
 				canClimb = false
 				
 				if(GlobalVariables.firstLimb == "null"):
@@ -184,7 +184,7 @@ func _process(_delta):
 				#disable right arm
 				GlobalVariables.RightArmOn = false;
 				#disable the grapple
-				GlobalVariables.canGrapple = false
+				GlobalVariables.canClimb = false
 				canGrapple = false
 				
 				if(GlobalVariables.firstLimb != "null" && GlobalVariables.secondLimb == "null"):

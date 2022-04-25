@@ -18,7 +18,7 @@ func _on_Area2D11_body_entered(body):
 		GlobalVariables.fourthLimb = "null"
 	elif(GlobalVariables.fourthLimb == "Arm"):
 		GlobalVariables.RightArmOn = true
-		GlobalVariables.canGrapple = true
+		GlobalVariables.canClimb = true
 		GlobalVariables.fourthLimb = "null"
 		
 	elif(GlobalVariables.thirdLimb == "Leg"):
@@ -27,7 +27,7 @@ func _on_Area2D11_body_entered(body):
 		GlobalVariables.thirdLimb = "null"
 	elif(GlobalVariables.thirdLimb == "Arm"):
 		GlobalVariables.RightArmOn = true
-		GlobalVariables.canGrapple = true
+		GlobalVariables.canClimb = true
 		GlobalVariables.thirdLimb = "null"
 		
 	elif(GlobalVariables.secondLimb == "Leg"):
@@ -41,10 +41,10 @@ func _on_Area2D11_body_entered(body):
 	elif(GlobalVariables.secondLimb == "Arm"):
 		if(GlobalVariables.RightArmOn):
 			GlobalVariables.LeftArmOn = true
-			GlobalVariables.canClimb = true
+			GlobalVariables.canGrapple = true
 		else:
 			GlobalVariables.RightArmOn = true
-			GlobalVariables.canGrapple = true
+			GlobalVariables.canClimb = true
 		GlobalVariables.secondLimb = "null"
 		
 	elif(GlobalVariables.firstLimb == "Leg"):
@@ -53,7 +53,7 @@ func _on_Area2D11_body_entered(body):
 		GlobalVariables.firstLimb = "null"
 	elif(GlobalVariables.firstLimb == "Arm"):
 		GlobalVariables.LeftArmOn = true
-		GlobalVariables.canClimb = true
+		GlobalVariables.canGrapple = true
 		GlobalVariables.secondLimb = "null"
 	queue_free()
 	if(GlobalVariables.timesPlanted != 0):
