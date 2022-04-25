@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bloom_Thumbnail_Blurry.png-68868057207862b0ebe12b6d8a0d377d.stex"
+path="res://.import/Bloom_Start_Screen_-_New.png-4f337849501281d4dc8248945bcd430d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Bloom_Thumbnail_Blurry.png"
-dest_files=[ "res://.import/Bloom_Thumbnail_Blurry.png-68868057207862b0ebe12b6d8a0d377d.stex" ]
+source_file="res://Art/Bloom_Start_Screen_-_New.png"
+dest_files=[ "res://.import/Bloom_Start_Screen_-_New.png-4f337849501281d4dc8248945bcd430d.stex" ]
 
 [params]
 
