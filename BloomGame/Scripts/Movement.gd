@@ -38,23 +38,26 @@ onready var _walking_sound = $Camera2D/WalkingSound
 onready var _landing_sound = $Body/LandingSound
 onready var _wall_sounds = $Body/WallSounds
 onready var only_once = false
-var sounds_array = ["res://Music/Wall Movement/Wall Movement 1_1.wav", "res://Music/Wall Movement/Wall Movement 2_1.wav", "res://Music/Wall Movement/Wall Movement 3_1.wav"]
+
+onready var wall_sound1 = load("res://Music/Wall Movement/Wall Movement 1_1.wav")
+onready var wall_sound2 = load("res://Music/Wall Movement/Wall Movement 2_1.wav")
+onready var wall_sound3 = load("res://Music/Wall Movement/Wall Movement 3_1.wav")
 
 var time_elapsed = 0.0
 
 
 #this should work for having the randomish sounds that Aiden talked about
-func _choosing_wall_sounds(var path)->void:
-	var file = File.new()
-	if (file.file_exists(path)):
-		file.open(path,file.READ)
-		var buffer = file.get_buffer(file.get_len())
-		var stream = AudioStreamSample.new()
-		stream.data = buffer
-		_wall_sounds.stream = stream
-		if not (_wall_sounds.is_playing()):
-			_wall_sounds.play()
-			only_once = true
+#func _choosing_wall_sounds(var path)->void:
+#	var file = File.new()
+#	if (file.file_exists(path)):
+#		file.open(path,file.READ)
+#		var buffer = file.get_buffer(file.get_len())
+#		var stream = AudioStreamSample.new()
+#		stream.data = buffer
+#		_wall_sounds.stream = stream
+#		if not (_wall_sounds.is_playing()):
+#			_wall_sounds.play()
+#			only_once = true
 
 
 
@@ -199,13 +202,10 @@ func _physics_process(_delta: float) -> void:
 	elif Input.is_action_pressed("Climb"):
 		
 #		#creates a random number
-#		var rng = RandomNumberGenerator.new()
-#		rng.randomize()
-#		var _sound_to_play = rng.randi_range(1,4)
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		var _sound_to_play = rng.randi_range(1,4)
 #
-#		for i in range(sounds_array.size()):
-#			if (_sound_to_play == i and !only_once):
-#					_choosing_wall_sounds(sounds_array[i])
 				
 
 

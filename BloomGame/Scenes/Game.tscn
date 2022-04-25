@@ -21,7 +21,7 @@
 [ext_resource path="res://Art/Level Art/Seedling.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 63.4961, 252.25 )
+extents = Vector2( 64.5, 252.25 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 244.5, 55 )
