@@ -14,7 +14,7 @@ func _on_Area2D11_body_entered(body):
 	
 	if(GlobalVariables.fourthLimb == "Leg"):
 		GlobalVariables.RightLegOn = true
-		GlobalVariables.canDoubleJump = true
+		GlobalVariables.canSingleJump = true
 		GlobalVariables.fourthLimb = "null"
 	elif(GlobalVariables.fourthLimb == "Arm"):
 		GlobalVariables.RightArmOn = true
@@ -23,7 +23,7 @@ func _on_Area2D11_body_entered(body):
 		
 	elif(GlobalVariables.thirdLimb == "Leg"):
 		GlobalVariables.RightLegOn = true
-		GlobalVariables.canDoubleJump = true
+		GlobalVariables.canSingleJump = true
 		GlobalVariables.thirdLimb = "null"
 	elif(GlobalVariables.thirdLimb == "Arm"):
 		GlobalVariables.RightArmOn = true
@@ -33,10 +33,10 @@ func _on_Area2D11_body_entered(body):
 	elif(GlobalVariables.secondLimb == "Leg"):
 		if(GlobalVariables.RightLegOn):
 			GlobalVariables.LeftLegOn = true
-			GlobalVariables.canSingleJump = true
+			GlobalVariables.canDoubleJump = true
 		else:
 			GlobalVariables.RightLegOn = true
-			GlobalVariables.canDoubleJump = true
+			GlobalVariables.canSingleJump = true
 		GlobalVariables.secondLimb = "null"
 	elif(GlobalVariables.secondLimb == "Arm"):
 		if(GlobalVariables.RightArmOn):
@@ -49,7 +49,7 @@ func _on_Area2D11_body_entered(body):
 		
 	elif(GlobalVariables.firstLimb == "Leg"):
 		GlobalVariables.LeftLegOn = true
-		GlobalVariables.canSingleJump = true
+		GlobalVariables.canDoubleJump = true
 		GlobalVariables.firstLimb = "null"
 	elif(GlobalVariables.firstLimb == "Arm"):
 		GlobalVariables.LeftArmOn = true
