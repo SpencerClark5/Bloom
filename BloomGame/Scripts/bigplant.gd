@@ -13,7 +13,9 @@ onready var _music_player = $AudioStreamPlayer2D
 func _ready():
 	#_animated_sprite.play("PlantAnim")
 	_animation_player.play("Growing")
-	#_plant.disabled = true
+#	_plant.disabled = true
 	#_music_player.play()
-	#$StaticBody2D/Plant.disabled = true
-	##after the animation (yeild) turn on the collider
+func _endPlant():
+	print("Called endplant!")
+#	_plant.disabled = false
+	GlobalVariables.isPlanting = false

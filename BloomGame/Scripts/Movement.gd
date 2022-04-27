@@ -363,7 +363,7 @@ func _physics_process(_delta: float) -> void:
 			_animated_sprite_RightLeg.play("RightLegJumpAnim")
 			
 			
-		elif(GlobalVariables.inPlantArea && GlobalVariables.isPlanting):
+		elif((GlobalVariables.inPlantArea && GlobalVariables.isPlanting) || (GlobalVariables.inBigPlantArea && GlobalVariables.isPlanting)):
 			_animated_sprite_Idle.visible = false
 			_animated_sprite_Wall_Climb.visible = false
 			_animated_sprite_Body.visible = true
