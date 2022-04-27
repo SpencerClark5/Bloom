@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/SourceCodePro-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Controls.gd" type="Script" id=2]
+[ext_resource path="res://Art/Level Art/bloom_bg_layer_4.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -18,6 +19,11 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BloomBgLayer4" type="Sprite" parent="."]
+position = Vector2( 521.5, 297.5 )
+scale = Vector2( 4.372, 3.34225 )
+texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 margin_right = 504.0
