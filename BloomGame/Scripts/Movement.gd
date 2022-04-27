@@ -174,6 +174,7 @@ func _physics_process(_delta: float) -> void:
 		_animated_sprite_Idle.flip_h = false
 		
 		endOfIdle = false
+		GlobalVariables.idleSwitch = true
 	
 	elif Input.is_action_pressed("Left"):
 	
@@ -199,6 +200,7 @@ func _physics_process(_delta: float) -> void:
 		_animated_sprite_Idle.flip_h = true
 		
 		endOfIdle = false
+		GlobalVariables.idleSwitch = false
 		
 		
 	elif Input.is_action_just_pressed("EnterClimb"):
@@ -227,13 +229,19 @@ func _physics_process(_delta: float) -> void:
 	else:
 		
 		if((velocity.y == 5 && grounded) && (GlobalVariables.isPlanting == false && GlobalVariables.isClimbing == false)):
-#			_animated_sprite_Idle.visible = true
-#			_animated_sprite_Wall_Climb.visible = false
-#			_animated_sprite_Body.visible = false
-#			_animated_sprite_LeftArm.visible = false
-#			_animated_sprite_LeftLeg.visible = false
-#			_animated_sprite_RightArm.visible = false
-#			_animated_sprite_RightLeg.visible = false
+			if(GlobalVariables.idleSwitch):
+				_animated_sprite_Body.flip_h = false
+				_animated_sprite_LeftArm.flip_h = false
+				_animated_sprite_LeftLeg.flip_h = false
+				_animated_sprite_RightArm.flip_h = false
+				_animated_sprite_RightLeg.flip_h = false
+			else:
+				_animated_sprite_Body.flip_h = true
+				_animated_sprite_LeftArm.flip_h = true
+				_animated_sprite_LeftLeg.flip_h = true
+				_animated_sprite_RightArm.flip_h = true
+				_animated_sprite_RightLeg.flip_h = true
+			
 			
 			_animated_sprite_Wall_Climb.visible = false
 			_animated_sprite_Body.visible = true
@@ -289,20 +297,16 @@ func _physics_process(_delta: float) -> void:
 					_animated_sprite_Body.animation = "IdleCont"
 					_animated_sprite_Body.play("IdleCont")
 			else:
+				
 				_animated_sprite_Body.animation = "TorsoIdleAnim"
-				_animated_sprite_Body.flip_h = false
 
 				_animated_sprite_RightArm.animation = "RightArmIdleAnim"
-				_animated_sprite_RightArm.flip_h = false
 
 				_animated_sprite_LeftArm.animation = "LeftArmIdleAnim"
-				_animated_sprite_LeftArm.flip_h = false
 
 				_animated_sprite_LeftLeg.animation = "LeftLegIdleAnim"
-				_animated_sprite_LeftLeg.flip_h = false
 
 				_animated_sprite_RightLeg.animation = "RightLegIdleAnim"
-				_animated_sprite_RightLeg.flip_h = false
 				
 				_animated_sprite_Body.frame = 0
 				_animated_sprite_Body.stop()

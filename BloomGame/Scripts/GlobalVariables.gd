@@ -37,3 +37,6 @@ var RightArmOn = true
 var LeftArmOn = true
 var RightLegOn = true
 var LeftLegOn = true
+
+#idle direction
+var idleSwitch = true
