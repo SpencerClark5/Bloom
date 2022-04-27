@@ -296,6 +296,17 @@ texture = ExtResource( 12 )
 [node name="Stalactite" type="CollisionPolygon2D" parent="StalactiteBody7"]
 polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
 
+[node name="StalactiteBody9" type="StaticBody2D" parent="."]
+position = Vector2( 6119, -4864 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="StalactiteBody9"]
+texture = ExtResource( 12 )
+
+[node name="Stalactite" type="CollisionPolygon2D" parent="StalactiteBody9"]
+polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
+
 [node name="StalactiteBody8" type="StaticBody2D" parent="."]
 position = Vector2( 4728, -7059 )
 scale = Vector2( 1.628, 1.675 )
@@ -451,6 +462,19 @@ position = Vector2( 0, -1.114 )
 shape = SubResource( 5 )
 
 [node name="Seedling" type="Sprite" parent="SeedArea10"]
+scale = Vector2( 0.256798, 0.276256 )
+texture = ExtResource( 19 )
+
+[node name="SeedArea11" type="Area2D" parent="."]
+position = Vector2( 5058, -4813 )
+scale = Vector2( 12.8495, 12.8495 )
+script = ExtResource( 18 )
+
+[node name="SeedCollider" type="CollisionShape2D" parent="SeedArea11"]
+position = Vector2( 0, -1.114 )
+shape = SubResource( 5 )
+
+[node name="Seedling" type="Sprite" parent="SeedArea11"]
 scale = Vector2( 0.256798, 0.276256 )
 texture = ExtResource( 19 )
 
@@ -728,6 +752,8 @@ shape = SubResource( 1 )
 [connection signal="body_exited" from="SeedArea9" to="SeedArea9" method="_on_Area2D11_body_exited"]
 [connection signal="body_entered" from="SeedArea10" to="SeedArea10" method="_on_Area2D11_body_entered"]
 [connection signal="body_exited" from="SeedArea10" to="SeedArea10" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="SeedArea11" to="SeedArea11" method="_on_Area2D11_body_entered"]
+[connection signal="body_exited" from="SeedArea11" to="SeedArea11" method="_on_Area2D11_body_exited"]
 [connection signal="body_entered" from="SeedArea8" to="SeedArea8" method="_on_Area2D11_body_entered"]
 [connection signal="body_exited" from="SeedArea8" to="SeedArea8" method="_on_Area2D11_body_exited"]
 [connection signal="body_entered" from="SeedArea" to="SeedArea" method="_on_Area2D11_body_entered"]
