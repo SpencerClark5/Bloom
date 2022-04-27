@@ -23,5 +23,5 @@ func _on_Controls_pressed():
 	get_tree().change_scene("res://Scenes/Controls.tscn")
 
 
-func _on_Quit_pressed():
-	get_tree().quit()
+func _on_Credits_pressed():
+	get_tree().change_scene("res://Scenes/Credits.tscn")

@@ -39,9 +39,14 @@ onready var _landing_sound = $Body/LandingSound
 onready var _wall_sounds = $Body/WallSounds
 onready var only_once = false
 
-onready var wall_sound1 = load("res://Music/Wall Movement/Wall Movement 1_1.wav")
-onready var wall_sound2 = load("res://Music/Wall Movement/Wall Movement 2_1.wav")
-onready var wall_sound3 = load("res://Music/Wall Movement/Wall Movement 3_1.wav")
+#onready var wall_sound1 = load("res://Music/Wall Movement/Wall Movement 1_1.wav")
+#onready var wall_sound2 = load("res://Music/Wall Movement/Wall Movement 2_1.wav")
+#onready var wall_sound3 = load("res://Music/Wall Movement/Wall Movement 3_1.wav")
+
+onready var sounds_array = [load("res://Music/Wall Movement/Wall Movement 1_1.wav"), load("res://Music/Wall Movement/Wall Movement 2_1.wav"), load("res://Music/Wall Movement/Wall Movement 3_1.wav")]
+
+
+
 
 var time_elapsed = 0.0
 
@@ -204,7 +209,12 @@ func _physics_process(_delta: float) -> void:
 #		#creates a random number
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
-		var _sound_to_play = rng.randi_range(1,4)
+		var _sound_to_play = rng.randi_range(0,2)
+		var index = _sound_to_play
+		if (index == _sound_to_play):
+			_wall_sounds.stream = sounds_array[index]
+			if not (_wall_sounds.is_playing()):
+				_wall_sounds.play()
 #
 				
 
@@ -245,6 +255,7 @@ func _physics_process(_delta: float) -> void:
 				_animated_sprite_RightLeg.visible = false
 			
 			_animated_sprite_Wall_Climb.stop()
+			_wall_sounds.stop()
 			_animated_sprite_Wall_Climb.frame = 0
 			
 			_walking_sound.stop()

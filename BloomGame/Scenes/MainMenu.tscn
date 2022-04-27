@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/MenuScript.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/SourceCodePro-Bold.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,13 @@
 [sub_resource type="DynamicFont" id=1]
 size = 45
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Scripts/SourceCodePro-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 45
+font_data = SubResource( 2 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -53,13 +60,13 @@ margin_bottom = 132.0
 custom_fonts/font = SubResource( 1 )
 text = "Controls"
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Credits" type="Button" parent="VBoxContainer"]
 margin_top = 136.0
 margin_right = 228.0
 margin_bottom = 200.0
-custom_fonts/font = SubResource( 1 )
-text = "Quit"
+custom_fonts/font = SubResource( 3 )
+text = "Credits"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Controls" to="." method="_on_Controls_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
