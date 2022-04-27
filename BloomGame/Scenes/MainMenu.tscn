@@ -30,8 +30,7 @@ scale = Vector2( 10.8333, 6.15708 )
 texture = ExtResource( 4 )
 
 [node name="BloomThumbnailBlurry" type="Sprite" parent="."]
-position = Vector2( 555, 300 )
-scale = Vector2( 1.346, 0.998 )
+position = Vector2( 595, 304 )
 texture = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
