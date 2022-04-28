@@ -180,6 +180,102 @@ script = ExtResource( 6 )
 [node name="PlantArea" type="CollisionShape2D" parent="Area2D35"]
 shape = SubResource( 2 )
 
+[node name="Area2D47" type="Area2D" parent="."]
+position = Vector2( -284, -6806 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D47"]
+shape = SubResource( 2 )
+
+[node name="Area2D48" type="Area2D" parent="."]
+position = Vector2( 165, -7133 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D48"]
+shape = SubResource( 2 )
+
+[node name="Area2D49" type="Area2D" parent="."]
+position = Vector2( -410, -7448 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D49"]
+shape = SubResource( 2 )
+
+[node name="Area2D50" type="Area2D" parent="."]
+position = Vector2( 1061, -8215 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D50"]
+shape = SubResource( 2 )
+
+[node name="Area2D51" type="Area2D" parent="."]
+position = Vector2( -96, -9563 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D51"]
+shape = SubResource( 2 )
+
+[node name="Area2D52" type="Area2D" parent="."]
+position = Vector2( 1384, -9557 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D52"]
+shape = SubResource( 2 )
+
+[node name="Area2D53" type="Area2D" parent="."]
+position = Vector2( 746, -10519 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D53"]
+shape = SubResource( 2 )
+
+[node name="Area2D54" type="Area2D" parent="."]
+position = Vector2( 3488, -11161 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D54"]
+shape = SubResource( 2 )
+
+[node name="Area2D55" type="Area2D" parent="."]
+position = Vector2( 3521, -8920 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D55"]
+shape = SubResource( 2 )
+
+[node name="Area2D56" type="Area2D" parent="."]
+position = Vector2( 4261, -8536 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D56"]
+shape = SubResource( 2 )
+
+[node name="Area2D57" type="Area2D" parent="."]
+position = Vector2( 9631, -7897 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D57"]
+shape = SubResource( 2 )
+
+[node name="Area2D58" type="Area2D" parent="."]
+position = Vector2( 9547, -9045 )
+scale = Vector2( 0.355, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D58"]
+shape = SubResource( 2 )
+
 [node name="Area2D12" type="Area2D" parent="."]
 position = Vector2( 2381, -2093 )
 scale = Vector2( 0.268, 0.668 )
@@ -319,12 +415,57 @@ texture = ExtResource( 12 )
 [node name="Stalactite" type="CollisionPolygon2D" parent="StalactiteBody8"]
 polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
 
+[node name="StalactiteBody10" type="StaticBody2D" parent="."]
+position = Vector2( 7840, -11031 )
+scale = Vector2( 1.628, 1.675 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="StalactiteBody10"]
+texture = ExtResource( 12 )
+
+[node name="Stalactite" type="CollisionPolygon2D" parent="StalactiteBody10"]
+polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
+
+[node name="StalactiteBody11" type="StaticBody2D" parent="."]
+position = Vector2( 3659, -10005 )
+scale = Vector2( 1.628, 1.675 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="StalactiteBody11"]
+texture = ExtResource( 12 )
+
+[node name="Stalactite" type="CollisionPolygon2D" parent="StalactiteBody11"]
+polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
+
+[node name="StalactiteBody12" type="StaticBody2D" parent="."]
+position = Vector2( 1214, -10834 )
+scale = Vector2( 1.628, 1.675 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="StalactiteBody12"]
+texture = ExtResource( 12 )
+
+[node name="Stalactite" type="CollisionPolygon2D" parent="StalactiteBody12"]
+polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
+
 [node name="big plant area2" type="Area2D" parent="."]
 position = Vector2( 461, -4042 )
 scale = Vector2( 1.045, 0.168 )
 script = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="big plant area2"]
+scale = Vector2( 5, 5 )
+shape = SubResource( 3 )
+
+[node name="big plant area8" type="Area2D" parent="."]
+position = Vector2( 620, -11581 )
+scale = Vector2( 1.045, 0.168 )
+script = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="big plant area8"]
 scale = Vector2( 5, 5 )
 shape = SubResource( 3 )
 
@@ -466,7 +607,7 @@ scale = Vector2( 0.256798, 0.276256 )
 texture = ExtResource( 19 )
 
 [node name="SeedArea11" type="Area2D" parent="."]
-position = Vector2( 5084, -4753 )
+position = Vector2( 5090, -4814 )
 scale = Vector2( 12.8495, 12.8495 )
 script = ExtResource( 18 )
 
@@ -500,6 +641,106 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="Seedling" type="Sprite" parent="SeedArea"]
+texture = ExtResource( 19 )
+
+[node name="SeedArea12" type="Area2D" parent="."]
+position = Vector2( 4162, -9294 )
+scale = Vector2( 3.58462, 3.58462 )
+script = ExtResource( 18 )
+
+[node name="SeedCollider" type="CollisionShape2D" parent="SeedArea12"]
+shape = SubResource( 5 )
+
+[node name="Seedling" type="Sprite" parent="SeedArea12"]
+texture = ExtResource( 19 )
+
+[node name="SeedArea13" type="Area2D" parent="."]
+position = Vector2( 3073, -9550 )
+scale = Vector2( 3.58462, 3.58462 )
+script = ExtResource( 18 )
+
+[node name="SeedCollider" type="CollisionShape2D" parent="SeedArea13"]
+shape = SubResource( 5 )
+
+[node name="Seedling" type="Sprite" parent="SeedArea13"]
+texture = ExtResource( 19 )
+
+[node name="SeedArea14" type="Area2D" parent="."]
+position = Vector2( 6208, -10574 )
+scale = Vector2( 3.58462, 3.58462 )
+script = ExtResource( 18 )
+
+[node name="SeedCollider" type="CollisionShape2D" parent="SeedArea14"]
+shape = SubResource( 5 )
+
+[node name="Seedling" type="Sprite" parent="SeedArea14"]
+texture = ExtResource( 19 )
+
+[node name="SeedArea15" type="Area2D" parent="."]
+position = Vector2( 8601, -8269 )
+scale = Vector2( 3.58462, 3.58462 )
+script = ExtResource( 18 )
+
+[node name="SeedCollider" type="CollisionShape2D" parent="SeedArea15"]
+shape = SubResource( 5 )
+
+[node name="Seedling" type="Sprite" parent="SeedArea15"]
+texture = ExtResource( 19 )
+
+[node name="SeedArea16" type="Area2D" parent="."]
+position = Vector2( 1251, -7694 )
+scale = Vector2( 3.58462, 3.58462 )
+script = ExtResource( 18 )
+
+[node name="SeedCollider" type="CollisionShape2D" parent="SeedArea16"]
+shape = SubResource( 5 )
+
+[node name="Seedling" type="Sprite" parent="SeedArea16"]
+texture = ExtResource( 19 )
+
+[node name="SeedArea17" type="Area2D" parent="."]
+position = Vector2( 1380, -7694 )
+scale = Vector2( 3.58462, 3.58462 )
+script = ExtResource( 18 )
+
+[node name="SeedCollider" type="CollisionShape2D" parent="SeedArea17"]
+shape = SubResource( 5 )
+
+[node name="Seedling" type="Sprite" parent="SeedArea17"]
+texture = ExtResource( 19 )
+
+[node name="SeedArea18" type="Area2D" parent="."]
+position = Vector2( 1482, -6801 )
+scale = Vector2( 3.58462, 3.58462 )
+script = ExtResource( 18 )
+
+[node name="SeedCollider" type="CollisionShape2D" parent="SeedArea18"]
+shape = SubResource( 5 )
+
+[node name="Seedling" type="Sprite" parent="SeedArea18"]
+position = Vector2( 0, 0.836914 )
+texture = ExtResource( 19 )
+
+[node name="SeedArea19" type="Area2D" parent="."]
+position = Vector2( 1426, -6797 )
+scale = Vector2( 3.58462, 3.58462 )
+script = ExtResource( 18 )
+
+[node name="SeedCollider" type="CollisionShape2D" parent="SeedArea19"]
+shape = SubResource( 5 )
+
+[node name="Seedling" type="Sprite" parent="SeedArea19"]
+texture = ExtResource( 19 )
+
+[node name="SeedArea20" type="Area2D" parent="."]
+position = Vector2( 1368, -6797 )
+scale = Vector2( 3.58462, 3.58462 )
+script = ExtResource( 18 )
+
+[node name="SeedCollider" type="CollisionShape2D" parent="SeedArea20"]
+shape = SubResource( 5 )
+
+[node name="Seedling" type="Sprite" parent="SeedArea20"]
 texture = ExtResource( 19 )
 
 [node name="SeedArea4" type="Area2D" parent="."]
@@ -667,6 +908,106 @@ pause_mode = 1
 scale = Vector2( 10, 1.75 )
 shape = SubResource( 1 )
 
+[node name="Area2D36" type="Area2D" parent="."]
+position = Vector2( 9236, -8799 )
+scale = Vector2( -0.008, 0.907 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D36"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
+[node name="Area2D38" type="Area2D" parent="."]
+position = Vector2( 9648, -9877 )
+scale = Vector2( -0.008, 1.23 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D38"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
+[node name="Area2D39" type="Area2D" parent="."]
+position = Vector2( 8177, -10467 )
+scale = Vector2( -0.008, 0.776 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D39"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
+[node name="Area2D40" type="Area2D" parent="."]
+position = Vector2( 6288, -9925 )
+scale = Vector2( -0.008, 1.44 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D40"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
+[node name="Area2D41" type="Area2D" parent="."]
+position = Vector2( 5037, -11254 )
+scale = Vector2( -0.008, 0.675 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D41"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
+[node name="Area2D42" type="Area2D" parent="."]
+position = Vector2( 2578, -10178 )
+scale = Vector2( -0.008, 0.698 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D42"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
+[node name="Area2D43" type="Area2D" parent="."]
+position = Vector2( 2068, -8507 )
+scale = Vector2( -0.008, 0.526 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D43"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
+[node name="Area2D44" type="Area2D" parent="."]
+position = Vector2( 1452, -10201 )
+scale = Vector2( -0.008, 0.904 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D44"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
+[node name="Area2D45" type="Area2D" parent="."]
+position = Vector2( -23, -9876 )
+scale = Vector2( -0.008, 0.37 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D45"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
+[node name="Area2D46" type="Area2D" parent="."]
+position = Vector2( -557, -9321 )
+scale = Vector2( -0.008, 1.622 )
+script = ExtResource( 9 )
+
+[node name="WallClimbArea" type="CollisionShape2D" parent="Area2D46"]
+pause_mode = 1
+scale = Vector2( 10, 1.75 )
+shape = SubResource( 1 )
+
 [node name="Area2D20" type="Area2D" parent="."]
 position = Vector2( 2072, -2713 )
 scale = Vector2( 0.012, 0.763 )
@@ -724,6 +1065,30 @@ shape = SubResource( 1 )
 [connection signal="body_exited" from="Area2D34" to="Area2D34" method="_on_Area2D2_body_exited"]
 [connection signal="body_entered" from="Area2D35" to="Area2D35" method="_on_Area2D2_body_entered"]
 [connection signal="body_exited" from="Area2D35" to="Area2D35" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D47" to="Area2D47" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D47" to="Area2D47" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D48" to="Area2D48" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D48" to="Area2D48" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D49" to="Area2D49" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D49" to="Area2D49" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D50" to="Area2D50" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D50" to="Area2D50" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D51" to="Area2D51" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D51" to="Area2D51" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D52" to="Area2D52" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D52" to="Area2D52" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D53" to="Area2D53" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D53" to="Area2D53" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D54" to="Area2D54" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D54" to="Area2D54" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D55" to="Area2D55" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D55" to="Area2D55" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D56" to="Area2D56" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D56" to="Area2D56" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D57" to="Area2D57" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D57" to="Area2D57" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D58" to="Area2D58" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D58" to="Area2D58" method="_on_Area2D2_body_exited"]
 [connection signal="body_entered" from="Area2D12" to="Area2D12" method="_on_Area2D2_body_entered"]
 [connection signal="body_exited" from="Area2D12" to="Area2D12" method="_on_Area2D2_body_exited"]
 [connection signal="body_entered" from="Area2D37" to="Area2D37" method="_on_Area2D2_body_entered"]
@@ -734,6 +1099,8 @@ shape = SubResource( 1 )
 [connection signal="body_exited" from="Area2D14" to="Area2D14" method="_on_Area2D2_body_exited"]
 [connection signal="body_entered" from="big plant area2" to="big plant area2" method="_on_big_plant_area_body_entered"]
 [connection signal="body_exited" from="big plant area2" to="big plant area2" method="_on_big_plant_area_body_exited"]
+[connection signal="body_entered" from="big plant area8" to="big plant area8" method="_on_big_plant_area_body_entered"]
+[connection signal="body_exited" from="big plant area8" to="big plant area8" method="_on_big_plant_area_body_exited"]
 [connection signal="body_entered" from="big plant area7" to="big plant area7" method="_on_big_plant_area_body_entered"]
 [connection signal="body_exited" from="big plant area7" to="big plant area7" method="_on_big_plant_area_body_exited"]
 [connection signal="body_entered" from="big plant area3" to="big plant area3" method="_on_big_plant_area_body_entered"]
@@ -758,6 +1125,24 @@ shape = SubResource( 1 )
 [connection signal="body_exited" from="SeedArea8" to="SeedArea8" method="_on_Area2D11_body_exited"]
 [connection signal="body_entered" from="SeedArea" to="SeedArea" method="_on_Area2D11_body_entered"]
 [connection signal="body_exited" from="SeedArea" to="SeedArea" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="SeedArea12" to="SeedArea12" method="_on_Area2D11_body_entered"]
+[connection signal="body_exited" from="SeedArea12" to="SeedArea12" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="SeedArea13" to="SeedArea13" method="_on_Area2D11_body_entered"]
+[connection signal="body_exited" from="SeedArea13" to="SeedArea13" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="SeedArea14" to="SeedArea14" method="_on_Area2D11_body_entered"]
+[connection signal="body_exited" from="SeedArea14" to="SeedArea14" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="SeedArea15" to="SeedArea15" method="_on_Area2D11_body_entered"]
+[connection signal="body_exited" from="SeedArea15" to="SeedArea15" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="SeedArea16" to="SeedArea16" method="_on_Area2D11_body_entered"]
+[connection signal="body_exited" from="SeedArea16" to="SeedArea16" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="SeedArea17" to="SeedArea17" method="_on_Area2D11_body_entered"]
+[connection signal="body_exited" from="SeedArea17" to="SeedArea17" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="SeedArea18" to="SeedArea18" method="_on_Area2D11_body_entered"]
+[connection signal="body_exited" from="SeedArea18" to="SeedArea18" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="SeedArea19" to="SeedArea19" method="_on_Area2D11_body_entered"]
+[connection signal="body_exited" from="SeedArea19" to="SeedArea19" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="SeedArea20" to="SeedArea20" method="_on_Area2D11_body_entered"]
+[connection signal="body_exited" from="SeedArea20" to="SeedArea20" method="_on_Area2D11_body_exited"]
 [connection signal="body_entered" from="SeedArea4" to="SeedArea4" method="_on_Area2D11_body_entered"]
 [connection signal="body_exited" from="SeedArea4" to="SeedArea4" method="_on_Area2D11_body_exited"]
 [connection signal="body_entered" from="SeedArea5" to="SeedArea5" method="_on_Area2D11_body_entered"]
@@ -790,6 +1175,26 @@ shape = SubResource( 1 )
 [connection signal="body_exited" from="Area2D29" to="Area2D29" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D30" to="Area2D30" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D30" to="Area2D30" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D36" to="Area2D36" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D36" to="Area2D36" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D38" to="Area2D38" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D38" to="Area2D38" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D39" to="Area2D39" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D39" to="Area2D39" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D40" to="Area2D40" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D40" to="Area2D40" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D41" to="Area2D41" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D41" to="Area2D41" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D42" to="Area2D42" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D42" to="Area2D42" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D43" to="Area2D43" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D43" to="Area2D43" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D44" to="Area2D44" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D44" to="Area2D44" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D45" to="Area2D45" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D45" to="Area2D45" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D46" to="Area2D46" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D46" to="Area2D46" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D20" to="Area2D20" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D20" to="Area2D20" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D21" to="Area2D21" method="_on_Area2D_body_entered"]
