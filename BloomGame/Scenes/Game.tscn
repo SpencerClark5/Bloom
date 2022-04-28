@@ -698,6 +698,18 @@ shape = SubResource( 5 )
 [node name="Seedling" type="Sprite" parent="SeedArea16"]
 texture = ExtResource( 19 )
 
+[node name="SeedArea21" type="Area2D" parent="."]
+position = Vector2( -515, -10037 )
+rotation = 3.14179
+scale = Vector2( 3.58462, 3.58462 )
+script = ExtResource( 18 )
+
+[node name="SeedCollider" type="CollisionShape2D" parent="SeedArea21"]
+shape = SubResource( 5 )
+
+[node name="Seedling" type="Sprite" parent="SeedArea21"]
+texture = ExtResource( 19 )
+
 [node name="SeedArea17" type="Area2D" parent="."]
 position = Vector2( 1380, -7694 )
 scale = Vector2( 3.58462, 3.58462 )
@@ -1135,6 +1147,8 @@ shape = SubResource( 1 )
 [connection signal="body_exited" from="SeedArea15" to="SeedArea15" method="_on_Area2D11_body_exited"]
 [connection signal="body_entered" from="SeedArea16" to="SeedArea16" method="_on_Area2D11_body_entered"]
 [connection signal="body_exited" from="SeedArea16" to="SeedArea16" method="_on_Area2D11_body_exited"]
+[connection signal="body_entered" from="SeedArea21" to="SeedArea21" method="_on_Area2D11_body_entered"]
+[connection signal="body_exited" from="SeedArea21" to="SeedArea21" method="_on_Area2D11_body_exited"]
 [connection signal="body_entered" from="SeedArea17" to="SeedArea17" method="_on_Area2D11_body_entered"]
 [connection signal="body_exited" from="SeedArea17" to="SeedArea17" method="_on_Area2D11_body_exited"]
 [connection signal="body_entered" from="SeedArea18" to="SeedArea18" method="_on_Area2D11_body_entered"]
