@@ -19,13 +19,17 @@ font_data = SubResource( 2 )
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -4.0
+margin_right = -32.0
+margin_bottom = -4.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BloomBgLayer4" type="Sprite" parent="."]
-position = Vector2( 481, 280 )
+position = Vector2( 445, 280 )
 scale = Vector2( 10.8333, 6.15708 )
 texture = ExtResource( 4 )
 
