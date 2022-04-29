@@ -40,3 +40,6 @@ var LeftLegOn = true
 
 #idle direction
 var idleSwitch = true
+
+#music controller
+var canPlay = true
