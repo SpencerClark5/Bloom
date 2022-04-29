@@ -559,12 +559,29 @@ z_index = 2
 texture = ExtResource( 15 )
 
 [node name="MusicSwitch1" type="Area2D" parent="."]
-position = Vector2( 2459, -1319 )
+position = Vector2( 701, -4434 )
 scale = Vector2( 4, 4 )
 script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MusicSwitch1"]
-position = Vector2( -437, -778.25 )
+scale = Vector2( 2.86774, 0.03488 )
+shape = SubResource( 6 )
+
+[node name="MusicSwitch2" type="Area2D" parent="."]
+position = Vector2( 3648, -4430 )
+scale = Vector2( 4, 4 )
+script = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicSwitch2"]
+scale = Vector2( 5.59774, 0.03488 )
+shape = SubResource( 6 )
+
+[node name="MusicSwitch3" type="Area2D" parent="."]
+position = Vector2( 6075, -4433 )
+scale = Vector2( 4, 4 )
+script = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicSwitch3"]
 scale = Vector2( 2.86774, 0.03488 )
 shape = SubResource( 6 )
 
@@ -1138,6 +1155,8 @@ shape = SubResource( 1 )
 [connection signal="body_entered" from="big plant area4" to="big plant area4" method="_on_big_plant_area_body_entered"]
 [connection signal="body_exited" from="big plant area4" to="big plant area4" method="_on_big_plant_area_body_exited"]
 [connection signal="body_shape_entered" from="MusicSwitch1" to="MusicSwitch1" method="_on_MusicSwitch1_body_shape_entered"]
+[connection signal="body_shape_entered" from="MusicSwitch2" to="MusicSwitch2" method="_on_MusicSwitch1_body_shape_entered"]
+[connection signal="body_shape_entered" from="MusicSwitch3" to="MusicSwitch3" method="_on_MusicSwitch1_body_shape_entered"]
 [connection signal="body_entered" from="SeedArea2" to="SeedArea2" method="_on_Area2D11_body_entered"]
 [connection signal="body_exited" from="SeedArea2" to="SeedArea2" method="_on_Area2D11_body_exited"]
 [connection signal="body_entered" from="SeedArea7" to="SeedArea7" method="_on_Area2D11_body_entered"]
