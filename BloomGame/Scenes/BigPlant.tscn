@@ -138,7 +138,7 @@ one_way_collision = true
 
 [node name="top collider" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 43.2692, -1037.5 )
-scale = Vector2( 200, 1 )
+scale = Vector2( 5, 1 )
 shape = SubResource( 4 )
 one_way_collision = true
 
