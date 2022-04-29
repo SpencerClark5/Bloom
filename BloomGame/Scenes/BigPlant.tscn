@@ -100,10 +100,11 @@ position = Vector2( 92, -241 )
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
 animation = "Growing"
-speed_scale = 2.5
+speed_scale = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite")
+playback_speed = 2.5
 anims/Growing = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 
