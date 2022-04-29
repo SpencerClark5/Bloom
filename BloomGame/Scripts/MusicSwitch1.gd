@@ -27,3 +27,7 @@ func _on_MusicSwitch1_body_shape_entered(body_rid, body, body_shape_index, local
 	if not (level_2_music.is_playing()):
 		level_2_music.volume_db = -24
 		level_2_music.play()
+
+
+func _on_MusicSwitch1_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+	self.queue_free()
