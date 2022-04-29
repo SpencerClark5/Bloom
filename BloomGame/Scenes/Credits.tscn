@@ -1,16 +1,26 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/SourceCodePro-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Credits.gd" type="Script" id=2]
 [ext_resource path="res://Art/Level Art/bloom_bg_layer_4.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Flora.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Art/Level Art/NewLargeDirtTileset.tres" type="TileSet" id=5]
+[ext_resource path="res://Art/Level Art/stalactite.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=2]
 size = 20
 font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 170.5, 31.5 )
 
 [node name="Credits" type="Control"]
 anchor_right = 1.0
@@ -28,19 +38,41 @@ texture = ExtResource( 3 )
 [node name="Button" type="Button" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -64.0
-margin_right = 336.0
+margin_left = 5.0
+margin_top = -90.0
+margin_right = 341.0
+margin_bottom = -26.0
 custom_fonts/font = SubResource( 1 )
 text = "Back to Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 238.0
-margin_top = 159.0
-margin_right = 754.0
-margin_bottom = 301.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 245.0
+margin_top = 173.0
+margin_right = 761.0
+margin_bottom = 350.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_right = 516.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 3 )
+text = "Thanks for playing!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 35.0
+margin_right = 516.0
+margin_bottom = 177.0
 custom_fonts/font = SubResource( 2 )
 text = "Lead Artist - Logan Webster
 Lead Programmer - Spencer Clark
@@ -52,5 +84,35 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+format = 1
+tile_data = PoolIntArray( -131061, 0, 0, -131060, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, 65535, 0, 0, 16, 0, 0, 131071, 0, 0, 65552, 0, 0, 196607, 0, 0, 131088, 0, 0, 262143, 0, 0, 196624, 0, 0, 327679, 0, 0, 262160, 0, 0, 393215, 0, 0, 327680, 42, 0, 327695, 40, 0, 327696, 0, 0, 458751, 0, 0, 393232, 0, 0, 524287, 0, 0, 458768, 0, 0, 589823, 0, 0, 524304, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0 )
+
+[node name="Flora" parent="." instance=ExtResource( 4 )]
+position = Vector2( 420, 571 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 511, 297 )
+current = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 172.5, 540 )
+shape = SubResource( 4 )
+
+[node name="StalactiteBody6" type="StaticBody2D" parent="."]
+position = Vector2( 503, 63 )
+scale = Vector2( 1.348, 0.885 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite" parent="StalactiteBody6"]
+texture = ExtResource( 6 )
+
+[node name="Stalactite" type="CollisionPolygon2D" parent="StalactiteBody6"]
+polygon = PoolVector2Array( -22, -12, -23.3416, -37.0149, -32.5553, -43.582, -35, -75, 28.2555, -75.8209, 11.0565, 13.1343, 7.37097, 25.6716, -7.98523, 62.0896, -20, 31 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
