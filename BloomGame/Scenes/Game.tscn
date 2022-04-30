@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/NewLargeDirtTileset.tres" type="TileSet" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Scripts/Grow.gd" type="Script" id=18]
 [ext_resource path="res://Art/Level Art/Seedling.png" type="Texture" id=19]
 [ext_resource path="res://Scripts/MusicSwitch1.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/MusicSwitch2.gd" type="Script" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64.5, 252.25 )
@@ -256,6 +257,14 @@ script = ExtResource( 6 )
 [node name="PlantArea" type="CollisionShape2D" parent="Area2D55"]
 shape = SubResource( 2 )
 
+[node name="Area2D59" type="Area2D" parent="."]
+position = Vector2( 3358, -8598 )
+scale = Vector2( 0.114995, 0.289 )
+script = ExtResource( 6 )
+
+[node name="PlantArea" type="CollisionShape2D" parent="Area2D59"]
+shape = SubResource( 2 )
+
 [node name="Area2D56" type="Area2D" parent="."]
 position = Vector2( 4261, -8536 )
 scale = Vector2( 0.355, 0.289 )
@@ -465,7 +474,7 @@ scale = Vector2( 5, 5 )
 shape = SubResource( 3 )
 
 [node name="big plant area8" type="Area2D" parent="."]
-position = Vector2( 620, -11581 )
+position = Vector2( 603, -11528 )
 scale = Vector2( 1.045, 0.168 )
 script = SubResource( 4 )
 
@@ -497,6 +506,33 @@ scale = Vector2( 0.883, 0.168 )
 script = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="big plant area5"]
+scale = Vector2( 5, 5 )
+shape = SubResource( 3 )
+
+[node name="MusicSwitch4" type="Area2D" parent="."]
+position = Vector2( 3903, -7377 )
+scale = Vector2( 1.843, 0.168 )
+script = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicSwitch4"]
+scale = Vector2( 5, 5 )
+shape = SubResource( 3 )
+
+[node name="MusicSwitch5" type="Area2D" parent="."]
+position = Vector2( 4351, -7377 )
+scale = Vector2( 0.558959, 0.168 )
+script = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicSwitch5"]
+scale = Vector2( 5, 5 )
+shape = SubResource( 3 )
+
+[node name="MusicSwitch6" type="Area2D" parent="."]
+position = Vector2( 2558, -7375 )
+scale = Vector2( 0.558959, 0.168 )
+script = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicSwitch6"]
 scale = Vector2( 5, 5 )
 shape = SubResource( 3 )
 
@@ -1126,6 +1162,8 @@ shape = SubResource( 1 )
 [connection signal="body_exited" from="Area2D54" to="Area2D54" method="_on_Area2D2_body_exited"]
 [connection signal="body_entered" from="Area2D55" to="Area2D55" method="_on_Area2D2_body_entered"]
 [connection signal="body_exited" from="Area2D55" to="Area2D55" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D59" to="Area2D59" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D59" to="Area2D59" method="_on_Area2D2_body_exited"]
 [connection signal="body_entered" from="Area2D56" to="Area2D56" method="_on_Area2D2_body_entered"]
 [connection signal="body_exited" from="Area2D56" to="Area2D56" method="_on_Area2D2_body_exited"]
 [connection signal="body_entered" from="Area2D57" to="Area2D57" method="_on_Area2D2_body_entered"]
@@ -1150,6 +1188,15 @@ shape = SubResource( 1 )
 [connection signal="body_exited" from="big plant area3" to="big plant area3" method="_on_big_plant_area_body_exited"]
 [connection signal="body_entered" from="big plant area5" to="big plant area5" method="_on_big_plant_area_body_entered"]
 [connection signal="body_exited" from="big plant area5" to="big plant area5" method="_on_big_plant_area_body_exited"]
+[connection signal="body_entered" from="MusicSwitch4" to="MusicSwitch1" method="_on_MusicSwitch4_body_entered"]
+[connection signal="body_entered" from="MusicSwitch4" to="MusicSwitch4" method="_on_MusicSwitch4_body_entered"]
+[connection signal="body_exited" from="MusicSwitch4" to="MusicSwitch4" method="_on_MusicSwitch4_body_exited"]
+[connection signal="body_entered" from="MusicSwitch5" to="MusicSwitch1" method="_on_MusicSwitch4_body_entered"]
+[connection signal="body_entered" from="MusicSwitch5" to="MusicSwitch5" method="_on_MusicSwitch4_body_entered"]
+[connection signal="body_exited" from="MusicSwitch5" to="MusicSwitch5" method="_on_MusicSwitch4_body_exited"]
+[connection signal="body_entered" from="MusicSwitch6" to="MusicSwitch1" method="_on_MusicSwitch4_body_entered"]
+[connection signal="body_entered" from="MusicSwitch6" to="MusicSwitch6" method="_on_MusicSwitch4_body_entered"]
+[connection signal="body_exited" from="MusicSwitch6" to="MusicSwitch6" method="_on_MusicSwitch4_body_exited"]
 [connection signal="body_entered" from="big plant area6" to="big plant area6" method="_on_big_plant_area_body_entered"]
 [connection signal="body_exited" from="big plant area6" to="big plant area6" method="_on_big_plant_area_body_exited"]
 [connection signal="body_entered" from="big plant area4" to="big plant area4" method="_on_big_plant_area_body_entered"]

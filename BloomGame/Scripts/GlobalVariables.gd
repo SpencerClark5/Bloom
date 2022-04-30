@@ -43,3 +43,6 @@ var idleSwitch = true
 
 #music controller
 var canPlay = true
+
+#music controller2
+var canPlay2 = true

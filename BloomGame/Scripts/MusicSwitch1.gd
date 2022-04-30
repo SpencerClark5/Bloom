@@ -1,21 +1,12 @@
 extends Area2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 onready var looping_music = get_parent().get_node("Flora/LoopingBackground")
 onready var _flora = get_parent().get_node("Flora")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 
 func _on_MusicSwitch1_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if(GlobalVariables.canPlay):
@@ -32,3 +23,4 @@ func _on_MusicSwitch1_body_shape_entered(body_rid, body, body_shape_index, local
 
 func _on_MusicSwitch1_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
 	self.queue_free()
+
