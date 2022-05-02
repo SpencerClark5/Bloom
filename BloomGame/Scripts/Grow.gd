@@ -4,6 +4,7 @@ onready var _sprite_seed = $Seedling
 onready var _collider_seed = $SeedCollider
 
 
+
 func _on_Area2D11_body_entered(body):
 	if(GlobalVariables.timesPlanted != 0):
 		GlobalVariables.canGrow = true
