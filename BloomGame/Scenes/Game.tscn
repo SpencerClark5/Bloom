@@ -22,8 +22,8 @@
 [ext_resource path="res://Scripts/MusicSwitch1.gd" type="Script" id=20]
 [ext_resource path="res://Scripts/MusicSwitch2.gd" type="Script" id=21]
 [ext_resource path="res://Art/Level Art/bloom_second_tiles/grapple_vine.png" type="Texture" id=22]
-[ext_resource path="res://PlantTip.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/EndArea.gd" type="Script" id=24]
+[ext_resource path="res://Scenes/PlantTip.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scripts/EndArea.gd" type="Script" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64.5, 252.25 )
