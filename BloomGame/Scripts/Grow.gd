@@ -54,7 +54,7 @@ func _on_Area2D11_body_entered(body):
 	elif(GlobalVariables.firstLimb == "Arm"):
 		GlobalVariables.LeftArmOn = true
 		GlobalVariables.canGrapple = true
-		GlobalVariables.secondLimb = "null"
+		GlobalVariables.firstLimb = "null"
 	queue_free()
 	if(GlobalVariables.timesPlanted != 0):
 		GlobalVariables.timesPlanted -= 1
