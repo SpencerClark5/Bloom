@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/PlantTip.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PlantTip.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/SourceCodePro-Bold.ttf" type="DynamicFontData" id=2]
+
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.0392157, 0.0392157, 0.0392157, 1 )
