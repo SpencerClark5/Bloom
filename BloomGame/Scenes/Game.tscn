@@ -1261,7 +1261,7 @@ scale = Vector2( 10, 1.75 )
 shape = SubResource( 1 )
 
 [node name="EndArea" type="Area2D" parent="."]
-position = Vector2( 595, -11954 )
+position = Vector2( 608, -11954 )
 script = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea"]
