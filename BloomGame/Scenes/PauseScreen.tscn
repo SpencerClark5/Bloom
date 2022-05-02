@@ -58,7 +58,7 @@ margin_bottom = 118.0
 custom_fonts/font = SubResource( 2 )
 text = "Quit Game"
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Pause" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 122.0
 margin_right = 276.0
 margin_bottom = 179.0
@@ -67,4 +67,4 @@ text = "Reset Game"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Pause" to="." method="_on_Button_pressed"]
