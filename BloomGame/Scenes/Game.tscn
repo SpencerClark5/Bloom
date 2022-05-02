@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/NewLargeDirtTileset.tres" type="TileSet" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Scripts/MusicSwitch2.gd" type="Script" id=21]
 [ext_resource path="res://Art/Level Art/bloom_second_tiles/grapple_vine.png" type="Texture" id=22]
 [ext_resource path="res://PlantTip.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/EndArea.gd" type="Script" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64.5, 252.25 )
@@ -1260,10 +1261,10 @@ scale = Vector2( 10, 1.75 )
 shape = SubResource( 1 )
 
 [node name="EndArea" type="Area2D" parent="."]
-position = Vector2( 214, -388 )
+position = Vector2( 595, -11954 )
+script = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea"]
-position = Vector2( 394, -11615 )
 scale = Vector2( 27.3409, 2.01092 )
 shape = SubResource( 7 )
 
@@ -1451,4 +1452,4 @@ shape = SubResource( 7 )
 [connection signal="body_exited" from="Area2D22" to="Area2D22" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D23" to="Area2D23" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D23" to="Area2D23" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="EndArea" to="." method="_on_EndArea_body_entered"]
+[connection signal="body_entered" from="EndArea" to="EndArea" method="_on_EndArea_body_entered"]
