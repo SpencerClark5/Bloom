@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/GameScript.gd" type="Script" id=1]
 [ext_resource path="res://Art/Level Art/NewLargeDirtTileset.tres" type="TileSet" id=2]
@@ -51,6 +51,8 @@ extents = Vector2( 10.875, 58.0835 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 2.5, 1.4253 )
+
+[sub_resource type="RectangleShape2D" id=7]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 97, -145 )
@@ -1206,6 +1208,14 @@ pause_mode = 1
 scale = Vector2( 10, 1.75 )
 shape = SubResource( 1 )
 
+[node name="EndArea" type="Area2D" parent="."]
+position = Vector2( 214, -388 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea"]
+position = Vector2( 394, -11615 )
+scale = Vector2( 27.3409, 2.01092 )
+shape = SubResource( 7 )
+
 [connection signal="finished" from="Flora/BackgroundMusic" to="." method="_on_BackgroundMusic_finished"]
 [connection signal="body_entered" from="Area2D11" to="Area2D11" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D11" to="Area2D11" method="_on_Area2D_body_exited"]
@@ -1384,3 +1394,4 @@ shape = SubResource( 1 )
 [connection signal="body_exited" from="Area2D22" to="Area2D22" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D23" to="Area2D23" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D23" to="Area2D23" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="EndArea" to="." method="_on_EndArea_body_entered"]

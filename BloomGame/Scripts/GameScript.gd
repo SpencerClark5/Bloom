@@ -258,3 +258,7 @@ func BigPlant():
 
 func _on_BackgroundMusic_finished():
 	$Flora/LoopingBackground.play()
+
+
+func _on_EndArea_body_entered(body):
+	get_tree().change_scene("res://Scenes/Credits.tscn")
