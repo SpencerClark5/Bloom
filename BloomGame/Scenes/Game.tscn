@@ -652,12 +652,19 @@ z_index = -2
 z_as_relative = false
 texture = ExtResource( 13 )
 
+[node name="SpaceIcon3" type="Sprite" parent="."]
+position = Vector2( 943, -184 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 13 )
+offset = Vector2( 3.25, -28.75 )
+
 [node name="SpaceIcon2" type="Sprite" parent="."]
-position = Vector2( 860, -300 )
+position = Vector2( 722, -183 )
 scale = Vector2( 4, 4 )
 z_index = -2
 z_as_relative = false
 texture = ExtResource( 13 )
+offset = Vector2( 3.25, -28.75 )
 
 [node name="QIcon" type="Sprite" parent="."]
 position = Vector2( 2341, -1322 )

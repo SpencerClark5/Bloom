@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_EndArea_body_entered(body):
-	get_tree().change_scene("res://Scenes/Flora.tscn")
+	get_tree().change_scene("res://Scenes/Credits.tscn")

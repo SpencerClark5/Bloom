@@ -23,4 +23,18 @@ func _on_Quit_pressed():
 
 
 func _on_Button_pressed():
+	GlobalVariables.RightArmOn = true
+	GlobalVariables.LeftArmOn = true
+	GlobalVariables.RightLegOn = true
+	GlobalVariables.LeftLegOn = true
+	GlobalVariables.firstLimb = "null"
+	GlobalVariables.secondLimb = "null"
+	GlobalVariables.thirdLimb = "null"
+	GlobalVariables.fourthLimb = "null"
+	GlobalVariables.timesPlanted = 0
+	GlobalVariables.canClimb = true
+	GlobalVariables.canGrapple = true
+	GlobalVariables.canDoubleJump = true
+	GlobalVariables.canSingleJump = true
+	self.is_paused = false
 	get_tree().change_scene("res://Scenes/Game.tscn")

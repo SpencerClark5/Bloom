@@ -111,7 +111,7 @@ func _process(_delta):
 
 
 	#when u wana plant
-	elif(GlobalVariables.inPlantArea):
+	elif(GlobalVariables.inPlantArea && GlobalVariables.timesPlanted < 5):
 		if Input.is_action_just_pressed("PlantLeg"):
 			
 			if(GlobalVariables.LeftLegOn):
@@ -155,6 +155,7 @@ func _process(_delta):
 		
 				#when they press E 
 		if Input.is_action_just_pressed("PlantArm"):
+			
 			#if the arm is visible
 			if(GlobalVariables.LeftArmOn):
 				#test print
